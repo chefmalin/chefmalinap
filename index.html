@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7f4e9" />
+    <meta name="description" content="ChefMalin, votre assistant repas NutriChef." />
+    <title>ChefMalin · NutriChef</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-frame">
+      <header class="site-header">
+        <a class="logo" href="#accueil" aria-label="ChefMalin, accueil">
+          <span class="logo-hat" aria-hidden="true">⌁</span>Chef<span>Malin</span>
+        </a>
+        <nav class="top-nav" aria-label="Navigation">
+          <a href="#recettes">Recettes</a>
+          <a href="#calendrier">Calendrier</a>
+          <a href="#courses">Courses</a>
+          <a href="#api">Connexion API</a>
+        </nav>
+        <button class="avatar-button" data-route="profil" aria-label="Ouvrir mon profil">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.8"/><path d="M4.5 20c.8-4.1 3.3-6 7.5-6s6.7 1.9 7.5 6"/></svg>
+        </button>
+      </header>
+
+      <main id="app" tabindex="-1"></main>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Navigation principale">
+      <a href="#accueil" data-nav="accueil"><span class="nav-icon">⌂</span>Accueil</a>
+      <a href="#recettes" data-nav="recettes"><span class="nav-icon">⌕</span>Recettes</a>
+      <a href="#calendrier" data-nav="calendrier"><span class="nav-icon">□</span>Menus</a>
+      <a href="#courses" data-nav="courses"><span class="nav-icon">⌑</span>Courses</a>
+      <a href="#profil" data-nav="profil"><span class="nav-icon">◉</span>Profil</a>
+    </nav>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
+
