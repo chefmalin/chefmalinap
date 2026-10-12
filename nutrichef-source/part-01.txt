@@ -565,10 +565,10 @@ footer {
 }
 /* Bouton placé près de Pipo, sans le recouvrir. */
 .hero .cta {
-  left: 36%;
-  min-width: 326px;
-  padding: 14px 26px;
-  font-size: 18px;
+  left: 29%;
+  min-width: 290px;
+  padding: 12px 22px;
+  font-size: 17px;
 }
 @media (min-width: 560px) and (max-width: 760px) {
   .hero .cta { left: 34%; min-width: 300px; padding: 13px 22px; font-size: 17px; }
