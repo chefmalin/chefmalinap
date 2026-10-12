@@ -1,7 +1,893 @@
-Get-Content : Impossible de trouver le chemin d'accès « C:\NutriChef-direct.html », car il n'existe pas.
-Au caractère Ligne:2 : 1
-+ Get-Content -Raw 'NutriChef-direct.html'
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (C:\NutriChef-direct.html:String) [Get-Content], ItemNotFoundException
-    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
- 
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#25472c"><title>NutriChef</title><style>:root{--green:#264c35;--lime:#e9edda;--cream:#faf8f1;--ink:#263c2c;--muted:#6d7569}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,sans-serif}button,input,select,textarea{font:inherit}a{color:inherit}button,.btn{cursor:pointer;border:0;border-radius:12px;padding:13px 20px;background:var(--green);color:white;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600}button:hover,.btn:hover{filter:brightness(1.1)}button:disabled{opacity:.5;cursor:not-allowed}.secondary{background:var(--lime);color:var(--green)}.danger{background:#fff0eb;color:#9e3f2d}:focus-visible{outline:3px solid #b68017;outline-offset:3px}.top{padding:18px 4%;background:var(--cream);border-bottom:1px solid #deded1;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{text-decoration:none;font-family:Georgia,serif;font-size:31px;white-space:nowrap;font-weight:700}.brand span{color:#72914c}.brand small{display:block;font:9px system-ui;letter-spacing:1.7px;margin-top:5px}.top nav{display:flex;gap:6px;flex-wrap:wrap}.top nav a{font-size:13px;text-decoration:none;padding:12px 14px;border-radius:9px}.top nav a[aria-current=page]{background:var(--lime);font-weight:700}.dot{display:inline-block;background:#d65344;width:8px;height:8px;border-radius:50%;margin-left:6px}.wrap{max-width:1200px;margin:auto;padding:40px 30px}.eyebrow{color:#7c8059;letter-spacing:2px;text-transform:uppercase;font-size:11px;font-weight:700}h1,h2,h3{font-family:Georgia,serif;font-weight:600}h1{font-size:clamp(30px,4vw,46px);margin:10px 0 16px}h2{font-size:28px;margin:0 0 16px}h3{font-size:23px;margin:12px 0}p{line-height:1.65}.muted{color:var(--muted)}.hero{position:relative;overflow:hidden;width:100%;height:clamp(350px,43vw,630px);background:#e8dfc9}.hero-art{position:absolute;width:100%;height:auto;top:-17.6vw;left:0}.hero .cta{position:absolute;bottom:6%;left:8%;box-shadow:0 8px 30px #24321d35;font-size:19px;padding:18px 28px;border:5px solid var(--cream);border-radius:50px}.intro{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:26px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.two{display:grid;grid-template-columns:1fr 1.2fr;gap:24px}.card{background:white;border:1px solid #e4e5d7;border-radius:22px;padding:24px}.green{background:#edf1e3}.blue{background:#e8f1f8}.gold{background:#fbf0d9}.bigicon{font-size:32px;color:#54733a}.badge{display:inline-block;background:#f0efdf;border-radius:30px;padding:5px 10px;font-size:11px;font-weight:600}.recipe{display:flex;flex-direction:column;align-items:flex-start}.recipe p{flex:1}.recipe-art{height:90px;width:100%;border-radius:14px;margin-bottom:10px}.notice{padding:14px 18px;border-radius:12px;background:#f4efdb;margin:16px 0;font-size:13px;line-height:1.65}.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:20px 0}.toolbar label{margin:0}.toolbar input{width:auto;flex:1}.fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}label{display:block;font-size:13px;font-weight:600;margin-bottom:16px}input,select,textarea{display:block;width:100%;border:1px solid #d8dccd;border-radius:10px;background:#fff;padding:12px;margin-top:8px;color:var(--ink)}input[type=checkbox],input[type=radio]{width:auto;display:inline;margin:0 9px 0 0;accent-color:var(--green)}.checks{display:flex;flex-wrap:wrap;gap:10px}.checks label{background:#f4f5ec;padding:12px;border-radius:10px;margin:0}.steps{display:flex;gap:10px;margin:22px 0}.steps span{flex:1;border-top:4px solid #dde2d1;padding-top:10px;font-size:12px}.steps .active{border-color:var(--green);font-weight:bold}.actions{display:flex;justify-content:space-between;gap:12px;margin-top:24px}.metric{font-size:40px;font-family:Georgia,serif;color:var(--green)}.metric small{font:14px system-ui}.gauge{height:13px;background:linear-gradient(to right,#dcb463 0 12%,#76a56c 12% 38%,#e5bd5e 38% 58%,#d67455 58% 100%);border-radius:20px;margin:28px 10px 14px;position:relative}.gauge i{position:absolute;top:-7px;height:27px;width:4px;background:#243c2c;border:1px solid white;border-radius:3px}.avatar{display:block;margin:0 auto;height:145px;width:140px}.chart{width:100%;height:210px;overflow:visible}.chart text{font:11px system-ui;fill:#60725f}.calendar{display:grid;grid-template-columns:repeat(7,minmax(140px,1fr));gap:12px;overflow:auto;padding-bottom:12px}.day{background:#fff;border:1px solid #e2e3d8;border-radius:16px;padding:14px}.day h3{font-size:19px}.meal{padding:10px 0;border-top:1px solid #eeeee5;font-size:12px}.meal button{padding:6px 9px;margin-top:8px;font-size:11px}.meal select{font-size:12px;padding:7px}.meal a{display:block;margin:8px 0}.shopping-row{display:flex;align-items:center;gap:12px;border-bottom:1px solid #eceee4;padding:13px 0}.shopping-row label{flex:1;margin:0;font-size:15px;font-weight:400}.shopping-row button{padding:5px 10px;background:transparent;color:#8b4438}.shopping-row input:checked+span{text-decoration:line-through;color:#89907f}footer{text-align:center;padding:35px;color:#7b826f;font-size:13px;border-top:1px solid #e3e3d6;line-height:2}dialog{border:0;border-radius:24px;padding:32px;width:min(620px,94vw);max-height:90dvh;color:var(--ink);background:var(--cream)}dialog::backdrop{background:#172b2066}.close{float:right;background:#e9edda;color:var(--green);font-size:24px;padding:4px 12px}#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#264c35;color:white;border-radius:12px;padding:14px 24px;z-index:5;display:none}table{width:100%;border-collapse:collapse;font-size:13px}td,th{text-align:left;padding:9px;border-bottom:1px solid #e4e6db}.empty{text-align:center;padding:40px}.error{color:#a73d2c}.section-gap{margin-top:32px}@media(max-width:760px){.top{display:block;padding:14px 16px}.brand{font-size:26px}.top nav{margin-top:12px;gap:0}.top nav a{padding:9px 10px;font-size:12px}.hero{height:410px}.hero-art{width:900px;max-width:none;top:-158px;left:calc(50% - 480px)}.hero .cta{bottom:22px;left:20px;font-size:16px}.wrap{padding:28px 18px}.grid,.two{grid-template-columns:1fr}.fields{gap:12px}.intro{align-items:flex-start;flex-direction:column}.card{padding:20px}.metric{font-size:34px}.calendar{grid-template-columns:repeat(7,180px)}h1{font-size:32px}}
+.hero{height:clamp(340px,39.5vw,590px)}.hero:after{content:'';position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(transparent,#faf8f1)}.hero .cta{z-index:1}.dot[hidden]{display:none}@media(max-width:760px){.hero{height:365px}.hero-art{width:850px;top:-150px;left:calc(50% - 425px)}.hero:after{height:65px;background:linear-gradient(transparent,#faf8f1 65%)}}
+@media(max-width:760px){.hero{height:calc(42vw + 80px);min-height:230px}.hero-art{width:100%;top:-17.6vw;left:0}.hero:after{height:85px;background:linear-gradient(transparent,#faf8f1 15%)}.hero .cta{bottom:12px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:15px;padding:14px 20px}}
+</style><style>
+/* Ajustements visuels ChefMalin : mÃªme application, lecture plus lÃ©gÃ¨re. */
+:root {
+  --green: #315b43;
+  --lime: #eff3e2;
+  --cream: #fcfbf7;
+  --ink: #263b2e;
+  --muted: #727b72;
+}
+
+body {
+  background: var(--cream);
+  letter-spacing: .002em;
+}
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 13px 5%;
+  background: rgb(252 251 247 / 94%);
+  border-bottom-color: #e9e9df;
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  font-size: 28px;
+  letter-spacing: -.035em;
+}
+
+.brand small {
+  margin-top: 3px;
+  font-size: 8px;
+  letter-spacing: 1.35px;
+}
+
+.top nav {
+  gap: 3px;
+}
+
+.top nav a {
+  padding: 9px 11px;
+  color: #52655a;
+  font-size: 12px;
+  transition: color .18s ease, background .18s ease;
+}
+
+.top nav a:hover,
+.top nav a[aria-current=page] {
+  background: #eef3e5;
+  color: var(--green);
+}
+
+.wrap {
+  max-width: 1120px;
+  padding: 32px 28px 44px;
+}
+
+.eyebrow {
+  color: #75805b;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+h1 {
+  margin: 8px 0 12px;
+  font-size: clamp(28px, 3.3vw, 40px);
+  line-height: 1.08;
+}
+
+h2 {
+  margin-bottom: 12px;
+  font-size: 24px;
+  line-height: 1.18;
+}
+
+h3 {
+  margin: 10px 0;
+  font-size: 19px;
+  line-height: 1.22;
+}
+
+p {
+  line-height: 1.55;
+}
+
+button,
+.btn {
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: #315b43;
+  box-shadow: 0 5px 14px rgb(36 67 45 / 12%);
+  font-size: 14px;
+  font-weight: 650;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+button:hover,
+.btn:hover {
+  filter: none;
+  background: #244a35;
+  box-shadow: 0 8px 18px rgb(36 67 45 / 16%);
+  transform: translateY(-1px);
+}
+
+.secondary {
+  border-color: #dbe4ce;
+  background: #f3f7ed;
+  color: #315b43;
+  box-shadow: none;
+}
+
+.secondary:hover {
+  background: #e6efd9;
+}
+
+.danger {
+  background: #fff5f0;
+  box-shadow: none;
+}
+
+.hero {
+  height: clamp(340px, 44vw, 540px);
+  background: #eee7d7;
+  overflow: hidden;
+}
+
+.hero-art {
+  width: 80%;
+  top: -1.2vw;
+  left: 10%;
+  transform-origin: 64% 50%;
+  animation: pipo-float 5.5s ease-in-out infinite;
+}
+
+@keyframes pipo-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(.35deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-art { animation: none; }
+}
+
+.pipo-greeting:focus-visible { outline: 3px solid #f2b739; outline-offset: -6px; }
+
+.hero.pipo-says-hey .hero-art {
+  animation: pipo-wave .72s cubic-bezier(.2,.8,.25,1) 3 both;
+}
+
+@keyframes pipo-wave {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30% { transform: translateY(-8px) rotate(-.7deg); }
+  60% { transform: translateY(-4px) rotate(.7deg); }
+}
+
+.pipo-hello {
+  position: absolute;
+  z-index: 3;
+  top: 17%;
+  right: 36%;
+  padding: 10px 15px;
+  border-radius: 18px 18px 4px 18px;
+  background: #fffdf7;
+  color: #315b43;
+  box-shadow: 0 9px 22px rgb(36 67 45 / 18%);
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(.8) translateY(8px);
+}
+
+.hero.pipo-says-hey .pipo-hello {
+  animation: pipo-hello 2.6s ease both;
+}
+
+@keyframes pipo-hello {
+  10%, 80% { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(.95) translateY(-5px); }
+}
+
+@media (min-width: 560px) and (max-width: 760px) {
+  .hero .cta { top: 55%; bottom: auto; left: 22%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero.pipo-says-hey .hero-art,
+  .hero.pipo-says-hey .pipo-hello { animation: none; opacity: 1; transform: none; }
+}
+.hero:after {
+  height: 72px;
+  background: linear-gradient(transparent, var(--cream));
+}
+
+.hero .cta {
+  top: 54%;
+  bottom: auto;
+  left: 21%;
+  min-width: 264px;
+  padding: 9px 24px;
+  border: 3px solid rgb(252 251 247 / 92%);
+  border-radius: 999px;
+  background: #315b43;
+  box-shadow: 0 9px 24px rgb(36 67 45 / 18%);
+  font-size: 13px;
+  transform: translateX(-50%);
+}
+
+.grid {
+  gap: 17px;
+}
+
+.two {
+  gap: 18px;
+}
+
+.card {
+  padding: 20px;
+  border-color: #e8e9df;
+  border-radius: 18px;
+  box-shadow: 0 3px 12px rgb(54 70 54 / 4%);
+}
+
+.green { background: #f0f4e8; }
+.blue { background: #eef5f8; }
+.gold { background: #fcf3e4; }
+
+.bigicon {
+  font-size: 25px;
+  color: #627e49;
+}
+
+.badge {
+  background: #f1f3e8;
+  color: #5d6b5b;
+}
+
+.recipe-art {
+  height: 76px;
+  border-radius: 12px;
+}
+
+/* Les trois entrÃ©es de l'accueil restent directes et aÃ©rÃ©es. */
+.home-shortcuts .card {
+  --card-edge: #d9dfce;
+  min-height: 205px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 7px 0 var(--card-edge), 0 16px 24px rgb(54 70 54 / 10%);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.home-shortcuts .green { --card-edge: #d3dfbf; }
+.home-shortcuts .gold { --card-edge: #ead4ae; }
+.home-shortcuts .blue { --card-edge: #c8dce8; }
+
+.home-shortcuts .card:hover {
+  transform: translateY(-4px);
+  text-decoration: none;
+  box-shadow: 0 11px 0 var(--card-edge), 0 20px 28px rgb(54 70 54 / 13%);
+}
+
+.home-shortcuts .card:active {
+  transform: translateY(4px);
+  box-shadow: 0 3px 0 var(--card-edge), 0 7px 12px rgb(54 70 54 / 10%);
+}
+
+.home-shortcuts .card h3 {
+  margin: 0;
+  color: #244b37;
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", "Segoe UI Rounded", sans-serif;
+  font-size: clamp(21px, 2vw, 26px);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.05;
+  text-decoration: none;
+}
+
+.shortcut-illustration {
+  width: 118px;
+  height: 118px;
+  object-fit: contain;
+  filter: drop-shadow(0 7px 6px rgb(32 65 46 / 15%));
+  transition: transform .22s ease;
+}
+
+.home-shortcuts .card:hover .shortcut-illustration {
+  transform: translateY(-4px) rotate(-2deg) scale(1.04);
+}
+
+.shortcut-moustache { width: 126px; }
+
+.toolbar {
+  gap: 9px;
+  margin: 16px 0;
+}
+
+.toolbar input,
+input,
+select,
+textarea {
+  border-color: #dfe4d9;
+  border-radius: 12px;
+  background: #fffefa;
+}
+
+.calendar {
+  gap: 10px;
+}
+
+.day {
+  padding: 13px;
+  border-color: #e7e9df;
+  border-radius: 14px;
+}
+
+.day h3 {
+  font-size: 17px;
+}
+
+.meal {
+  padding: 9px 0;
+}
+
+.notice {
+  border-radius: 14px;
+  background: #f7f3e6;
+}
+
+footer {
+  padding: 28px;
+  background: #fbfaf5;
+}
+
+@media (max-width: 760px) {
+  .top {
+    padding: 11px 16px 9px;
+  }
+
+  .brand {
+    font-size: 24px;
+  }
+
+  .top nav {
+    margin-top: 9px;
+  }
+
+  .top nav a {
+    padding: 8px 8px;
+    font-size: 11px;
+  }
+
+  .wrap {
+    padding: 25px 17px 34px;
+  }
+
+  .hero {
+    height: clamp(280px, 56.25vw, 406px);
+  }
+
+  .hero-art {
+    width: 84%;
+    top: 0;
+    left: 8%;
+  }
+
+  .pipo-greeting:focus-visible { outline: 3px solid #f2b739; outline-offset: -6px; }
+
+.hero.pipo-says-hey .hero-art {
+  animation: pipo-wave .72s cubic-bezier(.2,.8,.25,1) 3 both;
+}
+
+@keyframes pipo-wave {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30% { transform: translateY(-8px) rotate(-.7deg); }
+  60% { transform: translateY(-4px) rotate(.7deg); }
+}
+
+.pipo-hello {
+  position: absolute;
+  z-index: 3;
+  top: 17%;
+  right: 36%;
+  padding: 10px 15px;
+  border-radius: 18px 18px 4px 18px;
+  background: #fffdf7;
+  color: #315b43;
+  box-shadow: 0 9px 22px rgb(36 67 45 / 18%);
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(.8) translateY(8px);
+}
+
+.hero.pipo-says-hey .pipo-hello {
+  animation: pipo-hello 2.6s ease both;
+}
+
+@keyframes pipo-hello {
+  10%, 80% { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(.95) translateY(-5px); }
+}
+
+@media (min-width: 560px) and (max-width: 760px) {
+  .hero .cta { top: 55%; bottom: auto; left: 22%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero.pipo-says-hey .hero-art,
+  .hero.pipo-says-hey .pipo-hello { animation: none; opacity: 1; transform: none; }
+}
+.hero:after {
+    height: 82px;
+  }
+
+  .hero .cta {
+    bottom: 12px;
+    left: 50%;
+    min-width: 242px;
+    padding: 8px 20px;
+    border-width: 3px;
+    border-radius: 999px;
+    font-size: 12px;
+    transform: translateX(-50%);
+  }
+
+  .hero .cta:hover {
+    transform: translateX(-50%) translateY(-1px);
+  }
+
+  h1 { font-size: 29px; }
+  h2 { font-size: 22px; }
+  h3 { font-size: 18px; }
+  .card { padding: 18px; }
+  .home-shortcuts .card h3 { font-size: 22px; }
+}
+
+
+/* Accueil : Pipo parle sans dÃ©placer la banniÃ¨re. */
+.hero { height: clamp(400px, 52vw, 650px); }
+.hero-art {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: center bottom;
+  animation: none;
+}
+.hero.pipo-says-hey .hero-art { animation: none !important; }
+.hero .cta {
+  top: 54%;
+  bottom: auto;
+  left: 21%;
+  min-width: 304px;
+  padding: 14px 28px;
+  font-size: 17px;
+  letter-spacing: -.01em;
+}
+.pipo-hello {
+  top: 15%;
+  right: 40%;
+  padding: 17px 24px;
+  font-size: clamp(27px, 3.4vw, 47px);
+  line-height: 1;
+  white-space: nowrap;
+}
+.week-cta { display: inline-flex; align-items: center; gap: 9px; }
+.mini-moustache {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 9px;
+}
+.mini-moustache::before,
+.mini-moustache::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  width: 13px;
+  height: 7px;
+  background: #315b43;
+  border-radius: 85% 15% 85% 15%;
+}
+.mini-moustache::before { left: 0; transform: rotate(18deg); }
+.mini-moustache::after { right: 0; transform: scaleX(-1) rotate(18deg); }
+@media (min-width: 560px) and (max-width: 760px) {
+  .hero { height: 430px; }
+  .hero .cta { top: 55%; bottom: auto; left: 22%; min-width: 280px; padding: 13px 23px; font-size: 16px; }
+  .pipo-hello { top: 14%; right: 35%; }
+}
+@media (max-width: 559px) {
+  .hero .cta { min-width: 272px; padding: 12px 22px; font-size: 15px; }
+  .pipo-hello { right: 22%; font-size: 28px; }
+}
+/* Cadrage final : contenu complet, sans recadrer le visage de Pipo. */
+.hero {
+  height: clamp(360px, 38vw, 560px);
+  background: #f5efe0;
+}
+.hero-art {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+}
+.hero::after {
+  height: 24px;
+  background: linear-gradient(transparent, rgb(252 251 247 / 48%));
+}
+.hero .cta {
+  top: 54%;
+  bottom: auto;
+  left: 21%;
+  min-width: 350px;
+  padding: 16px 32px;
+  border: 4px solid #f2b739;
+  background: #315b43;
+  box-shadow: 0 8px 0 #c98d12, 0 16px 28px rgb(36 67 45 / 22%);
+  font-size: 20px;
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  letter-spacing: -.02em;
+}
+.hero .cta:hover {
+  background: #315b43;
+  box-shadow: 0 5px 0 #c98d12, 0 10px 18px rgb(36 67 45 / 20%);
+  transform: translateX(-50%) translateY(3px);
+}
+@media (min-width: 560px) and (max-width: 760px) {
+  .hero { height: 350px; }
+  .hero .cta {
+    top: 55%;
+    bottom: auto;
+    left: 25%;
+    min-width: 320px;
+    padding: 15px 25px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 559px) {
+  .hero { height: 300px; }
+  .hero .cta {
+    top: auto;
+    bottom: 16px;
+    left: 50%;
+    min-width: 300px;
+    padding: 13px 22px;
+    font-size: 17px;
+  }
+}
+/* Bouton placÃ© prÃ¨s de Pipo, sans le recouvrir. */
+.hero .cta {
+  left: 29%;
+  min-width: 290px;
+  padding: 12px 22px;
+  font-size: 17px;
+}
+@media (min-width: 560px) and (max-width: 760px) {
+  .hero .cta { left: 34%; min-width: 300px; padding: 13px 22px; font-size: 17px; }
+}
+@media (max-width: 559px) {
+  .hero .cta { left: 50%; min-width: 280px; padding: 12px 20px; font-size: 16px; }
+}
+/* Profil Pipo et accÃ¨s au questionnaire. */
+.hero .cta { top: 52.8%; }
+.profile-chip {
+  position: relative;
+  flex: 0 0 58px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: #315b43;
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+}
+.profile-chip:hover { text-decoration: none; color: #244a35; }
+.profile-chip img {
+  width: 43px;
+  height: 43px;
+  object-fit: cover;
+  object-position: 50% 15%;
+  border: 2px solid #f2b739;
+  border-radius: 50%;
+  background: #fffdf7;
+  box-shadow: 0 3px 8px rgb(36 67 45 / 16%);
+}
+.profile-chip .dot {
+  position: absolute;
+  top: 1px;
+  right: 4px;
+}
+@media (min-width: 560px) and (max-width: 760px) {
+  .hero .cta { top: 53.8%; }
+}
+@media (max-width: 559px) {
+  .profile-chip { flex-basis: 46px; font-size: 10px; }
+  .profile-chip img { width: 36px; height: 36px; }
+}/* Les trois choix reprennent les illustrations et le relief de lâ€™accueil. */
+.cuisine-choices { align-items: stretch; }
+.choice-card { position: relative; min-height: 286px; display: flex; flex-direction: column; align-items: flex-start; gap: 0; overflow: hidden; padding: 18px 22px 23px; border-radius: 24px; text-decoration: none; isolation: isolate; transition: transform .22s ease, box-shadow .22s ease; }
+.choice-card:hover { text-decoration: none; transform: translateY(-4px); }
+.choice-card:focus-visible { outline: 4px solid #f2b739; outline-offset: 4px; }
+.choice-card.choice-green { background: #eff5e9; border-color: #dfe9d5; box-shadow: 0 8px 0 #c7d8bd, 0 16px 27px rgb(45 85 61 / 14%); }
+.choice-card.choice-blue { background: #eaf4fa; border-color: #d6e7f0; box-shadow: 0 8px 0 #bdd7e6, 0 16px 27px rgb(45 85 61 / 14%); }
+.choice-card.choice-gold { background: #fff2dc; border-color: #f1dfbf; box-shadow: 0 8px 0 #ead2a6, 0 16px 27px rgb(45 85 61 / 14%); }
+.choice-card:hover.choice-green { box-shadow: 0 4px 0 #c7d8bd, 0 11px 20px rgb(45 85 61 / 16%); }
+.choice-card:hover.choice-blue { box-shadow: 0 4px 0 #bdd7e6, 0 11px 20px rgb(45 85 61 / 16%); }
+.choice-card:hover.choice-gold { box-shadow: 0 4px 0 #ead2a6, 0 11px 20px rgb(45 85 61 / 16%); }
+.choice-number { position: absolute; top: 17px; left: 19px; z-index: 2; display: grid; width: 31px; height: 31px; place-items: center; border: 2px solid currentColor; border-radius: 50%; color: #315b43; background: rgb(255 253 247 / 80%); font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; font-size: 12px; font-weight: 900; }
+.choice-art { width: 100%; height: 132px; display: grid; place-items: center; margin: 0 0 1px; }
+.choice-illustration { width: 124px; height: 124px; object-fit: contain; filter: drop-shadow(0 8px 6px rgb(32 65 46 / 16%)); transition: transform .22s ease; }
+.choice-card:hover .choice-illustration { transform: translateY(-5px) rotate(-2deg) scale(1.04); }
+.choice-copy { display: block; padding-right: 18px; }
+.choice-card h3 { margin: 1px 0 7px; color: #244a35; font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; font-size: clamp(18px, 1.7vw, 22px); line-height: 1.1; }
+.choice-card p { margin: 0; color: #45604c; font-size: 14px; line-height: 1.45; }
+.choice-arrow { position: absolute; right: 18px; bottom: 17px; display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; color: #fffdf7; background: #315b43; box-shadow: 0 3px 0 #244a35; font-size: 22px; font-weight: 900; transition: transform .22s ease; }
+.choice-card:hover .choice-arrow { transform: translateX(3px); }
+@media (max-width: 760px) { .choice-card { min-height: 246px; } .choice-art { height: 108px; } .choice-illustration { width: 104px; height: 104px; } }/* Calendrier : une date ronde ouvre un seul menu Ã  la fois. */
+.calendar-intro { display: flex; align-items: end; justify-content: space-between; gap: 22px; }
+.calendar-intro h1 { margin-bottom: 5px; }
+.calendar-intro p { margin: 0; }
+.calendar-navigation { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 7px; border: 1px solid #dfe7d8; border-radius: 18px; background: #fffdf7; color: #315b43; white-space: nowrap; }
+.calendar-navigation strong { min-width: 142px; text-align: center; font-size: 14px; }
+.calendar-nav-button { width: 37px; height: 37px; min-width: 37px; padding: 0; border-radius: 13px; background: #edf4e8; color: #315b43; font-size: 18px; }
+.calendar-action-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 21px 0 12px; }
+.calendar-action-row button { border-radius: 15px; box-shadow: 0 4px 0 rgb(36 74 53 / 18%); }
+.calendar-tip { margin: 0 0 19px; padding: 12px 16px; border: 1px solid #e4e7db; border-radius: 15px; background: #f7f5ec; color: #5d6b61; font-size: 14px; }
+.calendar-tip strong { color: #315b43; }
+.playful-calendar { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px; margin: 0 0 23px; }
+.calendar-date-button { position: relative; display: flex; min-width: 0; flex-direction: column; align-items: center; gap: 4px; padding: 9px 4px 10px; border: 1px solid #e0e7db; border-radius: 22px; background: #fffdf8; color: #315b43; box-shadow: 0 4px 0 #e0e7db; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.calendar-date-button:hover { transform: translateY(-3px); box-shadow: 0 7px 0 #d2e1c9; filter: none; }
+.calendar-date-button.is-selected { border-color: #315b43; background: #eff5e9; box-shadow: 0 6px 0 #315b43; }
+.calendar-date-button.is-today .calendar-orb { border-color: #f2b739; }
+.calendar-orb { position: relative; display: flex; width: 68px; height: 68px; flex-direction: column; align-items: center; justify-content: center; border: 3px solid #dce9d2; border-radius: 50%; background: linear-gradient(145deg, #fffef9, #e8f1df); color: #315b43; box-shadow: inset 0 2px 0 #fff, 0 5px 9px rgb(42 79 56 / 12%); }
+.calendar-date-button.is-selected .calendar-orb { border-color: #f2b739; background: linear-gradient(145deg, #fff7d7, #f2df9c); }
+.calendar-orb small { margin-bottom: 1px; text-transform: capitalize; font-size: 11px; font-weight: 800; }
+.calendar-orb strong { font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; font-size: 27px; line-height: .9; }
+.calendar-date-label { font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; font-size: 12px; font-weight: 800; }
+.calendar-date-status { overflow: hidden; width: 100%; padding: 0 4px; color: #778477; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.calendar-date-button.has-menu::after { content: ""; position: absolute; top: 11px; right: 16px; width: 9px; height: 9px; border: 2px solid #fffdf7; border-radius: 50%; background: #d8a725; }
+.calendar-editor { padding: 21px; border: 1px solid #dce8d4; border-radius: 24px; background: linear-gradient(135deg, #f5faef, #fffdf7); box-shadow: 0 9px 25px rgb(45 85 61 / 10%); }
+.calendar-editor-head { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+.calendar-editor-kicker { color: #819264; font-size: 11px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.calendar-editor h2 { margin: 3px 0 2px; font-size: 27px; }
+.calendar-editor-head p { margin: 0; color: #68756b; font-size: 14px; }
+.calendar-total { display: flex; min-width: 106px; flex-direction: column; align-items: center; padding: 10px; border-radius: 16px; background: #315b43; color: #fffdf7; }
+.calendar-total strong { font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; font-size: 25px; line-height: 1; }
+.calendar-total span { margin-top: 3px; font-size: 11px; }
+.calendar-meals { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.calendar-meal { padding: 14px; border: 1px solid #e0e8da; border-radius: 17px; background: #fffef9; }
+.calendar-meal.is-filled { border-color: #cddfc2; background: #fbfff7; }
+.calendar-meal-heading { display: flex; min-height: 34px; align-items: baseline; justify-content: space-between; gap: 10px; }
+.calendar-meal-heading > span { color: #315b43; font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; font-size: 15px; font-weight: 900; }
+.calendar-meal-heading a { overflow: hidden; max-width: 67%; color: #315b43; font-size: 13px; font-weight: 700; text-align: right; text-overflow: ellipsis; text-decoration: none; white-space: nowrap; }
+.calendar-meal-heading small { color: #8a9689; font-size: 12px; }
+.calendar-select { display: block; margin-top: 8px; }
+.calendar-select > span { display: block; margin: 0 0 5px; color: #7a887b; font-size: 11px; font-weight: 700; }
+.calendar-select select { width: 100%; padding: 9px 10px; border: 1px solid #d5e1d0; border-radius: 12px; background: #f9fcf5; color: #315b43; font-size: 13px; }
+.calendar-meal-bottom { display: flex; align-items: end; gap: 9px; margin-top: 10px; padding-top: 9px; border-top: 1px dashed #d7e1d4; }
+.calendar-meal-bottom label { width: 72px; color: #708072; font-size: 10px; font-weight: 800; }
+.calendar-meal-bottom input { width: 100%; margin-top: 3px; padding: 6px; border: 1px solid #d5e1d0; border-radius: 9px; background: #fff; font-size: 12px; }
+.calendar-meal-bottom small { flex: 1; color: #68756b; font-size: 11px; }
+.calendar-remove { padding: 7px 9px; border-radius: 10px; background: #fff0e9; color: #a44d38; font-size: 11px; }
+@media (max-width: 760px) { .calendar-intro { align-items: flex-start; flex-direction: column; } .playful-calendar { grid-template-columns: repeat(4, minmax(0, 1fr)); } .calendar-editor { padding: 16px; } .calendar-meals { grid-template-columns: 1fr; } }
+@media (max-width: 430px) { .calendar-navigation { width: 100%; } .calendar-navigation strong { flex: 1; } .calendar-action-row button { width: 100%; } .playful-calendar { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; } .calendar-orb { width: 61px; height: 61px; } .calendar-editor-head { align-items: flex-start; flex-direction: column; } .calendar-total { align-self: stretch; flex-direction: row; justify-content: center; gap: 7px; } .calendar-total span { margin: 0; } }/* Liste de courses : une seule lecture, puis une sortie papier ou tÃ©lÃ©phone. */
+.shopping-intro { display: flex; align-items: end; justify-content: space-between; gap: 22px; }
+.shopping-intro h1 { margin-bottom: 5px; }
+.shopping-intro p { margin: 0; }
+.shopping-progress { display: flex; min-width: 116px; flex-direction: column; align-items: center; padding: 13px 16px; border: 1px solid #d6e4cd; border-radius: 19px; background: #eff5e9; color: #315b43; }
+.shopping-progress strong { font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; font-size: 32px; line-height: 1; }
+.shopping-progress span { margin-top: 4px; font-size: 11px; font-weight: 800; }
+.shopping-add-card { display: flex; align-items: end; justify-content: space-between; gap: 15px; margin: 22px 0; padding: 15px; border: 1px solid #dce8d4; border-radius: 20px; background: #f5faef; }
+.shopping-add-form { flex: 1; }
+.shopping-add-form > label { display: block; margin: 0 0 7px; color: #315b43; font-size: 13px; font-weight: 800; }
+.shopping-add-form > div { display: flex; gap: 9px; }
+.shopping-add-form input[type=text],.shopping-add-form input:not([type]) { width: 100%; }
+.shopping-add-form input { min-height: 46px; border: 1px solid #cdddc4; border-radius: 13px; background: #fffef9; }
+.shopping-add-form button { min-width: 105px; border-radius: 13px; }
+.shopping-calendar-link { min-height: 46px; border-radius: 13px; white-space: nowrap; }
+.shopping-list-card { overflow: hidden; border: 1px solid #dce8d4; border-radius: 23px; background: #fffdf8; box-shadow: 0 8px 22px rgb(45 85 61 / 8%); }
+.shopping-list-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px; border-bottom: 1px solid #e3ebe0; background: linear-gradient(90deg, #eff5e9, #fffdf8); }
+.shopping-list-head span { color: #819264; font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.shopping-list-head h2 { margin: 3px 0 0; color: #315b43; font-size: 25px; }
+.shopping-list-head small { padding: 7px 11px; border-radius: 999px; background: #315b43; color: #fffdf7; font-size: 11px; font-weight: 800; }
+.shopping-list { margin: 0; padding: 0; list-style: none; }
+.shopping-item { display: flex; align-items: center; gap: 12px; min-height: 66px; padding: 10px 17px; border-bottom: 1px solid #edf0ea; }
+.shopping-item:last-child { border-bottom: 0; }
+.shopping-item.is-done { background: #fbfcf9; }
+.shopping-check { display: flex; min-width: 0; flex: 1; align-items: center; gap: 12px; cursor: pointer; }
+.shopping-check input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.shopping-tick { display: grid; width: 29px; height: 29px; flex: 0 0 29px; place-items: center; border: 2px solid #b9cfac; border-radius: 10px; background: #fffef9; color: transparent; font-size: 17px; font-weight: 900; transition: all .16s ease; }
+.shopping-check input:checked + .shopping-tick { border-color: #315b43; background: #315b43; color: #fff; }
+.shopping-check input:focus-visible + .shopping-tick { outline: 3px solid #f2b739; outline-offset: 3px; }
+.shopping-item-name { overflow: hidden; color: #315b43; font-size: 16px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.shopping-item.is-done .shopping-item-name { color: #8b978c; text-decoration: line-through; }
+.shopping-quantity { padding: 6px 10px; border-radius: 999px; background: #f4ead2; color: #6b562b; font-size: 12px; font-weight: 800; white-space: nowrap; }
+.shopping-delete { width: 31px; height: 31px; padding: 0; border-radius: 10px; background: transparent; color: #8b9a8c; font-size: 22px; line-height: 1; }
+.shopping-delete:hover { background: #fff0e9; color: #a44d38; filter: none; }
+.shopping-empty { display: flex; min-height: 174px; align-items: center; justify-content: center; gap: 13px; padding: 25px; text-align: left; }
+.shopping-empty > span { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; background: #315b43; color: #fff; font-size: 24px; font-weight: 900; }
+.shopping-empty p { margin: 0; color: #607060; }
+.shopping-empty a { color: #315b43; font-weight: 800; }
+.shopping-completed { border-top: 1px solid #e3ebe0; background: #fafcf8; }
+.shopping-completed summary { padding: 14px 18px; color: #6f806f; cursor: pointer; font-size: 13px; font-weight: 800; }
+.shopping-completed .shopping-list { border-top: 1px solid #edf0ea; }
+.shopping-export { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 20px; padding: 18px 20px; border-radius: 21px; background: #fff3dd; }
+.shopping-export h2 { margin: 0 0 3px; color: #315b43; font-size: 22px; }
+.shopping-export p { margin: 0; color: #6e624d; font-size: 13px; }
+.shopping-export-actions { display: flex; flex-wrap: wrap; gap: 9px; }
+.shopping-export-actions button { border-radius: 13px; white-space: nowrap; }
+.shopping-clear { margin-top: 14px; padding: 9px 12px; border-radius: 12px; background: transparent; color: #7b877b; font-size: 12px; }
+.shopping-clear:hover { background: #fff0e9; color: #a44d38; filter: none; }
+@media (max-width: 700px) { .shopping-intro { align-items: flex-start; flex-direction: column; } .shopping-add-card { align-items: stretch; flex-direction: column; } .shopping-calendar-link { width: 100%; } .shopping-export { align-items: flex-start; flex-direction: column; } .shopping-export-actions { width: 100%; } .shopping-export-actions button { flex: 1; } }
+@media (max-width: 430px) { .shopping-add-form > div { flex-direction: column; } .shopping-add-form button { width: 100%; } .shopping-item { gap: 8px; padding: 10px 12px; } .shopping-item-name { font-size: 14px; } .shopping-quantity { padding: 5px 7px; font-size: 10px; } .shopping-delete { width: 25px; } }
+@media print { body { background: #fff !important; } .top, footer, #toast, .shopping-intro, .shopping-add-card, .shopping-export, .shopping-clear, .shopping-completed, .shopping-delete { display: none !important; } .wrap { max-width: none !important; padding: 0 !important; } #shopping-print-area { border: 0 !important; border-radius: 0 !important; box-shadow: none !important; } .shopping-list-head { padding: 0 0 16px !important; background: #fff !important; } .shopping-tick { border-color: #315b43 !important; } }/* Assistant de restes : recherche locale, lisible et sans IA distante. */
+.leftover-intro { display: flex; align-items: end; justify-content: space-between; gap: 22px; }
+.leftover-intro h1 { margin-bottom: 5px; }
+.leftover-intro p { margin: 0; }
+.leftover-calendar-note { display: flex; align-items: center; gap: 9px; padding: 11px 14px; border: 1px solid #dbe7d2; border-radius: 17px; background: #eff5e9; color: #315b43; text-decoration: none; }
+.leftover-calendar-note strong { font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; font-size: 26px; line-height: 1; }
+.leftover-calendar-note span { font-size: 11px; font-weight: 800; line-height: 1.2; }
+.leftover-workspace { display: grid; grid-template-columns: minmax(0, 1fr) 235px; gap: 18px; margin-top: 23px; }
+.leftover-steps { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 9px; }
+.leftover-steps span { display: inline-flex; align-items: center; gap: 7px; padding: 7px 11px; border-radius: 999px; background: #f3f5ec; color: #677568; font-size: 12px; font-weight: 700; }
+.leftover-steps b { display: grid; width: 19px; height: 19px; place-items: center; border-radius: 50%; background: #315b43; color: #fff; font-size: 11px; }
+.leftover-form { padding: 20px; border: 1px solid #d9e6d1; border-radius: 23px; background: linear-gradient(140deg, #f5faef, #fffdf8); }
+.leftover-form > label { display: block; margin-bottom: 8px; color: #315b43; font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; font-size: 19px; font-weight: 900; }
+.leftover-input-wrap { position: relative; }
+.leftover-input-wrap textarea { width: 100%; min-height: 103px; padding: 14px 14px 28px; border: 1px solid #cbdcc2; border-radius: 16px; background: #fffef9; color: #315b43; resize: vertical; }
+.leftover-input-wrap small { position: absolute; right: 12px; bottom: 9px; color: #829082; font-size: 10px; }
+.leftover-shortcuts { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 13px 0 17px; }
+.leftover-shortcuts > span { margin-right: 2px; color: #708072; font-size: 11px; font-weight: 800; }
+.leftover-shortcuts button { padding: 6px 9px; border: 1px solid #d6e3d0; border-radius: 999px; background: #fffef9; color: #315b43; font-size: 11px; font-weight: 800; }
+.leftover-shortcuts button:hover { background: #e8f1df; filter: none; }
+.leftover-submit { width: 100%; min-height: 50px; border: 3px solid #f2b739; border-radius: 15px; background: #315b43; box-shadow: 0 5px 0 #c98d12; font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; font-size: 15px; }
+.leftover-submit:hover { transform: translateY(2px); box-shadow: 0 3px 0 #c98d12; filter: none; }
+.leftover-method { align-self: stretch; padding: 19px; border-radius: 23px; background: #fff1d9; color: #5e513d; }
+.leftover-method-badge { display: inline-grid; width: 43px; height: 43px; place-items: center; border-radius: 50%; background: #315b43; color: #fffdf7; font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; font-size: 11px; font-weight: 900; }
+.leftover-method h2 { margin: 13px 0 6px; color: #315b43; font-size: 21px; }
+.leftover-method p { margin: 0; font-size: 13px; line-height: 1.55; }
+.leftover-results { margin-top: 25px; }
+.leftover-results-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 15px; }
+.leftover-results-head > div > span { color: #829264; font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.leftover-results-head h2 { margin: 4px 0 3px; color: #315b43; font-size: 28px; }
+.leftover-results-head p { margin: 0; color: #6d796d; font-size: 13px; }
+.leftover-token-summary { max-width: 35%; padding: 10px 12px; border-radius: 13px; background: #f3f5ec; color: #697869 !important; font-size: 12px !important; }
+.leftover-token-summary strong { color: #315b43; }
+.leftover-invention { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin: 0 0 13px; padding: 17px 19px; border: 1px solid #f0dcaf; border-radius: 19px; background: #fff3dd; }
+.leftover-invention span { color: #ad7d24; font-size: 11px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.leftover-invention h3 { margin: 4px 0; color: #315b43; font-size: 22px; }
+.leftover-invention p { margin: 0; color: #6c624d; font-size: 13px; }
+.leftover-invention button,.leftover-match button { padding: 10px 13px; border-radius: 12px; white-space: nowrap; }
+.leftover-match-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
+.leftover-match { position: relative; display: flex; min-height: 243px; flex-direction: column; padding: 16px; border: 1px solid #dfe8da; border-radius: 20px; background: #fffef9; }
+.leftover-match.is-best { border-color: #bcd6ae; background: #f4f9ef; box-shadow: 0 7px 0 #d9e8d0; }
+.leftover-match-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.leftover-score { padding: 5px 8px; border-radius: 999px; background: #edf3e8; color: #3f684b; font-size: 10px; font-weight: 900; }
+.leftover-best-label { color: #b07c1e; font-size: 10px; font-weight: 900; }
+.leftover-match h3 { margin: 12px 0 8px; color: #315b43; font-size: 21px; line-height: 1.15; }
+.leftover-match p { margin: 0 0 8px; color: #647164; font-size: 12px; line-height: 1.45; }
+.leftover-have strong { color: #315b43; }
+.leftover-missing strong { color: #9b7650; }
+.leftover-ready { color: #347150 !important; }
+.leftover-match button { margin-top: auto; align-self: flex-start; }
+.leftover-empty-result { padding: 20px; border: 1px dashed #cddbc4; border-radius: 17px; background: #f7faf4; color: #697869; }
+.leftover-disclaimer { margin: 15px 0 0; color: #7a867b; font-size: 11px; }
+@media (max-width: 800px) { .leftover-workspace { grid-template-columns: 1fr; } .leftover-method { display: grid; grid-template-columns: 50px 1fr; column-gap: 12px; align-items: center; } .leftover-method h2 { margin: 0 0 4px; } .leftover-method p { grid-column: 2; } .leftover-match-grid { grid-template-columns: 1fr; } .leftover-match { min-height: 0; } }
+@media (max-width: 560px) { .leftover-intro { align-items: flex-start; flex-direction: column; } .leftover-results-head,.leftover-invention { align-items: flex-start; flex-direction: column; } .leftover-token-summary { max-width: none; } .leftover-invention button { width: 100%; } .leftover-steps { display: grid; grid-template-columns: 1fr; } }.cuisine-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:8px}.cuisine-heading h1{margin:0}.cuisine-heading .muted{margin:10px 0 0}.refresh-catalogue{white-space:nowrap;flex:0 0 auto}@media(max-width:620px){.cuisine-heading{align-items:stretch;flex-direction:column}.refresh-catalogue{align-self:flex-start}}/* Cartes recettes : illustration uniforme et relief NutriChef */
+.card.recipe{position:relative;overflow:hidden;border:1px solid #dce4cc;background:linear-gradient(145deg,#ffffff 0%,#fbfcf7 100%);box-shadow:0 8px 0 #dce4cc,0 16px 25px rgba(34,73,43,.12);transition:transform .22s ease,box-shadow .22s ease}.card.recipe:hover{transform:translateY(-5px);box-shadow:0 13px 0 #cedbb8,0 23px 30px rgba(34,73,43,.16)}.card.recipe:active{transform:translateY(2px);box-shadow:0 4px 0 #cedbb8,0 9px 16px rgba(34,73,43,.13)}.recipe-art{position:relative;isolation:isolate;display:grid;place-items:center;width:100%;height:126px;margin:0 0 16px;border:1px solid #cbd8b7;border-radius:18px;background:linear-gradient(145deg,#eef5df 0%,#d8e7b8 52%,#c8dca8 100%);box-shadow:inset 0 2px 0 rgba(255,255,255,.72),inset 0 -8px 0 rgba(94,126,65,.18),0 5px 0 #b5cd93}.recipe-art::before{content:"";position:absolute;z-index:-1;width:72px;height:18px;bottom:17px;border-radius:50%;background:rgba(35,76,43,.18);filter:blur(3px)}.recipe-hat{width:104px;height:86px;overflow:visible;filter:drop-shadow(0 6px 0 rgba(51,92,42,.23)) drop-shadow(0 9px 7px rgba(51,92,42,.16));transform:translateY(3px);transition:transform .22s ease}.card.recipe:hover .recipe-hat{transform:translateY(-1px) rotate(-2deg)}.recipe-hat .hat-main{fill:#fffdf6;stroke:#294f35;stroke-width:6;stroke-linejoin:round}.recipe-hat .hat-shadow{fill:#8aaa60}.recipe-hat .hat-line{fill:none;stroke:#d7b45a;stroke-width:5;stroke-linecap:round}.card.recipe .btn{margin-top:4px;border:1px solid #174d35;border-bottom-width:5px;border-radius:14px;background:linear-gradient(145deg,#3b7a56 0%,#20573d 100%);box-shadow:0 4px 0 #153d2b,0 8px 13px rgba(24,66,45,.2);transition:transform .18s ease,box-shadow .18s ease}.card.recipe .btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 #153d2b,0 11px 16px rgba(24,66,45,.25)}.card.recipe .btn:active{transform:translateY(3px);box-shadow:0 1px 0 #153d2b,0 4px 8px rgba(24,66,45,.2)}@media(max-width:640px){.recipe-art{height:116px}.card.recipe{box-shadow:0 6px 0 #dce4cc,0 12px 20px rgba(34,73,43,.1)}}/* Tuile de recette : mÃªme langage 3D que les choix NutriChef */
+.card.recipe{max-width:340px;min-height:350px;padding:15px 15px 18px;border:1px solid #bfceaa;border-radius:25px;background:linear-gradient(150deg,#ffffff 0%,#f4f8ec 100%);box-shadow:0 10px 0 #b9ca9e,0 19px 28px rgba(29,70,43,.16);overflow:hidden}.card.recipe::after{content:"";position:absolute;inset:auto -24px -46px auto;width:130px;height:130px;border-radius:50%;background:rgba(248,191,50,.13);pointer-events:none}.recipe-art{height:148px;margin:0 0 16px;border:1px solid #94b673;border-radius:20px;background:radial-gradient(circle at 50% 92%,rgba(27,73,43,.2) 0 16%,transparent 17%),radial-gradient(circle at 18% 18%,rgba(255,255,255,.55) 0 3px,transparent 4px),radial-gradient(circle at 84% 24%,rgba(255,255,255,.42) 0 2px,transparent 3px),linear-gradient(145deg,#f1f6df 0%,#cfe2a9 50%,#a9ca7d 100%);box-shadow:inset 0 3px 0 rgba(255,255,255,.82),inset 0 -9px 0 rgba(46,101,58,.18),0 6px 0 #91b06c}.recipe-art::before{content:"";z-index:-1;bottom:18px;width:82px;height:16px;background:rgba(27,73,43,.24);filter:blur(5px)}.recipe-hat{width:122px;height:101px;filter:drop-shadow(0 7px 0 rgba(45,92,48,.25)) drop-shadow(0 11px 10px rgba(35,75,43,.18));transform:translateY(1px)}.recipe-hat .hat-main{fill:#fffdf3;stroke:#234e34;stroke-width:6}.recipe-hat .hat-shadow{fill:#6f9d52}.recipe-hat .hat-line{stroke:#f2b92f;stroke-width:6}.card.recipe .badge{position:relative;z-index:1;display:inline-flex;align-items:center;min-height:28px;padding:5px 11px;border:1px solid #d4dfbd;border-radius:999px;background:#edf3dd;color:#285437;font-weight:700;font-size:.72rem}.card.recipe h3{position:relative;z-index:1;margin:12px 0 8px;color:#193d2c;font-size:1.3rem;line-height:1.12}.card.recipe p{position:relative;z-index:1;margin:0 0 16px;color:#66766c}.card.recipe .recipe-cta{position:relative;z-index:1;min-width:168px;min-height:48px;margin-top:auto;padding:12px 17px;border:2px solid #f2bc32;border-bottom-width:6px;border-radius:15px;background:linear-gradient(145deg,#3e825a 0%,#1c573a 100%);box-shadow:0 4px 0 #143e2a,0 10px 15px rgba(22,66,42,.22);font-weight:800;letter-spacing:.01em}.card.recipe .recipe-cta::after{content:"â†—";font-size:1.05em;transition:transform .18s ease}.card.recipe .recipe-cta:hover{transform:translateY(-3px);box-shadow:0 7px 0 #143e2a,0 13px 17px rgba(22,66,42,.24)}.card.recipe .recipe-cta:hover::after{transform:translate(2px,-2px)}.card.recipe .recipe-cta:active{transform:translateY(3px);border-bottom-width:3px;box-shadow:0 1px 0 #143e2a,0 4px 7px rgba(22,66,42,.2)}@media(max-width:640px){.card.recipe{max-width:none;min-height:0}.recipe-art{height:138px}.recipe-hat{width:114px;height:94px}}</style><link rel="stylesheet" href="nutrichef-responsive.css"></head><body><header class="top"><a class="profile-chip" href="#profil" id="profile-link"><img src="nutrichef-assets/image-01.png" alt="TÃªte de Pipo"><span>Profil</span><i class="dot" aria-label="Profil Ã  complÃ©ter"></i></a><a class="brand" href="#accueil">Nutri<span>Chef</span><small>LE BONHEUR DE BIEN MANGER</small></a><nav aria-label="Navigation principale"><a href="#accueil">Accueil</a><a href="#calendrier">Mon calendrier</a><a href="#courses">Ma liste de courses</a><a href="#restes">Chef, il mâ€™en reste !</a></nav></header><main id="app"></main><footer>NutriChef Â· Cuisiner simplement, Ã  votre rythme.<br><small>Vos informations sont enregistrÃ©es sur cet appareil. <a href="#donnees">GÃ©rer mes donnÃ©es</a></small></footer><div id="toast" role="status" aria-live="polite"></div><dialog id="recipe-modal"><button class="close" aria-label="Fermer">Ã—</button><div id="recipe-body"></div></dialog><script>(async()=>{
+const exclusions=['Gluten','Lactose','Fruits Ã  coque','Arachides','Å’ufs','Soja','Porc','BÅ“uf','Poisson','Fruits de mer'];
+function nutrition(p){const bmi=p.weight/(p.height/100)**2;const bmr=10*p.weight+6.25*p.height-5*p.age+(p.sex==='homme'?5:-161);const tdee=bmr*Number(p.activity);const restricted=p.special||bmi<18.5;return{bmi,bmr:Math.round(bmr),tdee:Math.round(tdee),target:restricted?null:Math.round(tdee*(p.goal==='perdre'?.9:p.goal==='prendre'?1.1:1)),category:bmi<18.5?'Insuffisance pondÃ©rale':bmi<25?'Corpulence de rÃ©fÃ©rence':bmi<30?'Surpoids':'ObÃ©sitÃ©'};}
+const profileLabel=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();function compatible(r,p){if(!p)return true;const diet=profileLabel(p.diet),recipeDiets=(Array.isArray(r.diets)?r.diets:[]).map(profileLabel).filter(Boolean),recipeExclusions=(Array.isArray(r.exclusions)?r.exclusions:[]).map(profileLabel),profileExclusions=new Set((p.exclusions||[]).map(profileLabel).filter(Boolean)),dietOk=!diet||!recipeDiets.length||recipeDiets.includes(diet);return dietOk&&!recipeExclusions.some(item=>profileExclusions.has(item));}
+function validateRecipe(r){return r&&typeof r.id==='string'&&typeof r.title==='string'&&Number.isFinite(r.kcal)&&r.kcal>0&&Array.isArray(r.diets)&&Array.isArray(r.exclusions)&&Array.isArray(r.tags)&&Array.isArray(r.meals)&&Array.isArray(r.steps)&&r.steps.every(x=>typeof x==='string')&&Array.isArray(r.ingredients)&&r.ingredients.every(i=>typeof i.name==='string'&&typeof i.unit==='string'&&Number.isFinite(i.qty)&&i.qty>0);}
+function addIngredients(list,r,portions=1){for(const i of r.ingredients){const found=list.find(x=>x.name.toLocaleLowerCase('fr')===i.name.toLocaleLowerCase('fr')&&x.unit===i.unit&&!x.done);if(found)found.qty=Math.round((found.qty+i.qty*portions)*100)/100;else list.push({...i,qty:Math.round(i.qty*portions*100)/100,done:false,id:crypto.randomUUID()});}return list;}
+function buildMenu(recipes,p,dates){const n=nutrition(p);if(!n.target)throw Error('Un objectif calorique personnalisÃ© nÃ©cessite un avis professionnel pour ce profil.');const slots=[['matin',.25],['midi',.35],['soir',.30],['collation',.10]];const pool=recipes.filter(r=>compatible(r,p));const result={};for(const [index,date]of dates.entries()){result[date]={};for(const [slot,fraction]of slots){const eligible=pool.filter(r=>r.meals.includes(slot)&&n.target*fraction/r.kcal>=.5&&n.target*fraction/r.kcal<=2);if(!eligible.length)throw Error('Pas assez de recettes compatibles pour '+slot+'. Aucun menu nâ€™a Ã©tÃ© modifiÃ©.');const r=eligible[index%eligible.length];result[date][slot]={id:r.id,portions:Math.round(n.target*fraction/r.kcal*100)/100};}}return result;}
+function isoDate(d=new Date()){return new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);}
+
+const FOODCLOUD_URL='https://naregjbyatnoazyyfwmj.supabase.co';
+const FOODCLOUD_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hcmVnamJ5YXRub2F6eXlmd21qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxODMyMjAsImV4cCI6MjEwNTc1OTIyMH0.3wdp1l-61dSaFyVKDqKr9sM0SlUZT-y6wmDJ0Io9JhI';
+const foodCloudDiets=['Omnivore','VÃ©gÃ©tarien','VÃ©gÃ©talien','Pescatarien'];
+const foodCloudMeals={breakfast:'matin',lunch:'midi',dinner:'soir',snack:'collation'};
+const foodCloudRoutePrefix='__nutrichef:';
+const foodCloudRoutes={personnalisees:'personnalisee',panier:'panier_bleu',chef:'chef'};
+const foodCloudRecipeRoutes=values=>foodCloudList(values).filter(value=>value.indexOf(foodCloudRoutePrefix)===0).map(value=>value.slice(foodCloudRoutePrefix.length));
+const foodCloudVisibleDiets=values=>foodCloudList(values).filter(value=>value.indexOf(foodCloudRoutePrefix)!==0);
+const isForFoodCloudRoute=(recipe,route)=>{const routes=recipe.routes||[];return routes.length?routes.includes(foodCloudRoutes[route]):route!=='panier';};
+const foodCloudList=value=>Array.isArray(value)?value.filter(item=>typeof item==='string').map(item=>item.trim()).filter(Boolean):typeof value==='string'?value.split(',').map(item=>item.trim()).filter(Boolean):[];
+function mapFoodCloudRecipe(raw){const ingredients=Array.isArray(raw.ingredients)?raw.ingredients.map(item=>{const quantity=Number(item?.amount??item?.qty??1);return{name:String(item?.name||'').trim(),qty:Number.isFinite(quantity)&&quantity>0?quantity:1,unit:String(item?.unit||'piÃ¨ce').trim()||'piÃ¨ce'};}).filter(item=>item.name):[],rawDiets=foodCloudList(raw.diets),diets=foodCloudVisibleDiets(rawDiets),routes=foodCloudRecipeRoutes(rawDiets),exclusions=foodCloudList(raw.allergens),cuisine=String(raw.cuisine||'').toLocaleLowerCase('fr'),steps=String(raw.description||'').split(/\n+/).map(step=>step.trim()).filter(Boolean),minutes=(Number(raw.prep_time)||0)+(Number(raw.cook_time)||0)||25;return{id:String(raw.id),title:String(raw.name||'').trim(),kcal:Number(raw.calories),ingredients,steps:steps.length?steps:['PrÃ©paration Ã  complÃ©ter dans FoodCloud.'],diets:diets.length?diets:foodCloudDiets,exclusions,tags:cuisine.includes('mÃ©diterr')||cuisine.includes('mediterr')?['mediterraneen']:[],routes,meals:[foodCloudMeals[raw.meal_type]||'midi'],minutes};}
+async function getRecipes(){const params=new URLSearchParams({select:'id,name,description,meal_type,cuisine,calories,prep_time,cook_time,ingredients,diets,allergens,status',status:'eq.active',order:'created_at.desc'}),response=await fetch(FOODCLOUD_URL+'/rest/v1/recipes?'+params,{cache:'no-store',headers:{apikey:FOODCLOUD_ANON_KEY,Authorization:'Bearer '+FOODCLOUD_ANON_KEY}});if(!response.ok)throw Error('Impossible dâ€™actualiser le catalogue pour le moment.');const data=await response.json();if(!Array.isArray(data))throw Error('Le catalogue a renvoyÃ© un format inattendu.');return{recipes:data.map(mapFoodCloudRecipe).filter(validateRecipe),demo:false};}
+// Assemblage culinaire bornÃ© : uniquement des ingrÃ©dients connus et des Ã©tapes prÃ©vues.
+function inventRecipe(tokens,profile){const vegetables=[['courgette',200,34],['tomate',180,32],['carotte',150,62],['poivron',150,45],['champignon',150,33],['brocoli',180,61]];const bases=[['riz',70,250,[]],['quinoa',70,258,[]],['pÃ¢tes',80,280,['Gluten']],['lentilles',80,280,[]]];const normalize=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();const found=name=>tokens.some(t=>normalize(t).split(/[^a-z]+/).some(word=>word===normalize(name)||word===normalize(name)+'s'));const veg=vegetables.filter(v=>found(v[0])),base=bases.find(v=>found(v[0]));if(!veg.length||!base)return null;const chosen=veg.slice(0,3);const r={id:'pipo-'+Date.now(),title:'PoÃªlÃ©e de '+chosen.map(v=>v[0]).join(' & ')+' au '+base[0],kcal:base[2]+chosen.reduce((n,v)=>n+v[2],0)+90,minutes:30,diets:['Omnivore','VÃ©gÃ©tarien','VÃ©gÃ©talien','Pescatarien'],exclusions:base[3],tags:[],meals:['midi','soir'],ingredients:[{name:base[0]+' (poids sec)',qty:base[1],unit:'g'},...chosen.map(v=>({name:v[0],qty:v[1],unit:'g'})),{name:'Huile dâ€™olive',qty:10,unit:'g'}],steps:['Utiliser des ingrÃ©dients encore consommables. Les quantitÃ©s de fÃ©culents indiquÃ©es sont pesÃ©es sÃ¨ches.','Cuire '+base[0]+' dans lâ€™eau en suivant la durÃ©e indiquÃ©e sur le paquet.','Laver et couper les lÃ©gumes en petits morceaux. Faire revenir dans lâ€™huile Ã  feu moyen, puis ajouter un peu dâ€™eau et couvrir. Cuire 15 Ã  20 minutes, jusquâ€™Ã  tendretÃ©.','MÃ©langer avec '+base[0]+' cuit et servir chaud.'],generated:true};return compatible(r,profile)?r:null;}
+
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let state={profile:null,weights:[],menus:{},shopping:[]},storageError=false;
+try{const s=JSON.parse(localStorage.getItem('nutrichef-v3'));if(s&&Array.isArray(s.weights)&&Array.isArray(s.shopping)&&s.menus)state=s;}catch{storageError=true;}
+let catalogue=[],demo=true,loadError='',step=0,draft={},editing=false,week=0,filter='',selectedMeal='midi',modalRecipe=null,calendarDay='';
+const mealNames={matin:'Petit-dÃ©jeuner',midi:'DÃ©jeuner',soir:'DÃ®ner',collation:'Collation'},fractions={matin:.25,midi:.35,soir:.3,collation:.1};
+const save=()=>{try{localStorage.setItem('nutrichef-v3',JSON.stringify(state));return true;}catch{toast('Enregistrement impossible : vÃ©rifiez le stockage du navigateur.');return false;}};
+let toastTimer;function toast(s){$('#toast').textContent=s;$('#toast').style.display='block';clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').style.display='none',5000);}
+const fmt=n=>Number(n).toLocaleString('fr-FR',{maximumFractionDigits:1});
+function dates(){const d=new Date();d.setDate(d.getDate()-((d.getDay()+6)%7)+week*7);return Array.from({length:7},(_,i)=>{const n=new Date(d);n.setDate(n.getDate()+i);return isoDate(n);});}
+const pretty=d=>new Date(d+'T12:00:00').toLocaleDateString('fr-FR',{day:'numeric',month:'short'});
+const profileGate=()=>'<div class="card empty"><h2>CommenÃ§ons par vous connaÃ®tre.</h2><p>Votre profil permet Ã  Pipo de respecter vos prÃ©fÃ©rences et vos besoins.</p><a class="btn" href="#profil">CrÃ©er mon profil</a></div>';
+const demoNotice=()=>'';
+function recipeCards(rs){return rs.length?'<div class="grid">'+rs.map(r=>`<article class="card recipe"><div class="recipe-art" aria-hidden="true"><svg class="recipe-hat" viewBox="0 0 200 160" focusable="false"><path class="hat-shadow" d="M43 118h114l-8 20H51z"/><path class="hat-main" d="M52 105c-15-4-24-16-24-31 0-19 15-34 34-34 5 0 10 1 14 3 6-15 20-25 38-25 21 0 37 13 42 32 4-2 9-3 14-3 18 0 32 14 32 32 0 15-10 28-24 31v14H52z"/><path class="hat-line" d="M52 119h96"/><path class="hat-line" d="M76 39c8 8 10 18 7 30M111 27c-4 13-2 27 6 39M145 46c-6 8-8 17-6 27"/></svg></div><span class="badge">${r.tags.includes('mediterraneen')?'Cuisine mÃ©diterranÃ©enne':'La sÃ©lection de Pipo'}</span><h3>${esc(r.title)}</h3><p class="muted">${r.kcal} kcal / portion Â· ${r.minutes||25} min</p><button class="btn recipe-cta" data-open="${esc(r.id)}">Voir la recette</button></article>`).join('')+'</div>':'<div class="card empty">Aucune recette nâ€™est disponible pour le moment.</div>';}
+function home(){const rs=catalogue.filter(r=>compatible(r,state.profile)&&r.meals.includes('midi')).sort(()=>Math.random()-.5).slice(0,3);return`<section class="hero" aria-label="Pipo vous accueille"><img class="hero-art pipo-greeting" src="nutrichef-assets/image-02.png" data-hey-src="nutrichef-assets/image-03.png" data-talk-src="nutrichef-assets/image-04.png" alt="Pipo cuisine une casserole mÃ©diterranÃ©enne" role="button" tabindex="0" data-action="greet-pipo" aria-label="Dire bonjour Ã  Pipo"><span class="pipo-hello" aria-live="polite"></span><a class="btn cta" href="#profil" data-action="start-profile">Trouver ma recette <span aria-hidden="true">â†’</span></a></section><div class="wrap"><div class="intro"><div><div class="eyebrow">Une cuisine qui vous ressemble</div><p class="muted">Un peu dâ€™inspiration, de bons ingrÃ©dients et Pipo Ã  vos cÃ´tÃ©s.</p></div><a class="btn secondary week-cta" href="${state.profile?'#calendrier':'#profil'}">${state.profile?'<span class="mini-moustache" aria-hidden="true"></span>Organiser ma semaine<span class="mini-moustache" aria-hidden="true"></span>':'1. Je complÃ¨te mon profil'}</a></div><div class="grid home-shortcuts"><a class="card green" href="#cuisine"><h3>Recette personnalisÃ©e</h3><img class="shortcut-illustration shortcut-thinking" src="nutrichef-assets/image-01.png" alt="Pipo rÃ©flÃ©chit Ã  votre recette"></a><a class="card gold" href="#panier"><h3>Panier bleu</h3><img class="shortcut-illustration shortcut-basket" src="nutrichef-assets/image-05.png" alt="Panier bleu avec des ingrÃ©dients mÃ©diterranÃ©ens"></a><a class="card blue" href="#chef"><h3>Recette du chef</h3><img class="shortcut-illustration shortcut-moustache" src="nutrichef-assets/image-06.png" alt="La moustache de Pipo"></a></div></div>`;}
+function field(name,title,type='text',extra=''){return`<label>${title}<input name="${name}" type="${type}" value="${esc(draft[name]??'')}" ${extra} required></label>`;}
+function select(name,title,options){return`<label>${title}<select name="${name}" required><option value="">Choisir</option>${options.map(([value,label])=>`<option value="${value}" ${String(draft[name])===String(value)?'selected':''}>${label}</option>`).join('')}</select></label>`;}
+function wizard(){return`<div class="eyebrow">Faisons connaissance</div><h1>Votre profil, votre cuisine.</h1><p class="muted">Quelques informations pour cuisiner Ã  votre rythme.</p><div class="steps">${['Ã€ propos de vous','Votre rythme','Vos prÃ©fÃ©rences'].map((s,i)=>`<span class="${step===i?'active':''}">${i+1}. ${s}</span>`).join('')}</div><form id="profile-form" class="card">${step===0?`<div class="fields">${field('firstName','PrÃ©nom','text','maxlength="50" autocomplete="given-name"')}${field('age','Ã‚ge (18 ans et plus)','number','min="18" max="100" step="1"')}${select('sex','Sexe utilisÃ© pour le calcul',[['homme','Homme'],['femme','Femme']])}${field('weight','Poids (kg)','number','min="30" max="350" step="0.1"')}${field('height','Taille (cm)','number','min="120" max="230" step="0.1"')}</div><p class="muted">Les calculs proposÃ©s concernent les adultes.</p>`:step===1?`${select('activity','Niveau dâ€™activitÃ© physique',[[1.2,'SÃ©dentaire'],[1.375,'LÃ©gÃ¨rement actif'],[1.55,'ModÃ©rÃ©ment actif'],[1.725,'TrÃ¨s actif']])}${select('goal','Objectif nutritionnel',[['perdre','Perdre du poids'],['maintenir','Maintenir mon poids'],['prendre','Prendre du poids']])}<label><input name="special" type="checkbox" ${draft.special?'checked':''}>Grossesse, allaitement ou situation mÃ©dicale nÃ©cessitant une alimentation adaptÃ©e</label><p class="muted">Dans ce cas, Pipo conserve vos prÃ©fÃ©rences sans fixer automatiquement un objectif calorique.</p>`:`${select('diet','PrÃ©fÃ©rences alimentaires',['Omnivore','VÃ©gÃ©tarien','VÃ©gÃ©talien','Pescatarien'].map(x=>[x,x]))}<h3>Allergies et exclusions</h3><div class="checks">${exclusions.map(x=>`<label><input type="checkbox" name="exclusions" value="${x}" ${(draft.exclusions||[]).includes(x)?'checked':''}>${x}</label>`).join('')}</div><div class="notice">VÃ©rifiez toujours les Ã©tiquettes et les risques de traces. Un filtre de recettes ne peut pas garantir lâ€™absence de contamination croisÃ©e.</div><label><input type="checkbox" required>Jâ€™accepte dâ€™enregistrer mon profil sur cet appareil. Je peux lâ€™effacer Ã  tout moment.</label>`}<div class="actions"><button type="button" class="secondary" data-action="profile-back">${step?'PrÃ©cÃ©dent':'Annuler'}</button><button type="submit">${step===2?'Enregistrer mon profil':'Continuer â†’'}</button></div></form>`;}
+function chart(){const points=[...state.weights].sort((a,b)=>a.date.localeCompare(b.date)).slice(-16);if(!points.length)return'<p>Aucune pesÃ©e enregistrÃ©e.</p>';const lo=Math.min(...points.map(p=>p.weight))-1,hi=Math.max(...points.map(p=>p.weight))+1;const xy=points.map((p,i)=>[45+i*450/Math.max(1,points.length-1),160-(p.weight-lo)/(hi-lo)*125]);return`<svg class="chart" viewBox="0 0 530 205" role="img" aria-label="Ã‰volution du poids ; valeurs dÃ©taillÃ©es dans le tableau"><path d="M45 20V165H510" fill="none" stroke="#d7ddcc"/><text x="0" y="38">${fmt(hi)} kg</text><text x="0" y="163">${fmt(lo)} kg</text><polyline points="${xy.map(p=>p.join(',')).join(' ')}" fill="none" stroke="#5f8347" stroke-width="3"/>${xy.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="5" fill="#5f8347"><title>${points[i].date} : ${points[i].weight} kg</title></circle>`).join('')}<text x="45" y="195">${pretty(points[0].date)}</text><text x="440" y="195">${pretty(points.at(-1).date)}</text></svg>`;}
+function profile(){if(!state.profile||editing)return wizard();const p=state.profile,n=nutrition(p);return`<div class="intro"><div><div class="eyebrow">Votre espace personnel</div><h1>Bonjour ${esc(p.firstName)}.</h1><p class="muted">Vos repÃ¨res Ã©voluent avec vous.</p></div><button class="secondary" data-action="edit-profile">Modifier mon profil</button></div><div class="two"><section class="card green"><h2>Mon Ã©quilibre</h2><div class="gauge" role="img" aria-label="IMC ${fmt(n.bmi)} : ${n.category}"><i style="left:${Math.max(0,Math.min(100,(n.bmi-15)/25*100))}%"></i></div><svg class="avatar" viewBox="0 0 140 150" aria-label="Avatar" role="img"><circle cx="70" cy="44" r="27" fill="#dfb790"/><path d="M43 39Q40 4 71 14Q103 8 98 41Q73 21 43 39" fill="#4c593b"/><path d="M20 140V111Q22 78 70 78Q118 78 120 111V140" fill="#71935b"/><path d="M56 80Q70 101 84 80" stroke="#f7f1dc" stroke-width="8" fill="none"/><circle cx="60" cy="45" r="2" fill="#354532"/><circle cx="80" cy="45" r="2" fill="#354532"/><path d="M61 58Q70 65 79 58" stroke="#925d43" fill="none" stroke-width="2"/></svg><div class="metric">${fmt(n.bmi)} <small>IMC</small></div><p>${n.category}</p><small>RepÃ¨res adultes : &lt; 18,5 Â· 18,5â€“24,9 Â· 25â€“29,9 Â· â‰¥ 30. Lâ€™IMC est un indicateur, pas un diagnostic.</small></section><section class="card"><div class="eyebrow">Votre repÃ¨re quotidien</div><div class="metric">${n.target?fmt(n.target):'Ã€ dÃ©finir'} <small>${n.target?'kcal / jour':''}</small></div><p>${n.target?'Objectif Ã©nergÃ©tique estimÃ©, Ã  ajuster selon votre Ã©volution.':'Un professionnel peut vous aider Ã  dÃ©finir un objectif adaptÃ© Ã  votre situation.'}</p><div class="fields"><div><h3>${fmt(n.bmr)}</h3><span class="muted">MÃ©tabolisme de base estimÃ©</span></div><div><h3>${fmt(n.tdee)}</h3><span class="muted">DÃ©pense journaliÃ¨re estimÃ©e</span></div></div><p><strong>${esc(p.diet)}</strong> Â· ${esc(p.goal==='perdre'?'Perdre du poids':p.goal==='prendre'?'Prendre du poids':'Maintenir mon poids')}</p><p class="muted">Exclusions : ${p.exclusions.length?p.exclusions.map(esc).join(', '):'aucune'}</p><a class="btn" href="#cuisine">Trouver ma recette â†’</a></section></div><section class="card section-gap"><div class="intro"><div><h2>Mon poids au fil des semaines</h2><p class="muted">Une pesÃ©e par semaine suffit pour suivre votre tendance.</p></div></div>${chart()}<form id="weight-form" class="toolbar"><label>Date<input type="date" name="date" max="${isoDate()}" value="${isoDate()}" required></label><label>Poids (kg)<input name="weight" type="number" min="30" max="350" step="0.1" required value="${p.weight}"></label><button>Enregistrer ma pesÃ©e</button></form><details><summary>Historique des pesÃ©es</summary><table><thead><tr><th>Date</th><th>Poids</th></tr></thead><tbody>${[...state.weights].sort((a,b)=>b.date.localeCompare(a.date)).map(w=>`<tr><td>${pretty(w.date)}</td><td>${fmt(w.weight)} kg</td></tr>`).join('')}</tbody></table></details></section><details class="notice"><summary>Comment sont calculÃ©s mes repÃ¨res ?</summary><p>MÃ©tabolisme : Ã©quation de Mifflinâ€“St Jeor. DÃ©pense : mÃ©tabolisme Ã— facteur dâ€™activitÃ© (1,2 / 1,375 / 1,55 / 1,725). Objectif indicatif : maintien, âˆ’10 % ou +10 %. Aucun objectif automatique en cas dâ€™IMC infÃ©rieur Ã  18,5 ou de situation particuliÃ¨re dÃ©clarÃ©e.</p><a href="https://pubmed.ncbi.nlm.nih.gov/2305711/" target="_blank" rel="noopener">Source de lâ€™Ã©quation</a> Â· <a href="https://www.who.int/data/gho/data/themes/topics/GHO/body-mass-index" target="_blank" rel="noopener">RepÃ¨res IMC de lâ€™OMS</a></details>`;}
+function cuisine(){const choices=[['personnalisees','choice-green','01','Recette personnalisÃ©e','Des idÃ©es adaptÃ©es Ã  votre profil et Ã  votre repÃ¨re calorique.','nutrichef-assets/image-01.png','Pipo rÃ©flÃ©chit Ã  votre recette'],['panier','choice-blue','02','Panier bleu','Exclusivement les recettes mÃ©diterranÃ©ennes du catalogue.','nutrichef-assets/image-05.png','Panier bleu avec des ingrÃ©dients mÃ©diterranÃ©ens'],['chef','choice-gold','03','Recette du chef','Laissez Pipo vous surprendre avec une recette au hasard.','nutrichef-assets/image-06.png','La moustache de Pipo']];return`<div class="cuisine-heading"><div><div class="eyebrow">Ã€ vous de choisir</div><h1>Quâ€™est-ce quâ€™on cuisine ?</h1><p class="muted">Trois chemins, toujours le plaisir de passer Ã  table.</p></div><button class="secondary refresh-catalogue" type="button" data-action="refresh-catalogue" aria-label="Actualiser les recettes FoodCloud">â†» Actualiser les recettes</button></div><div class="grid cuisine-choices">${choices.map(([id,color,num,title,description,art,alt])=>`<a href="#${id}" class="card choice-card ${color}"><span class="choice-number">${num}</span><span class="choice-art"><img class="choice-illustration" src="${art}" alt="${alt}"></span><span class="choice-copy"><h3>${title}</h3><p>${description}</p></span><span class="choice-arrow" aria-hidden="true">â†’</span></a>`).join('')}</div>${demoNotice()}`;}
+function listing(route){if(!state.profile)return profileGate();const n=nutrition(state.profile);let pool=catalogue.filter(r=>compatible(r,state.profile));if(route==='panier')pool=pool.filter(r=>isForFoodCloudRoute(r,'panier')&&(r.routes&&r.routes.length||r.tags.includes('mediterraneen')));if(route==='personnalisees')pool=pool.filter(r=>isForFoodCloudRoute(r,'personnalisees')&&r.meals.includes(selectedMeal)&&(!n.target||Math.abs(r.kcal-n.target*fractions[selectedMeal])<=n.target*fractions[selectedMeal]*.25));if(route==='chef')pool=pool.filter(r=>isForFoodCloudRoute(r,'chef'));if(filter)pool=pool.filter(r=>(r.title+' '+r.ingredients.map(i=>i.name).join(' ')).toLocaleLowerCase('fr').includes(filter.toLocaleLowerCase('fr')));if(route==='chef'&&pool.length)pool=[pool[Math.floor(Math.random()*pool.length)]];return`<a href="#cuisine">â† Les trois faÃ§ons de cuisiner</a><h1>${route==='panier'?'Le panier bleu':route==='chef'?'La surprise du chef':'Vos recettes personnalisÃ©es'}</h1><p class="muted">${route==='panier'?'Les recettes que vous avez choisies pour votre panier bleu.':route==='chef'?'Une dÃ©couverte alÃ©atoire parmi les recettes du chef compatibles avec le profil.':'Des recettes compatibles avec le profil, le repas choisi et le repÃ¨re calorique.'}</p>${demoNotice()}${route==='personnalisees'&&!n.target?'<div class="notice">Filtrage par prÃ©fÃ©rences uniquement : aucun objectif calorique dÃ©fini pour votre profil.</div>':''}<form id="search-form" class="toolbar"><input aria-label="Rechercher une recette" name="query" placeholder="Une recette, un ingrÃ©dientâ€¦" value="${esc(filter)}">${route==='personnalisees'?`<select name="meal" aria-label="Repas" style="width:auto">${Object.entries(mealNames).map(([k,v])=>`<option value="${k}" ${selectedMeal===k?'selected':''}>${v}</option>`).join('')}</select>`:''}<button>Rechercher</button>${route==='chef'?'<button type="button" class="secondary" data-action="refresh">Une autre idÃ©e</button>':''}</form>${recipeCards(pool)}`;}
+function calendar(){if(!state.profile)return profileGate();const ds=dates(),pool=catalogue.filter(r=>compatible(r,state.profile)),n=nutrition(state.profile),activeDate=ds.includes(calendarDay)?calendarDay:ds[0],entries=state.menus[activeDate]||{},total=Object.values(entries).reduce((s,m)=>s+(catalogue.find(r=>r.id===m.id)?.kcal||0)*m.portions,0),activeLabel=pretty(activeDate),today=isoDate();return`<section class="calendar-intro"><div><div class="eyebrow">Moins dâ€™improvisation, plus de plaisir</div><h1>Mon calendrier</h1><p class="muted">Choisissez une journÃ©e, puis composez simplement ses repas.</p></div><div class="calendar-navigation"><button class="calendar-nav-button" aria-label="Semaine prÃ©cÃ©dente" data-action="prev-week">â†</button><strong>${pretty(ds[0])} â€” ${pretty(ds[6])}</strong><button class="calendar-nav-button" aria-label="Semaine suivante" data-action="next-week">â†’</button></div></section><div class="calendar-action-row"><button data-action="auto-menu">CrÃ©er ma semaine avec Pipo</button><button class="secondary" data-action="week-shopping">Ajouter aux courses</button></div><p class="calendar-tip">${n.target?'Votre repÃ¨re est de '+fmt(n.target)+' kcal par jour.':'Vos choix restent adaptÃ©s Ã  votre profil.'} <strong>Appuyez sur une date pour ouvrir son menu.</strong></p><section class="playful-calendar" aria-label="Calendrier de la semaine">${ds.map(date=>{const mealCount=Object.keys(state.menus[date]||{}).length,dayName=new Date(date+'T12:00:00').toLocaleDateString('fr-FR',{weekday:'short'}),dayNumber=Number(date.slice(-2));return`<button type="button" class="calendar-date-button ${date===activeDate?'is-selected':''} ${date===today?'is-today':''} ${mealCount?'has-menu':''}" data-action="open-calendar-day" data-calendar-date="${date}" aria-pressed="${date===activeDate}"><span class="calendar-orb"><small>${dayName.replace('.','')}</small><strong>${dayNumber}</strong></span><span class="calendar-date-label">${pretty(date)}</span><span class="calendar-date-status">${mealCount?mealCount+' repas':'Ã€ composer'}</span></button>`;}).join('')}</section><section class="calendar-editor" aria-live="polite"><div class="calendar-editor-head"><div><span class="calendar-editor-kicker">Menu du jour</span><h2>${activeLabel}</h2><p>${Object.keys(entries).length?'Votre menu prend forme, modifiez un repas si besoin.':'Choisissez ce que vous avez envie de manger.'}</p></div><div class="calendar-total"><strong>${Math.round(total)}</strong><span>kcal prÃ©vues</span></div></div><div class="calendar-meals">${Object.entries(mealNames).map(([slot,label])=>{const m=entries[slot],r=m&&catalogue.find(r=>r.id===m.id),choices=pool.filter(recipe=>recipe.meals.includes(slot));return`<article class="calendar-meal ${r?'is-filled':''}"><div class="calendar-meal-heading"><span>${label}</span>${r?`<a href="#" data-open="${esc(r.id)}">${esc(r.title)}</a>`:'<small>Aucun repas choisi</small>'}</div><label class="calendar-select"><span>${r?'Changer le repas':'Choisir un repas'}</span><select aria-label="Choisir ${label} le ${activeLabel}" data-meal="${activeDate}|${slot}"><option value="">${r?'Remplacerâ€¦':'Choisirâ€¦'}</option>${choices.map(recipe=>`<option value="${esc(recipe.id)}">${esc(recipe.title)}</option>`).join('')}</select></label>${r?`<div class="calendar-meal-bottom"><label>Portions<input type="number" min="0.25" max="10" step="0.01" data-portions="${activeDate}|${slot}" value="${m.portions}"></label><small>${Math.round(r.kcal*m.portions)} kcal${!compatible(r,state.profile)?' Â· Ã€ vÃ©rifier avec votre profil':''}</small><button type="button" class="calendar-remove" data-remove-meal="${activeDate}|${slot}">Retirer</button></div>`:''}</article>`;}).join('')}</div></section>${demoNotice()}`;}function courses(){const remaining=state.shopping.filter(i=>!i.done),done=state.shopping.filter(i=>i.done),item=i=>`<li class="shopping-item ${i.done?'is-done':''}"><label class="shopping-check"><input type="checkbox" data-check="${i.id}" ${i.done?'checked':''}><span class="shopping-tick" aria-hidden="true">âœ“</span><span class="shopping-item-name">${esc(i.name)}</span></label><span class="shopping-quantity">${fmt(i.qty)} ${esc(i.unit)}</span><button type="button" class="shopping-delete" data-delete-item="${i.id}" aria-label="Retirer ${esc(i.name)}">Ã—</button></li>`;return`<section class="shopping-intro"><div><div class="eyebrow">Tout ce quâ€™il vous faut, sans rien oublier</div><h1>Ma liste de courses</h1><p class="muted">Cochez au fur et Ã  mesure. Votre liste reste enregistrÃ©e ici.</p></div><div class="shopping-progress"><strong>${remaining.length}</strong><span>${remaining.length>1?'articles Ã  prendre':'article Ã  prendre'}</span></div></section><section class="shopping-add-card"><form id="shopping-form" class="shopping-add-form"><label for="shopping-name">Ajouter un article</label><div><input id="shopping-name" name="name" placeholder="Ex. tomates, pain, yaourtsâ€¦" aria-label="Ajouter un article" maxlength="100" required autofocus><input type="hidden" name="qty" value="1"><input type="hidden" name="unit" value="piÃ¨ce"><button>Ajouter</button></div></form><button type="button" class="secondary shopping-calendar-link" data-action="week-shopping">+ Ajouter depuis mon calendrier</button></section><section id="shopping-print-area" class="shopping-list-card"><div class="shopping-list-head"><div><span>Ma liste du jour</span><h2>Ã€ acheter</h2></div><small>${remaining.length?remaining.length+' article'+(remaining.length>1?'s':''):'Tout est cochÃ© !'}</small></div>${remaining.length?`<ul class="shopping-list">${remaining.map(item).join('')}</ul>`:`<div class="shopping-empty"><span>âœ“</span><p>Votre liste est terminÃ©e.<br><a href="#calendrier">PrÃ©parer les courses de la semaine</a></p></div>`}${done.length?`<details class="shopping-completed"><summary>${done.length} article${done.length>1?'s':''} dÃ©jÃ  cochÃ©${done.length>1?'s':''}</summary><ul class="shopping-list">${done.map(item).join('')}</ul></details>`:''}</section><section class="shopping-export"><div><h2>Emporter ma liste</h2><p>Imprimez-la pour le papier ou tÃ©lÃ©chargez une image Ã  garder dans votre tÃ©lÃ©phone.</p></div><div class="shopping-export-actions"><button type="button" class="secondary" data-action="print-shopping" ${state.shopping.length?'':'disabled'}>Imprimer</button><button type="button" data-action="download-shopping-image" ${remaining.length?'':'disabled'}>TÃ©lÃ©charger lâ€™image</button></div></section>${done.length?'<button type="button" class="shopping-clear" data-action="clear-checked">Retirer les articles cochÃ©s</button>':''}`;}
+function downloadShoppingImage(){const items=state.shopping.filter(i=>!i.done);if(!items.length){toast('Votre liste ne contient plus rien Ã  tÃ©lÃ©charger.');return;}const scale=2,w=1080,row=82,h=Math.max(710,330+items.length*row+105),canvas=document.createElement('canvas');canvas.width=w*scale;canvas.height=h*scale;const c=canvas.getContext('2d');c.scale(scale,scale);const round=(x,y,width,height,r)=>{c.beginPath();c.moveTo(x+r,y);c.arcTo(x+width,y,x+width,y+height,r);c.arcTo(x+width,y+height,x,y+height,r);c.arcTo(x,y+height,x,y,r);c.arcTo(x,y,x+width,y,r);c.closePath();};c.fillStyle='#faf8f1';c.fillRect(0,0,w,h);round(58,54,w-116,h-108,34);c.fillStyle='#fffdf8';c.fill();c.strokeStyle='#dce8d4';c.lineWidth=3;c.stroke();c.fillStyle='#315b43';c.font='700 54px Georgia, serif';c.fillText('NutriChef',106,137);c.fillStyle='#819264';c.font='800 17px system-ui, sans-serif';c.fillText('MA LISTE DE COURSES',108,174);c.fillStyle='#264c35';c.font='700 38px Georgia, serif';c.fillText('Ã€ acheter',106,236);c.fillStyle='#6d7569';c.font='400 19px system-ui, sans-serif';c.fillText(items.length+' article'+(items.length>1?'s':'')+' Ã  retrouver en magasin',106,270);items.forEach((item,index)=>{const y=305+index*row;round(104,y,w-208,61,17);c.fillStyle=index%2?'#f4f8f0':'#eff5e9';c.fill();c.strokeStyle='#dde8d8';c.lineWidth=1;c.stroke();c.beginPath();c.arc(140,y+30,14,0,Math.PI*2);c.fillStyle='#fffdf8';c.fill();c.strokeStyle='#315b43';c.lineWidth=3;c.stroke();c.fillStyle='#315b43';c.font='600 23px system-ui, sans-serif';const label=item.name.length>42?item.name.slice(0,39)+'â€¦':item.name;c.fillText(label,174,y+38);c.fillStyle='#e7b23a';c.font='800 19px system-ui, sans-serif';c.textAlign='right';c.fillText(fmt(item.qty)+' '+item.unit,w-132,y+37);c.textAlign='left';});c.fillStyle='#819264';c.font='400 16px system-ui, sans-serif';c.fillText('PrÃ©parÃ©e avec NutriChef',108,h-83);canvas.toBlob(blob=>{if(!blob){toast('Le tÃ©lÃ©chargement nâ€™a pas pu Ãªtre prÃ©parÃ©.');return;}const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='ma-liste-de-courses-nutrichef.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Votre image est prÃªte Ã  Ãªtre enregistrÃ©e sur votre tÃ©lÃ©phone.');},'image/png');}function leftovers(){if(!state.profile)return profileGate();const menuCount=dates().reduce((total,date)=>total+Object.keys(state.menus[date]||{}).length,0),shortcuts=['tomate','courgette','Å“ufs','riz','pÃ¢tes','pois chiches','feta','poulet'];return`<section class="leftover-intro"><div><div class="eyebrow">La bonne idÃ©e anti-gaspi</div><h1>Chef, il mâ€™en reste !</h1><p class="muted">Dites Ã  Pipo ce quâ€™il y a dans votre frigo ou vos placards. Il retrouve la recette la plus adaptÃ©e.</p></div><a class="leftover-calendar-note" href="#calendrier"><strong>${menuCount}</strong><span>repas dans<br>mon calendrier</span></a></section><section class="leftover-workspace"><div class="leftover-steps"><span><b>1</b> Je note mes ingrÃ©dients</span><span><b>2</b> Pipo compare les recettes</span><span><b>3</b> Je cuisine sans gaspiller</span></div><form id="leftovers-form" class="leftover-form"><label for="leftover-ingredients">Quâ€™est-ce quâ€™il vous reste ?</label><div class="leftover-input-wrap"><textarea id="leftover-ingredients" name="ingredients" required rows="3" maxlength="500" placeholder="Ex. courgette, tomate, riz, reste de pouletâ€¦"></textarea><small>SÃ©parez les ingrÃ©dients par une virgule.</small></div><div class="leftover-shortcuts"><span>Ajout rapide :</span>${shortcuts.map(item=>`<button type="button" data-action="add-leftover" data-leftover-item="${item}">${item}</button>`).join('')}</div><button class="leftover-submit">Trouver ma recette avec Pipo <span aria-hidden="true">â†’</span></button></form><aside class="leftover-method"><span class="leftover-method-badge">Pipo</span><h2>Simple et local</h2><p>Pipo compare vos ingrÃ©dients au catalogue NutriChef. Aucun service dâ€™intelligence artificielle nâ€™est utilisÃ©.</p></aside></section><div id="leftovers-results" class="leftover-results" aria-live="polite"></div>`;}
+function normalizeLeftover(value){return String(value??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('fr').trim();}
+function showLeftoverResults(tokens,invented){const tokenSet=[...new Set(tokens)],matches=catalogue.filter(recipe=>compatible(recipe,state.profile)&&!recipe.generated).map(recipe=>{const matched=recipe.ingredients.filter(ingredient=>tokenSet.some(token=>{const a=normalizeLeftover(ingredient.name),b=normalizeLeftover(token);return a.includes(b)||b.includes(a);}));return{recipe,matched,missing:recipe.ingredients.filter(ingredient=>!matched.includes(ingredient)),score:matched.length};}).filter(entry=>entry.score).sort((a,b)=>b.score-a.score||a.missing.length-b.missing.length).slice(0,3),formatNames=list=>list.slice(0,5).map(item=>esc(item.name)).join(', '),card=(entry,index)=>`<article class="leftover-match ${index===0?'is-best':''}"><div class="leftover-match-top"><span class="leftover-score">${entry.score} ingrÃ©dient${entry.score>1?'s':''} utilisÃ©${entry.score>1?'s':''}</span>${index===0?'<span class="leftover-best-label">Meilleure idÃ©e</span>':''}</div><h3>${esc(entry.recipe.title)}</h3><p class="leftover-have"><strong>Vous avez :</strong> ${formatNames(entry.matched)}</p>${entry.missing.length?`<p class="leftover-missing"><strong>Ã€ complÃ©ter :</strong> ${formatNames(entry.missing)}${entry.missing.length>5?'â€¦':''}</p>`:'<p class="leftover-ready"><strong>Parfait :</strong> vous avez tout ce quâ€™il faut.</p>'}<button type="button" data-open="${esc(entry.recipe.id)}">Voir la recette</button></article>`;$('#leftovers-results').innerHTML=`<section class="leftover-results-head"><div><span>RÃ©sultat de Pipo</span><h2>${matches.length?'Voici ce que vous pouvez cuisiner':'Aucune recette ne correspond encore'}</h2><p>${matches.length?'Les recettes sont classÃ©es selon les ingrÃ©dients que vous possÃ©dez dÃ©jÃ .':'Essayez dâ€™ajouter un ou deux ingrÃ©dients, par exemple tomate, riz ou courgette.'}</p></div><p class="leftover-token-summary">Vous avez notÃ© : <strong>${tokenSet.map(esc).join(', ')}</strong></p></section>${invented?`<article class="leftover-invention"><div><span>Suggestion express de Pipo</span><h3>${esc(invented.title)}</h3><p>Une prÃ©paration simple crÃ©Ã©e Ã  partir des ingrÃ©dients reconnus dans votre liste.</p></div><button type="button" data-open="${esc(invented.id)}">DÃ©couvrir lâ€™idÃ©e</button></article>`:''}<div class="leftover-match-grid">${matches.map(card).join('')}</div>${!matches.length&&!invented?'<div class="leftover-empty-result">Pipo nâ€™a pas encore assez dâ€™indices. Ajoutez dâ€™autres ingrÃ©dients ou regardez vos menus de la semaine.</div>':''}<p class="leftover-disclaimer">Recherche locale par correspondance dâ€™ingrÃ©dients du catalogue NutriChef. VÃ©rifiez toujours les quantitÃ©s et les allergÃ¨nes avant de cuisiner.</p>`;}function dataPage(){return`<h1>Mes donnÃ©es</h1><div class="card"><p>Profil, poids, menus et courses restent dans le stockage de ce navigateur. Ils ne sont pas synchronisÃ©s entre appareils et peuvent disparaÃ®tre si les donnÃ©es du navigateur sont effacÃ©es. Utilisez un appareil personnel.</p><div class="toolbar"><button data-action="export">Exporter mes donnÃ©es</button><button class="danger" data-action="erase">Effacer toutes mes donnÃ©es</button></div></div>`;}
+function render(){const route=location.hash.slice(1)||'accueil';const view={accueil:home,profil:profile,cuisine,recettes:cuisine,personnalisees:()=>listing('personnalisees'),panier:()=>listing('panier'),chef:()=>listing('chef'),calendrier:calendar,courses,restes:leftovers,donnees:dataPage}[route]||home;$('#app').innerHTML=(route==='accueil'?'':'<div class="wrap">')+(storageError?'<div class="notice">Le stockage de ce navigateur nâ€™a pas pu Ãªtre lu.</div>':'')+(loadError?`<div class="notice error">${esc(loadError)} <button data-action="retry">RÃ©essayer</button></div>`:'')+view()+(route==='accueil'?'':'</div>');$('#profile-link .dot').hidden=!!state.profile;document.querySelectorAll('.top nav a').forEach(a=>{if(a.hash===location.hash||route==='accueil'&&a.hash==='#accueil')a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});document.title='NutriChef Â· '+(route==='accueil'?'Accueil':route);}
+function openRecipe(id){const r=catalogue.find(r=>r.id===id);if(!r)return;modalRecipe=r;$('#recipe-body').innerHTML=`<div class="eyebrow">${r.generated?'Improvisation de Pipo Â· calories estimÃ©es':'Recette NutriChef'}</div><h2>${esc(r.title)}</h2><p>${r.kcal} kcal / portion Â· ${r.minutes||25} minutes</p><p class="muted">AllergÃ¨nes / exclusions dÃ©clarÃ©s : ${r.exclusions.length?r.exclusions.map(esc).join(', '):'aucun'}. VÃ©rifiez les traces sur les produits.</p><label>Nombre de portions<input id="recipe-portions" type="number" min="0.25" max="20" step="0.25" value="1"></label><div id="ingredient-list"></div><h3>En cuisine</h3><ol>${r.steps.map(s=>`<li><p>${esc(s)}</p></li>`).join('')}</ol><button data-action="recipe-shopping">Ajouter les ingrÃ©dients aux courses</button><form id="plan-recipe" class="section-gap"><h3>PrÃ©voir ce repas</h3><div class="fields"><label>Date<input type="date" name="date" value="${isoDate()}" required></label><label>Repas<select name="slot">${Object.entries(mealNames).map(([k,v])=>`<option value="${k}" ${r.meals.includes(k)?'':'disabled'}>${v}</option>`).join('')}</select></label></div><button class="secondary">Ajouter Ã  mon calendrier</button></form>`;$('#recipe-body select').value=r.meals[0];updateIngredients();$('#recipe-modal').showModal();}
+function updateIngredients(){const p=Number($('#recipe-portions').value);$('#ingredient-list').innerHTML='<h3>IngrÃ©dients</h3><ul>'+modalRecipe.ingredients.map(i=>`<li>${fmt(i.qty*p)} ${esc(i.unit)} de ${esc(i.name)}</li>`).join('')+'</ul>';}
+function getPortions(){const input=$('#recipe-portions');if(!input.reportValidity())return null;return Number(input.value);}
+function upsertWeight(date,weight){state.weights=state.weights.filter(w=>w.date!==date);state.weights.push({date,weight});state.weights.sort((a,b)=>a.date.localeCompare(b.date));state.profile.weight=state.weights.at(-1).weight;}
+document.addEventListener('submit',e=>{e.preventDefault();const f=e.target,d=new FormData(f);if(f.id==='profile-form'){for(const [k,v]of d)if(k!=='exclusions')draft[k]=v;if(step===1)draft.special=d.has('special');if(step===2){draft.exclusions=d.getAll('exclusions');for(const k of ['age','weight','height','activity'])draft[k]=Number(draft[k]);draft.firstName=draft.firstName.trim();if(!draft.firstName){step=0;render();return;}state.profile={...draft};upsertWeight(isoDate(),draft.weight);editing=false;step=0;save();toast('Votre profil est enregistrÃ©.');}else step++;render();}
+if(f.id==='weight-form'){upsertWeight(d.get('date'),Number(d.get('weight')));save();render();toast('Votre poids et vos repÃ¨res ont Ã©tÃ© actualisÃ©s.');}
+if(f.id==='search-form'){filter=d.get('query').trim();selectedMeal=d.get('meal')||selectedMeal;render();}
+if(f.id==='shopping-form'){const name=d.get('name').trim();if(!name)return;addIngredients(state.shopping,{ingredients:[{name,qty:Number(d.get('qty')),unit:d.get('unit')}]});save();render();}
+if(f.id==='plan-recipe'){if(!state.profile){$('#recipe-modal').close();location.hash='profil';return;}const p=getPortions();if(!p)return;const date=d.get('date'),slot=d.get('slot');state.menus[date]??={};if(state.menus[date][slot]&&!confirm('Remplacer le repas dÃ©jÃ  prÃ©vu ?'))return;state.menus[date][slot]={id:modalRecipe.id,portions:p};save();$('#recipe-modal').close();toast('Recette ajoutÃ©e au calendrier.');render();}
+if(f.id==='leftovers-form'){const tokens=d.get('ingredients').split(/[,;\n]+/).map(x=>x.trim().toLocaleLowerCase('fr')).filter(Boolean);if(!tokens.length){toast('Ajoutez au moins un ingrÃ©dient.');return;}const invented=inventRecipe(tokens,state.profile);if(invented){state.custom??=[];state.custom.push(invented);catalogue.push(invented);save();}showLeftoverResults(tokens,invented);}
+});
+document.addEventListener('change',e=>{const el=e.target;if(el.dataset.check){const i=state.shopping.find(x=>x.id===el.dataset.check);if(i){i.done=el.checked;save();render();}return;}if(el.dataset.meal&&el.value){const[date,slot]=el.dataset.meal.split('|');state.menus[date]??={};state.menus[date][slot]={id:el.value,portions:1};save();render();}if(el.dataset.portions){if(!el.reportValidity())return;const[date,slot]=el.dataset.portions.split('|');state.menus[date][slot].portions=Number(el.value);save();render();}if(el.id==='recipe-portions')updateIngredients();if(el.id==='menu-search'){filter=el.value.trim();render();}});
+document.addEventListener('click',async e=>{const open=e.target.closest('[data-open]');if(open){e.preventDefault();openRecipe(open.dataset.open);return;}if(e.target.closest('.close'))$('#recipe-modal').close();const del=e.target.closest('[data-delete-item]');if(del){state.shopping=state.shopping.filter(x=>x.id!==del.dataset.deleteItem);save();render();}const remove=e.target.closest('[data-remove-meal]');if(remove){const[date,slot]=remove.dataset.removeMeal.split('|');delete state.menus[date][slot];save();render();}const action=e.target.closest('[data-action]')?.dataset.action;if(!action)return;
+if(action==='add-leftover'){const input=$('#leftover-ingredients'),item=e.target.closest('[data-leftover-item]')?.dataset.leftoverItem;if(input&&item){const current=input.value.split(/[,;\n]+/).map(value=>value.trim()).filter(Boolean);if(!current.some(value=>normalizeLeftover(value)===normalizeLeftover(item)))current.push(item);input.value=current.join(', ');input.focus();}return;}if(action==='open-calendar-day'){calendarDay=e.target.closest('[data-calendar-date]')?.dataset.calendarDate||calendarDay;render();return;}if(action==='start-profile'){e.preventDefault();draft=state.profile?structuredClone(state.profile):{};step=0;editing=true;location.hash='profil';render();return;}if(action==='edit-profile'){draft=structuredClone(state.profile);step=0;editing=true;render();}
+if(action==='profile-back'){const form=$('#profile-form');if(form){const fd=new FormData(form);for(const[k,v]of fd)if(k!=='exclusions')draft[k]=v;if(step===1)draft.special=fd.has('special');if(step===2)draft.exclusions=fd.getAll('exclusions');}if(step){step--;render();}else{editing=false;location.hash=state.profile?'profil':'accueil';render();}}
+if(action==='greet-pipo'){
+  const pipo=e.target.closest('.pipo-greeting'),hero=pipo?.closest('.hero'),first=state.profile?.firstName?.trim();
+  if(pipo&&hero){
+    pipo.dataset.cookingSrc??=pipo.currentSrc||pipo.src;
+    const waveSrc=pipo.dataset.heySrc,talkSrc=pipo.dataset.talkSrc;
+    pipo.src=waveSrc;
+    hero.classList.add('pipo-says-hey');
+    const bubble=hero.querySelector('.pipo-hello');
+    if(bubble)bubble.textContent=first?`Hey ${first} !`:'Hey !';
+    clearTimeout(window.pipoHelloTimer);
+    clearInterval(window.pipoTalkTimer);
+    let talking=false;
+    window.pipoTalkTimer=setInterval(()=>{talking=!talking;pipo.src=talking?talkSrc:waveSrc;},240);
+    window.pipoHelloTimer=setTimeout(()=>{clearInterval(window.pipoTalkTimer);pipo.src=pipo.dataset.cookingSrc;hero.classList.remove('pipo-says-hey');},3000);
+  }
+  toast(first?`Bonjour ${first} ! PrÃªt Ã  cuisiner ensemble ?`:'Bonjour ! Je suis Pipo. CrÃ©ons votre profil pour cuisiner ensemble.');
+  return;
+} if(action==='refresh-catalogue'){refreshCatalogue({renderView:true,notify:true});return;}if(action==='refresh')render();
+if(action==='prev-week'||action==='next-week'){week+=action==='prev-week'?-1:1;calendarDay='';render();}
+if(action==='auto-menu'){try{const next=buildMenu(catalogue,state.profile,dates());if(dates().some(d=>Object.keys(state.menus[d]||{}).length)&&!confirm('Remplacer les menus de cette semaine par la proposition de Pipo ?'))return;Object.assign(state.menus,next);save();render();toast('Vos menus de la semaine sont prÃªts.');}catch(err){toast(err.message);}}
+if(action==='week-shopping'){const meals=dates().flatMap(d=>Object.values(state.menus[d]||{}));if(!meals.length){toast('Ajoutez dâ€™abord des repas au calendrier.');return;}if(!confirm('Ajouter tous les ingrÃ©dients de cette semaine ? Un nouvel ajout cumulera les quantitÃ©s.'))return;for(const m of meals){const r=catalogue.find(r=>r.id===m.id);if(r&&compatible(r,state.profile))addIngredients(state.shopping,r,m.portions);}save();toast('IngrÃ©dients compatibles ajoutÃ©s Ã  la liste.');}
+if(action==='recipe-shopping'){const p=getPortions();if(!p)return;if(!compatible(modalRecipe,state.profile)){toast('Cette recette ne respecte pas votre profil.');return;}addIngredients(state.shopping,modalRecipe,p);save();toast('IngrÃ©dients ajoutÃ©s Ã  votre liste.');}
+if(action==='print-shopping'){window.print();return;}if(action==='download-shopping-image'){downloadShoppingImage();return;}if(action==='clear-checked'){state.shopping=state.shopping.filter(i=>!i.done);save();render();}
+if(action==='copy-shopping'){try{await navigator.clipboard.writeText(state.shopping.filter(i=>!i.done).map(i=>`${i.name} : ${fmt(i.qty)} ${i.unit}`).join('\n'));toast('Liste copiÃ©e.');}catch{toast('Copie indisponible dans ce navigateur.');}}
+if(action==='export'){const url=URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='nutrichef-mes-donnees.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+if(action==='erase'&&confirm('Effacer dÃ©finitivement votre profil, vos pesÃ©es, vos menus et vos courses sur cet appareil ?')){state={profile:null,weights:[],menus:{},shopping:[]};draft={};step=0;editing=false;save();location.hash='accueil';render();}
+if(action==='retry')await load();});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.dataset.action==='greet-pipo'){e.preventDefault();e.target.click();}});window.addEventListener('hashchange',()=>{filter='';render();window.scrollTo(0,0);});
+let catalogueUpdatedAt=0,catalogueRefreshBusy=false;async function refreshCatalogue(options={}){const {renderView=false,notify=false}=options;if(catalogueRefreshBusy)return false;catalogueRefreshBusy=true;try{const data=await getRecipes();catalogue=[...data.recipes,...(state.custom||[])];demo=false;loadError='';catalogueUpdatedAt=Date.now();if(renderView)render();if(notify)toast('Catalogue FoodCloud actualisÃ© : '+data.recipes.length+' recette'+(data.recipes.length>1?'s':'')+' disponible'+(data.recipes.length>1?'s':'')+'.');return true;}catch(e){if(!catalogue.length){loadError='FoodCloud est momentanÃ©ment inaccessible. VÃ©rifiez votre connexion puis rÃ©essayez.';if(renderView)render();}if(notify)toast('Impossible dâ€™actualiser le catalogue pour le moment.');return false;}finally{catalogueRefreshBusy=false;}}async function load(){await refreshCatalogue({renderView:false});render();}setInterval(()=>{if(document.visibilityState==='visible')refreshCatalogue();},120000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&Date.now()-catalogueUpdatedAt>30000)refreshCatalogue();});
+render();await load();
+
+})();
+const nutrichefIcon=document.createElement('link');
+nutrichefIcon.rel='icon';nutrichefIcon.type='image/svg+xml';nutrichefIcon.href='nutrichef-icon.svg';
+document.head.appendChild(nutrichefIcon);
+const nutrichefAppleIcon=document.createElement('link');
+nutrichefAppleIcon.rel='apple-touch-icon';nutrichefAppleIcon.href='nutrichef-icon.svg';
+document.head.appendChild(nutrichefAppleIcon);
+</script><script src="nutrichef-family-lite.js"></script></body></html>
+
