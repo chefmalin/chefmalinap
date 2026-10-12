@@ -1,0 +1,129 @@
+/* Ajustements d'affichage NutriChef : ordinateur, tablette et téléphone. */
+:root { --nc-green:#315b43; --nc-cream:#fcfbf7; --nc-gold:#f2b739; }
+
+/* La photo occupe mieux la bannière large sans les deux bandes crème. */
+#app > .hero {
+  max-width: 1360px;
+  margin: 0 auto;
+  background: #efe7d5;
+}
+.hero-art {
+  object-fit: cover !important;
+  object-position: center 52% !important;
+}
+.hero .cta {
+  left: 27%;
+  min-width: 270px;
+}
+
+/* Profil famille */
+.family-link { white-space: nowrap; }
+.family-shell { max-width: 1120px; margin: 0 auto; }
+.family-intro { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-bottom:26px; }
+.family-intro h1, .family-card h2, .family-member h3 { font-family:"Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif; color:#244a35; }
+.family-intro h1 { margin:7px 0; font-size:clamp(31px,4vw,46px); }
+.family-lead { max-width:660px; margin:0; color:#66766c; }
+.family-count { display:grid; min-width:142px; place-items:center; padding:16px; border:1px solid #d7e2c7; border-radius:22px; background:#edf4e5; box-shadow:0 5px 0 #d2dfbd; text-align:center; color:#315b43; font-family:"Arial Rounded MT Bold", "Trebuchet MS", sans-serif; }
+.family-count strong { font-size:32px; line-height:1; }
+.family-count span { margin-top:4px; font-size:12px; }
+.family-card { padding:25px; border:1px solid #d8e4c8; border-radius:25px; background:linear-gradient(145deg,#fffef9,#f3f7eb); box-shadow:0 7px 0 #d9e5c7,0 17px 31px rgb(36 74 53 / 10%); }
+.family-card + .family-card { margin-top:30px; }
+.family-card h2 { margin:0 0 8px; }
+.family-help { margin:0 0 20px; color:#66766c; }
+.family-member-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+.family-member { position:relative; display:flex; min-height:208px; flex-direction:column; padding:20px; border:1px solid #d7e3cb; border-radius:22px; background:#fffdf8; box-shadow:0 5px 0 #d7e3cb; }
+.family-member.is-active { border-color:var(--nc-gold); box-shadow:0 5px 0 #e3b549,0 13px 24px rgb(37 82 55 / 13%); }
+.family-member h3 { margin:2px 0 7px; font-size:21px; }
+.family-role { display:inline-flex; align-self:flex-start; margin-bottom:10px; padding:5px 10px; border-radius:999px; background:#eaf2df; color:#315b43; font-size:12px; font-weight:800; }
+.family-member p { margin:0 0 14px; color:#68786d; font-size:14px; line-height:1.45; }
+.family-member-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; }
+.family-member-actions button { min-height:38px; padding:8px 12px; border:2px solid var(--nc-gold); border-bottom-width:4px; border-radius:12px; background:linear-gradient(145deg,#3f835b,#245b3f); box-shadow:0 3px 0 #1d4a33; font-size:12px; }
+.family-member-actions .family-ghost { border-color:#cfddbd; border-bottom-width:3px; background:#f3f7eb; box-shadow:0 2px 0 #cfddbd; color:#315b43; }
+.family-member-actions .family-remove { border-color:#edcbc4; border-bottom-width:3px; background:#fff3ef; box-shadow:0 2px 0 #edcbc4; color:#a44c3a; }
+.family-tip { display:flex; gap:13px; align-items:flex-start; margin-top:22px; padding:16px 18px; border-radius:17px; background:#f8f0dc; color:#5c5a40; }
+.family-tip b { display:grid; flex:0 0 29px; width:29px; height:29px; place-items:center; border-radius:50%; background:#e7b23b; color:#fff; }
+.family-actions { display:flex; flex-wrap:wrap; gap:10px; }
+.family-actions .btn, .family-form button { border:2px solid var(--nc-gold); border-bottom-width:5px; border-radius:15px; box-shadow:0 4px 0 #c98d12,0 9px 18px rgb(36 67 45 / 14%); font-family:"Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif; }
+.family-form { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px 16px; }
+.family-form .wide, .family-form .family-form-actions { grid-column:1 / -1; }
+.family-form label { margin:0; color:#315b43; }
+.family-form input, .family-form select { min-height:45px; margin-top:6px; }
+.family-form-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
+.family-child-note { grid-column:1 / -1; margin:0; padding:12px 14px; border-radius:13px; background:#f8f0dc; color:#70613e; font-size:13px; }
+.family-empty { padding:32px; text-align:center; }
+
+/* Téléphone : en-tête compact, navigation défilable, texte lisible et bannière sans recadrage étrange. */
+@media (max-width:760px) {
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:16px; }
+  .top {
+    position:relative;
+    display:grid;
+    grid-template-columns:52px minmax(0,1fr);
+    align-items:center;
+    gap:8px 12px;
+    padding:12px 16px 10px;
+  }
+  .profile-chip { grid-column:1; grid-row:1; flex-basis:auto; }
+  .profile-chip img { width:38px; height:38px; }
+  .profile-chip span { font-size:10px; }
+  .brand { grid-column:2; grid-row:1; min-width:0; font-size:clamp(27px,8vw,34px); line-height:1; }
+  .brand small { margin-top:5px; font-size:8px; letter-spacing:1.35px; white-space:normal; }
+  .top nav {
+    grid-column:1 / -1;
+    display:flex;
+    flex-wrap:nowrap;
+    gap:5px;
+    width:100%;
+    margin:6px 0 0;
+    padding:0 0 4px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .top nav::-webkit-scrollbar { display:none; }
+  .top nav a { flex:0 0 auto; padding:9px 11px; border-radius:11px; font-size:12px; white-space:nowrap; }
+  #app > .hero { width:100%; height:clamp(246px,72vw,330px); }
+  .hero-art { width:100%; height:100%; object-fit:cover !important; object-position:center 53% !important; }
+  .hero .cta {
+    top:auto;
+    bottom:16px;
+    left:5%;
+    min-width:0;
+    width:min(58vw,238px);
+    min-height:45px;
+    padding:10px 12px;
+    border-width:3px;
+    border-bottom-width:5px;
+    border-radius:18px;
+    font-family:"Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;
+    font-size:clamp(12px,3.5vw,15px);
+    line-height:1.1;
+    white-space:normal;
+    text-align:center;
+  }
+  .hero .cta:hover { transform:translateY(2px); }
+  .pipo-hello { top:10%; right:17%; font-size:clamp(23px,7vw,30px); }
+  .wrap { padding:26px 16px 34px; }
+  h1,h2,h3 { font-family:"Arial Rounded MT Bold","Trebuchet MS",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+  h1 { font-size:clamp(28px,8vw,36px); line-height:1.1; }
+  h2 { font-size:clamp(21px,6vw,27px); line-height:1.15; }
+  h3 { font-size:19px; }
+  p { line-height:1.5; }
+  .eyebrow { font-size:10px; letter-spacing:1.55px; }
+  .card { padding:18px; border-radius:20px; }
+  .metric { font-size:clamp(31px,10vw,40px); }
+  .fields { grid-template-columns:1fr; }
+  .family-intro { align-items:flex-start; flex-direction:column; gap:14px; }
+  .family-count { grid-template-columns:auto auto; align-items:center; gap:8px; min-width:0; padding:12px 15px; }
+  .family-count span { margin:0; }
+  .family-card { padding:18px; border-radius:21px; }
+  .family-member-grid { grid-template-columns:1fr; }
+  .family-member { min-height:188px; }
+  .family-form { grid-template-columns:1fr; }
+  .family-form .wide, .family-form .family-form-actions { grid-column:auto; }
+}
+
+@media (min-width:761px) and (max-width:1100px) {
+  #app > .hero { height:clamp(395px,49vw,545px); }
+  .hero .cta { left:24%; }
+}

@@ -20,7 +20,8 @@
         const responses=await Promise.all(parts.map(path=>fetch(path,{cache:'no-store'})));
         if(responses.some(response=>!response.ok))throw new Error('Une partie est indisponible');
         const html=(await Promise.all(responses.map(response=>response.text()))).join('');
-        document.open();document.write(html);document.close();
+        const enhancedHtml=html.replace('</head>','<link rel="stylesheet" href="nutrichef-responsive.css"></head>').replace('</body>','<script src="nutrichef-family-lite.js"></script></body>');
+        document.open();document.write(enhancedHtml);document.close();
       }catch(error){const message=document.querySelector('.loading-error');message.hidden=false;message.textContent='Impossible de charger NutriChef. Actualisez la page dans quelques instants.';}
     })();
   </script>
