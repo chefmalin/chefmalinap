@@ -44,3 +44,30 @@
   .nc-energy-breakdown{grid-template-columns:1fr}
 }
 
+/* Accueil mobile : Pipo reste le point focal, le bouton ne masque plus son bras. */
+@media (max-width:559px){
+  #app>section.hero{height:clamp(300px,78vw,360px)}
+  #app>section.hero .hero-art{object-position:62% center!important}
+  #app>section.hero .cta{
+    top:28%;
+    bottom:auto;
+    left:6%;
+    min-width:0;
+    min-height:40px;
+    padding:9px 14px;
+    border-width:3px;
+    border-radius:14px;
+    font-size:13px;
+    line-height:1.1;
+    letter-spacing:-.01em;
+    transform:none;
+    box-shadow:0 5px 0 #c98d12,0 10px 18px rgb(36 67 45 / 18%);
+  }
+  #app>section.hero .cta:hover{transform:translateY(-1px)}
+  #app>section.hero+.wrap{padding-top:18px}
+  #app>section.hero+.wrap>.intro{gap:10px;margin-bottom:15px}
+  #app>section.hero+.wrap>.intro>div:first-child{padding:11px 13px 12px}
+  #app>section.hero+.wrap>.intro>div:first-child .eyebrow{font-size:9px;letter-spacing:1.6px}
+  #app>section.hero+.wrap>.intro>div:first-child p{font-size:14px;line-height:1.38}
+}
+
