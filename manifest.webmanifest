@@ -1,0 +1,19 @@
+{
+  "name": "NutriChef — Le bonheur de bien manger",
+  "short_name": "NutriChef",
+  "description": "NutriChef, votre application d'organisation culinaire.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffdf8",
+  "theme_color": "#2d6148",
+  "icons": [
+    {
+      "src": "nutrichef-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
+
