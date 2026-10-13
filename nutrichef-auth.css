@@ -1,0 +1,26 @@
+/* Accès client : l'application ne s'affiche qu'après validation de l'e-mail. */
+html:not(.nc-auth-ready) .top,
+html:not(.nc-auth-ready) #app,
+html:not(.nc-auth-ready) footer,
+html:not(.nc-auth-ready) #toast,
+html:not(.nc-auth-ready) #nc-loading-screen{visibility:hidden!important}
+.nc-auth-gate{position:fixed;inset:0;z-index:20000;display:grid;place-items:center;overflow:auto;padding:22px;background:radial-gradient(circle at 18% 18%,#f2bf4b 0 3%,transparent 3.2%),radial-gradient(circle at 87% 85%,#b8d09d 0 8%,transparent 8.2%),linear-gradient(135deg,#f4f0e3,#edf5e8 55%,#faf7ed);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#244735}
+.nc-auth-card{width:min(100%,430px);padding:28px;border:1px solid #d9e5cf;border-radius:26px;background:rgb(255 253 247 / 97%);box-shadow:0 20px 58px rgb(32 65 46 / 20%);text-align:center}
+.nc-auth-pipo{display:block;width:108px;height:108px;object-fit:contain;margin:0 auto 10px;filter:drop-shadow(0 9px 10px rgb(36 67 45 / 16%))}
+.nc-auth-kicker{margin:0 0 8px;color:#66804e;font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+.nc-auth-card h1{margin:0;color:#214735;font-family:ui-serif,Georgia,serif;font-size:2rem;line-height:1.08}
+.nc-auth-copy{margin:13px auto 20px;color:#596b60;font-size:.96rem;line-height:1.55}
+.nc-auth-form{display:grid;gap:10px;text-align:left}
+.nc-auth-form label{color:#315b43;font-size:.86rem;font-weight:800}
+.nc-auth-form input{width:100%;min-height:49px;margin-top:6px;padding:11px 13px;border:1px solid #cbdcc0;border-radius:14px;background:#fff;color:#233a2d;font:inherit;outline:none}
+.nc-auth-form input:focus{border-color:#47785b;box-shadow:0 0 0 4px rgb(87 130 97 / 14%)}
+.nc-auth-form button{min-height:49px;border:0;border-radius:14px;background:#315b43;color:#fff;box-shadow:0 5px 0 #214735,0 10px 18px rgb(36 67 45 / 16%);font:800 .95rem/1 ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:transform .17s ease,box-shadow .17s ease}
+.nc-auth-form button:hover:not(:disabled){transform:translateY(2px);box-shadow:0 3px 0 #214735,0 7px 13px rgb(36 67 45 / 16%)}
+.nc-auth-form button:disabled{cursor:wait;opacity:.63;box-shadow:none}
+.nc-auth-message{min-height:1.25em;margin:2px 0 0;font-size:.84rem;line-height:1.4;color:#5c6e62}
+.nc-auth-message.is-error{color:#aa3f31}
+.nc-auth-note{margin:18px 0 0;color:#708075;font-size:.75rem;line-height:1.45}
+.nc-auth-account{margin-left:2px;padding:8px 10px;border:1px solid #d7e2cc;border-radius:11px;background:#f5f8ef;color:#315b43;font:750 11px/1 ui-sans-serif,system-ui,sans-serif;white-space:nowrap;cursor:pointer}
+.nc-auth-account:hover{background:#e8f0df}
+@media(max-width:559px){.nc-auth-gate{padding:16px}.nc-auth-card{padding:24px 19px;border-radius:23px}.nc-auth-pipo{width:92px;height:92px}.nc-auth-card h1{font-size:1.75rem}.nc-auth-copy{font-size:.91rem}.nc-auth-account{min-height:38px}}
+
