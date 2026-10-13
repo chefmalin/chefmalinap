@@ -1,0 +1,46 @@
+/* Profile dashboard: clear, compact and touch-friendly. */
+.nc-profile-dashboard{gap:20px;align-items:stretch}
+.nc-profile-dashboard .nc-balance-card,.nc-profile-dashboard .nc-energy-card{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:24px;box-shadow:0 10px 28px rgba(38,72,54,.07)}
+.nc-profile-dashboard h2,.nc-profile-dashboard h3{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.025em;color:#183f30}
+.nc-profile-dashboard h2{margin:0;font-size:1.35rem;line-height:1.2}
+.nc-balance-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.nc-bmi-chip{font-size:.72rem;font-weight:750;letter-spacing:.04em;text-transform:uppercase;color:#47634d;background:#fffdf7;border:1px solid #d9e2cb;border-radius:999px;padding:7px 10px;white-space:nowrap}
+.nc-profile-dashboard .gauge{margin:0 0 18px}
+.nc-balance-body{display:grid;grid-template-columns:104px 1fr;gap:18px;align-items:center}
+.nc-pipo-guide{width:96px;height:116px;object-fit:contain;object-position:center;filter:drop-shadow(0 8px 10px rgba(37,76,55,.12))}
+.nc-bmi-number{font-family:ui-serif,Georgia,serif;color:#245c42;font-size:2.35rem;font-weight:700;line-height:1;letter-spacing:-.04em}
+.nc-bmi-number span{font-family:ui-sans-serif,system-ui,sans-serif;color:#527665;font-size:.94rem;font-weight:700;letter-spacing:0;margin-left:4px}
+.nc-bmi-category{margin:9px 0 0;font-weight:700;color:#244735;line-height:1.35}
+.nc-bmi-reference{margin:20px 0 0;padding-top:14px;border-top:1px solid rgba(55,93,67,.14);font-size:.79rem;line-height:1.5;color:#52645c}
+.nc-energy-card .eyebrow{margin-bottom:8px}
+.nc-energy-card .metric{margin:0;color:#1e5b42;font-size:2.15rem;line-height:1.04}
+.nc-energy-card .metric small{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.9rem;letter-spacing:0}
+.nc-energy-lead{max-width:35rem;margin:12px 0 18px;color:#354d42;line-height:1.5}
+.nc-energy-breakdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 16px}
+.nc-energy-breakdown>div{min-width:0;padding:13px;border:1px solid #e0e7d8;border-radius:14px;background:#fbfcf8}
+.nc-energy-breakdown strong{display:block;color:#174d37;font-family:ui-serif,Georgia,serif;font-size:1.25rem;line-height:1.1}
+.nc-energy-breakdown span{display:block;margin-top:5px;color:#65766d;font-size:.78rem;line-height:1.35}
+.nc-profile-tags{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px}
+.nc-profile-tags span{padding:7px 10px;background:#f0f5ea;border-radius:999px;color:#315943;font-size:.78rem;font-weight:700;line-height:1.15}
+.nc-energy-card .btn{min-height:44px;padding:11px 17px;border-radius:13px;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.92rem}
+.nc-no-target{border:1px solid #eadbb7;border-radius:14px;background:#fffaf0;padding:14px 15px;color:#5e4b2b;font-size:.9rem;line-height:1.45}
+.nc-profile-method{margin-top:20px!important;font-size:.84rem;line-height:1.5}
+.nc-profile-method summary{font-weight:750;color:#28533e;cursor:pointer}
+.nc-profile-method p{margin:.7rem 0;color:#4e6057}
+.nc-profile-method a{font-weight:700}
+@media (max-width:760px){
+  .nc-profile-dashboard{display:grid;grid-template-columns:1fr;gap:14px}
+  .nc-profile-dashboard .nc-balance-card,.nc-profile-dashboard .nc-energy-card{padding:18px}
+  .nc-balance-body{grid-template-columns:84px 1fr;gap:13px}
+  .nc-pipo-guide{width:80px;height:98px}
+  .nc-bmi-number{font-size:2rem}
+  .nc-energy-card .metric{font-size:1.9rem}
+  .nc-energy-breakdown{gap:8px}
+  .nc-energy-breakdown>div{padding:11px}
+  .nc-energy-card .btn{display:flex;width:100%;justify-content:center}
+}
+@media (max-width:390px){
+  .nc-balance-head{align-items:flex-start;flex-direction:column}
+  .nc-energy-breakdown{grid-template-columns:1fr}
+}
+
