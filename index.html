@@ -1021,15 +1021,11 @@ if(action==='greet-pipo'){
   if(pipo&&hero){
     pipo.dataset.cookingSrc??=pipo.currentSrc||pipo.src;
     const waveSrc=pipo.dataset.heySrc,talkSrc=pipo.dataset.talkSrc;
-    const gestures=[waveSrc,pipo.dataset.cookingSrc,talkSrc].filter(Boolean);
-    const turn=Number(pipo.dataset.gestureTurn||0)%gestures.length;
-    pipo.src=gestures[turn];
-    pipo.dataset.gestureTurn=String((turn+1)%gestures.length);
-    hero.classList.add('pipo-says-hey');
+    pipo.src=waveSrc||pipo.dataset.cookingSrc;
     const bubble=hero.querySelector('.pipo-hello');
     if(bubble)bubble.textContent='';
     clearTimeout(window.pipoHelloTimer);
-    window.pipoHelloTimer=setTimeout(()=>{pipo.src=pipo.dataset.cookingSrc;hero.classList.remove('pipo-says-hey');},1450);
+    window.pipoHelloTimer=setTimeout(()=>{pipo.src=pipo.dataset.cookingSrc;},1150);
   }
   return;
 } if(action==='refresh-catalogue'){refreshCatalogue({renderView:true,notify:true});return;}if(action==='refresh')render();
@@ -1653,15 +1649,15 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 <style id="nutrichef-hero-go-style">
 /* Accès immédiat aux trois façons de choisir une recette. */
 #app>section.hero .cta.nc-go-choices {
-  display:grid; width:66px; min-width:66px; height:66px; min-height:66px; padding:0;
+  display:grid; left:40%!important; top:52%!important; width:80px; min-width:80px; height:80px; min-height:80px; padding:0;
   place-items:center; border:3px solid #fff7de; border-bottom-width:6px; border-radius:50%;
   background:linear-gradient(145deg,#4a9065,#235b40); box-shadow:0 6px 0 #c98d12,0 11px 19px rgb(36 67 45 / 24%);
-  color:#fff; font-family:"Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif; font-size:16px; font-weight:900; letter-spacing:.04em;
+  color:#fff; font-family:"Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif; font-size:18px; font-weight:900; letter-spacing:.04em;
 }
 #app>section.hero .cta.nc-go-choices:hover { transform:translateY(calc(-50% - 2px))!important; filter:brightness(1.06); }
 #app>section.hero .cta.nc-go-choices:active { border-bottom-width:3px; box-shadow:0 3px 0 #c98d12,0 6px 10px rgb(36 67 45 / 22%); transform:translateY(calc(-50% + 3px))!important; }
 @media (max-width:700px) {
-  #app>section.hero .cta.nc-go-choices { width:58px; min-width:58px; height:58px; min-height:58px; border-width:3px; border-bottom-width:5px; font-size:14px; }
+  #app>section.hero .cta.nc-go-choices { left:36%!important; width:68px; min-width:68px; height:68px; min-height:68px; border-width:3px; border-bottom-width:5px; font-size:16px; }
 }
 </style>
 <script id="nutrichef-hero-go-script">
