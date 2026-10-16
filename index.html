@@ -1017,21 +1017,20 @@ document.addEventListener('click',async e=>{const open=e.target.closest('[data-o
 if(action==='add-leftover'){const input=$('#leftover-ingredients'),item=e.target.closest('[data-leftover-item]')?.dataset.leftoverItem;if(input&&item){const current=input.value.split(/[,;\n]+/).map(value=>value.trim()).filter(Boolean);if(!current.some(value=>normalizeLeftover(value)===normalizeLeftover(item)))current.push(item);input.value=current.join(', ');input.focus();}return;}if(action==='open-calendar-day'){calendarDay=e.target.closest('[data-calendar-date]')?.dataset.calendarDate||calendarDay;render();return;}if(action==='start-profile'){e.preventDefault();draft=state.profile?structuredClone(state.profile):{};step=0;editing=true;location.hash='profil';render();return;}if(action==='edit-profile'){draft=structuredClone(state.profile);step=0;editing=true;render();}
 if(action==='profile-back'){const form=$('#profile-form');if(form){const fd=new FormData(form);for(const[k,v]of fd)if(k!=='exclusions')draft[k]=v;if(step===1)draft.special=fd.has('special');if(step===2)draft.exclusions=fd.getAll('exclusions');}if(step){step--;render();}else{editing=false;location.hash=state.profile?'profil':'accueil';render();}}
 if(action==='greet-pipo'){
-  const pipo=e.target.closest('.pipo-greeting'),hero=pipo?.closest('.hero'),first=state.profile?.firstName?.trim();
+  const pipo=e.target.closest('.pipo-greeting'),hero=pipo?.closest('.hero');
   if(pipo&&hero){
     pipo.dataset.cookingSrc??=pipo.currentSrc||pipo.src;
     const waveSrc=pipo.dataset.heySrc,talkSrc=pipo.dataset.talkSrc;
-    pipo.src=waveSrc;
+    const gestures=[waveSrc,pipo.dataset.cookingSrc,talkSrc].filter(Boolean);
+    const turn=Number(pipo.dataset.gestureTurn||0)%gestures.length;
+    pipo.src=gestures[turn];
+    pipo.dataset.gestureTurn=String((turn+1)%gestures.length);
     hero.classList.add('pipo-says-hey');
     const bubble=hero.querySelector('.pipo-hello');
     if(bubble)bubble.textContent='';
     clearTimeout(window.pipoHelloTimer);
-    clearInterval(window.pipoTalkTimer);
-    let talking=false;
-    window.pipoTalkTimer=setInterval(()=>{talking=!talking;pipo.src=talking?talkSrc:waveSrc;},240);
-    window.pipoHelloTimer=setTimeout(()=>{clearInterval(window.pipoTalkTimer);pipo.src=pipo.dataset.cookingSrc;hero.classList.remove('pipo-says-hey');},3000);
+    window.pipoHelloTimer=setTimeout(()=>{pipo.src=pipo.dataset.cookingSrc;hero.classList.remove('pipo-says-hey');},1450);
   }
-  toast(first?`Bonjour ${first} ! Prêt à cuisiner ensemble ?`:'Bonjour ! Je suis Pipo. Créons votre profil pour cuisiner ensemble.');
   return;
 } if(action==='refresh-catalogue'){refreshCatalogue({renderView:true,notify:true});return;}if(action==='refresh')render();
 if(action==='prev-week'||action==='next-week'){week+=action==='prev-week'?-1:1;calendarDay='';render();}
@@ -1271,11 +1270,11 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 #app .home-week-row .week-cta-full {
   box-sizing:border-box; display:flex; width:min(100%,390px) !important; max-width:390px !important;
   min-height:54px; align-items:center; justify-content:center; padding:10px 18px;
-  border:1px solid #8fbdd1; border-bottom-width:5px; border-radius:15px;
-  background:linear-gradient(145deg,#dceef7,#bdddea); box-shadow:0 5px 0 #7fb0c7,0 11px 20px rgb(49 97 120 / 16%);
+  border:3px solid #fff; outline:1px solid #8fbdd1; border-bottom-width:5px; border-radius:15px;
+  background:linear-gradient(145deg,#dceef7,#bdddea); box-shadow:0 0 0 3px rgb(255 255 255 / 88%),0 0 0 4px #9bc4d6,0 5px 0 #7fb0c7,0 12px 22px rgb(49 97 120 / 17%);
   color:#214d36; font-size:15px; font-weight:600; line-height:1.1; text-align:center; text-decoration:none; white-space:nowrap;
 }
-#app .home-week-row .week-cta-full:hover { color:#214d36; background:linear-gradient(145deg,#e8f5fb,#cae6f1); box-shadow:0 3px 0 #7fb0c7,0 8px 15px rgb(49 97 120 / 16%); transform:translateY(2px); }
+#app .home-week-row .week-cta-full:hover { color:#214d36; background:linear-gradient(145deg,#e8f5fb,#cae6f1); box-shadow:0 0 0 3px rgb(255 255 255 / 88%),0 0 0 4px #9bc4d6,0 3px 0 #7fb0c7,0 8px 15px rgb(49 97 120 / 16%); transform:translateY(2px); }
 
 /* Courses : un seul bouton "Le chef calcule", avec Pipo et sa calculatrice. */
 #app .shopping-budget-action { display:flex; justify-content:center; margin:18px 0 8px; }
@@ -1562,6 +1561,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 </script>
 <style id="nutrichef-budget-simple-style">
 /* Version volontairement simple : trois gestes, un seul objectif. */
+#app>section.hero .hero-art { object-position:56% center!important; }
 #app .budget-simple-shell { max-width:820px; }
 #app .budget-simple-header { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:19px; }
 #app .budget-simple-header h1 { margin:0; }
