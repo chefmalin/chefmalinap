@@ -1265,5 +1265,175 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 })();
 </script>
 
+<style id="nutrichef-week-budget-fix-style">
+/* Correction accueil : l'action semaine occupe exactement la largeur du contenu. */
+#app .home-week-row { display:block; width:100%; margin:20px 0 26px; }
+#app .home-week-row .week-cta-full {
+  box-sizing:border-box; display:flex; width:100% !important; max-width:none !important;
+  min-height:70px; align-items:center; justify-content:center; gap:11px; padding:14px 26px;
+  border:2px solid #f2b739; border-bottom-width:7px; border-radius:19px;
+  background:linear-gradient(145deg,#43845d,#24583d); box-shadow:0 7px 0 #c98d12,0 14px 24px rgb(29 71 46 / 18%);
+  color:#fff; font-size:18px; font-weight:850; line-height:1; text-align:center; text-decoration:none; white-space:nowrap;
+}
+#app .home-week-row .week-cta-full:hover { color:#fff; background:linear-gradient(145deg,#4b9167,#2b6546); box-shadow:0 4px 0 #c98d12,0 10px 18px rgb(29 71 46 / 18%); transform:translateY(3px); }
+#app .week-cta-full .week-calendar { flex:0 0 auto; font-size:23px; }
+#app .week-cta-full .week-pipo { flex:0 0 auto; width:35px; height:35px; object-fit:cover; object-position:50% 18%; border:2px solid #fff8df; border-radius:50%; background:#eff3e2; }
+
+/* Courses : un seul bouton "Le chef calcule", avec Pipo et sa calculatrice. */
+#app .shopping-budget-action { display:flex; justify-content:center; margin:18px 0 8px; }
+#app .shopping-budget-action .shopping-budget-button {
+  box-sizing:border-box; display:inline-flex; width:min(100%,460px); min-height:88px; align-items:center; justify-content:center; gap:13px; padding:9px 20px;
+  border:2px solid #f2b739; border-bottom-width:7px; border-radius:20px; background:linear-gradient(145deg,#43845d,#24583d);
+  box-shadow:0 7px 0 #c98d12,0 14px 23px rgb(29 71 46 / 18%); color:#fff; font-size:19px; font-weight:850; text-decoration:none;
+}
+#app .shopping-budget-action .shopping-budget-button:hover { color:#fff; transform:translateY(3px); box-shadow:0 4px 0 #c98d12,0 10px 17px rgb(29 71 46 / 18%); }
+#app .shopping-budget-action .shopping-budget-button img { width:72px; height:72px; object-fit:contain; filter:drop-shadow(0 4px 4px rgb(0 0 0 / 16%)); }
+
+/* Page de suivi de ticket : chaque total est volontairement vérifiable. */
+#app .budget-shell { max-width:900px; }
+#app .budget-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; margin-bottom:22px; }
+#app .budget-heading h1 { margin-bottom:6px; }
+#app .budget-pipo { width:112px; height:112px; object-fit:contain; filter:drop-shadow(0 8px 12px rgb(29 71 46 / 16%)); }
+#app .budget-total-card { display:grid; grid-template-columns:1fr auto; align-items:center; gap:16px; margin-bottom:18px; padding:20px 22px; border:1px solid #d7e4ca; border-radius:22px; background:#eff6e8; }
+#app .budget-total-card p { margin:0; color:#5f6e64; font-size:13px; }
+#app .budget-total-card strong { color:#214d36; font-family:Georgia,serif; font-size:clamp(31px,5vw,48px); }
+#app .budget-photo-card,#app .budget-lines-card { margin-bottom:18px; padding:20px; border:1px solid #e2e7dc; border-radius:20px; background:#fffefa; }
+#app .budget-photo-card h2,#app .budget-lines-card h2 { margin:0 0 6px; font-size:22px; }
+#app .budget-help { margin:0 0 16px; color:#68756c; font-size:13px; line-height:1.55; }
+#app .budget-photo-actions { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+#app .budget-photo-button { cursor:pointer; }
+#app .budget-photo-button input { position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; }
+#app .budget-photo-preview { display:none; width:min(100%,330px); max-height:250px; margin-top:16px; border:1px solid #dbe4d1; border-radius:14px; object-fit:contain; background:#f5f2e9; }
+#app .budget-ocr-status { margin:14px 0 0; color:#596a5e; font-size:13px; }
+#app .budget-ocr-result { margin-top:13px; padding:12px 14px; border-radius:13px; background:#f5f1df; color:#455748; font-size:13px; }
+#app .budget-ticket-total { display:grid; grid-template-columns:1fr minmax(135px,190px); gap:12px; align-items:end; margin:17px 0 0; }
+#app .budget-ticket-total label { margin:0; }
+#app .budget-price-list { display:grid; gap:9px; margin-top:15px; }
+#app .budget-price-line { display:grid; grid-template-columns:minmax(0,1fr) 130px; align-items:center; gap:14px; padding:11px 12px; border-radius:13px; background:#f7f9f3; }
+#app .budget-price-line span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:700; }
+#app .budget-price-line label { margin:0; color:#6b786f; font-size:11px; }
+#app .budget-price-line input { margin-top:4px; padding:8px 9px; }
+#app .budget-empty { margin:12px 0 0; color:#6a756d; }
+#app .budget-back { margin-top:6px; }
+@media (max-width:700px) {
+  #app .home-week-row { margin:15px 0 22px; }
+  #app .home-week-row .week-cta-full { min-height:62px; gap:8px; padding:11px 13px; border-bottom-width:6px; border-radius:16px; font-size:15px; }
+  #app .week-cta-full .week-calendar { font-size:19px; }
+  #app .week-cta-full .week-pipo { width:27px; height:27px; }
+  #app .shopping-budget-action { margin:16px 0 6px; }
+  #app .shopping-budget-action .shopping-budget-button { min-height:78px; padding:7px 15px; border-bottom-width:6px; border-radius:17px; font-size:17px; }
+  #app .shopping-budget-action .shopping-budget-button img { width:61px; height:61px; }
+  #app .budget-heading { gap:10px; }
+  #app .budget-pipo { width:78px; height:78px; }
+  #app .budget-total-card,.budget-ticket-total { grid-template-columns:1fr; }
+  #app .budget-price-line { grid-template-columns:minmax(0,1fr) 118px; gap:10px; }
+}
+</style>
+<script id="nutrichef-week-budget-fix-script">
+/* Cette couche est indépendante du script principal afin que le suivi de ticket reste fiable. */
+(() => {
+  'use strict';
+  let receiptUrl = '';
+  let ocrPromise;
+  const storageKey = () => window.NUTRICHEF_STORAGE_KEY || 'nutrichef-v3';
+  const formatMoney = value => new Intl.NumberFormat('fr-FR', { style:'currency', currency:'EUR' }).format(Number(value || 0));
+  const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[char]);
+  const toNumber = value => Number(String(value ?? '').trim().replace(',', '.'));
+  const idFor = item => String(item?.id ?? item?.name ?? 'article');
+  function readData() {
+    try { const parsed = JSON.parse(localStorage.getItem(storageKey()) || '{}'); return parsed && typeof parsed === 'object' ? parsed : {}; }
+    catch { return {}; }
+  }
+  function writeData(data) {
+    try { localStorage.setItem(storageKey(), JSON.stringify(data)); return true; }
+    catch { return false; }
+  }
+  function dataWithBudget() {
+    const data = readData();
+    if (!Array.isArray(data.shopping)) data.shopping = [];
+    if (!data.shoppingBudget || typeof data.shoppingBudget !== 'object') data.shoppingBudget = {};
+    if (!data.shoppingBudget.prices || typeof data.shoppingBudget.prices !== 'object') data.shoppingBudget.prices = {};
+    return data;
+  }
+  function priceFor(data, item) { const value = toNumber(data.shoppingBudget.prices[idFor(item)]); return Number.isFinite(value) && value >= 0 ? value : 0; }
+  function linesTotal(data) { return data.shopping.reduce((sum, item) => sum + priceFor(data, item), 0); }
+  function currentTotal(data) { const saved = toNumber(data.shoppingBudget.ticketTotal); return Number.isFinite(saved) && saved > 0 ? saved : linesTotal(data); }
+  function flash(message) {
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+    toast.textContent = message; toast.hidden = false;
+    window.clearTimeout(flash.timer); flash.timer = window.setTimeout(() => { toast.hidden = true; }, 3500);
+  }
+  function budgetPage() {
+    const data = dataWithBudget(); const saved = toNumber(data.shoppingBudget.ticketTotal); const hasSaved = Number.isFinite(saved) && saved > 0;
+    const lines = data.shopping.map(item => {
+      const name = escapeHtml(item.name || 'Article'); const key = escapeHtml(idFor(item)); const value = priceFor(data, item);
+      return `<div class="budget-price-line"><span title="${name}">${name}</span><label>Prix payé<input data-nc-fixed-price="${key}" inputmode="decimal" type="number" min="0" max="999.99" step="0.01" placeholder="0,00" value="${value || ''}" aria-label="Prix payé pour ${name}"></label></div>`;
+    }).join('');
+    return `<div class="wrap budget-shell"><section class="budget-heading"><div><div class="eyebrow">Le ticket de caisse, sans calcul mental</div><h1>Le chef calcule</h1><p class="muted">Photographiez votre ticket, vérifiez le total, puis conservez-le ici avec votre liste.</p></div><img class="budget-pipo" src="assets/pipo-calculatrice-button.png" alt="Pipo tenant une calculatrice"></section><section class="budget-total-card"><div><p>${hasSaved ? 'Dernier total enregistré' : 'Total des prix renseignés'}</p><strong id="nc-fixed-budget-total">${formatMoney(currentTotal(data))}</strong><p id="nc-fixed-budget-help">${hasSaved ? 'Le total du ticket est conservé sur cet appareil.' : 'Ajoutez les prix ci-dessous, ou laissez Pipo lire le ticket.'}</p></div><span aria-hidden="true" style="font-size:44px">🧮</span></section><section class="budget-photo-card"><h2>Photographier le ticket</h2><p class="budget-help">Sur téléphone, ce bouton ouvre l’appareil photo. Le total proposé par la lecture automatique doit toujours être vérifié avant d’être enregistré.</p><div class="budget-photo-actions"><label class="btn budget-photo-button">📷 Prendre ou ajouter une photo<input id="nc-fixed-receipt-photo" type="file" accept="image/*" capture="environment"></label><button type="button" class="secondary" data-nc-budget-action="clear" ${hasSaved ? '' : 'disabled'}>Effacer le total</button></div><img id="nc-fixed-receipt-preview" class="budget-photo-preview" alt="Aperçu du ticket de caisse"><p id="nc-fixed-ocr-status" class="budget-ocr-status" aria-live="polite">Aucune photo analysée pour le moment.</p><div id="nc-fixed-ocr-result"></div><div class="budget-ticket-total"><label>Montant total du ticket<input id="nc-fixed-ticket-total" inputmode="decimal" type="number" min="0" max="9999.99" step="0.01" placeholder="Ex. 42,70" value="${hasSaved ? saved.toFixed(2) : ''}"></label><button type="button" data-nc-budget-action="save">Enregistrer ce total</button></div></section><section class="budget-lines-card"><h2>Prix article par article</h2><p class="budget-help">Vous pouvez corriger ou compléter chaque prix : le total se met à jour et reste enregistré sur cet appareil.</p><div class="budget-price-list">${lines || '<p class="budget-empty">Ajoutez d’abord des produits à votre liste de courses.</p>'}</div></section><a class="btn secondary budget-back" href="#courses">← Revenir à ma liste de courses</a></div>`;
+  }
+  function weekButton() {
+    return `<a class="btn week-cta week-cta-full" href="#calendrier"><span class="week-calendar" aria-hidden="true">🗓️</span><span>Organiser ma semaine</span><img class="week-pipo" src="nutrichef-assets-v2/image-01.png" alt=""></a>`;
+  }
+  function fixHome() {
+    const intro = document.querySelector('#app .intro'); const row = document.querySelector('#app .home-week-row');
+    if (intro) { intro.outerHTML = `<div class="home-week-row">${weekButton()}</div>`; return; }
+    if (row) row.innerHTML = weekButton();
+  }
+  function chefButton() {
+    return `<section class="shopping-budget-action"><a class="shopping-budget-button" href="#budget"><img src="assets/pipo-calculatrice-button.png" alt="Pipo tenant une calculatrice"><span>Le chef calcule</span></a></section>`;
+  }
+  function fixCourses() {
+    const old = document.querySelector('#app .shopping-budget-callout');
+    if (old) { old.outerHTML = chefButton(); return; }
+    const exportBox = document.querySelector('#app .shopping-export');
+    if (exportBox && !document.querySelector('#app .shopping-budget-action')) exportBox.insertAdjacentHTML('afterend', chefButton());
+  }
+  function mountFixedRoute() {
+    const route = location.hash.slice(1) || 'accueil'; const app = document.getElementById('app');
+    if (!app) return;
+    if (route === 'budget') { app.innerHTML = budgetPage(); document.title = 'NutriChef · Le chef calcule'; window.scrollTo(0, 0); return; }
+    if (route === 'accueil') fixHome();
+    if (route === 'courses') fixCourses();
+  }
+  function findTotal(text) {
+    const amounts = line => [...String(line).matchAll(/(?:^|[^0-9])(\d{1,4}(?:[ .]\d{3})*[,.]\d{2})(?:\s*(?:€|eur))?/gi)].map(match => toNumber(match[1].replace(/[ .]/g, ''))).filter(value => Number.isFinite(value) && value >= 0 && value < 10000);
+    const lines = String(text || '').split(/\r?\n/); const marked = lines.filter(line => /total|a\s*payer|montant|somme/i.test(line)).flatMap(amounts); const all = lines.flatMap(amounts);
+    return marked.at(-1) ?? all.at(-1) ?? null;
+  }
+  function loadOcr() {
+    if (window.Tesseract) return Promise.resolve(window.Tesseract);
+    if (ocrPromise) return ocrPromise;
+    ocrPromise = new Promise((resolve, reject) => { const script = document.createElement('script'); script.src = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'; script.async = true; script.onload = () => window.Tesseract ? resolve(window.Tesseract) : reject(new Error('Bibliothèque indisponible')); script.onerror = () => reject(new Error('Chargement impossible')); document.head.appendChild(script); });
+    return ocrPromise;
+  }
+  async function readReceipt(file) {
+    const status = document.getElementById('nc-fixed-ocr-status'); const result = document.getElementById('nc-fixed-ocr-result'); const preview = document.getElementById('nc-fixed-receipt-preview');
+    if (!file || !status || !result || !preview) return;
+    if (receiptUrl) URL.revokeObjectURL(receiptUrl); receiptUrl = URL.createObjectURL(file); preview.src = receiptUrl; preview.style.display = 'block'; status.textContent = 'Pipo lit les montants du ticket…'; result.innerHTML = '';
+    try {
+      const Tesseract = await loadOcr(); const { data } = await Tesseract.recognize(file, 'fra+eng', { logger: message => { if (message.status === 'recognizing text' && Number.isFinite(message.progress)) status.textContent = `Pipo lit le ticket… ${Math.round(message.progress * 100)} %`; } });
+      const total = findTotal(data.text);
+      if (total === null) { status.textContent = 'Pipo n’a pas trouvé de total lisible.'; result.innerHTML = '<div class="budget-ocr-result">Vous pouvez inscrire le montant final manuellement ci-dessous.</div>'; return; }
+      const field = document.getElementById('nc-fixed-ticket-total'); if (field) field.value = total.toFixed(2);
+      status.textContent = 'Un total a été proposé : vérifiez-le avant de l’enregistrer.'; result.innerHTML = `<div class="budget-ocr-result"><strong>Total détecté : ${formatMoney(total)}</strong><br>Le montant a été placé dans le champ ci-dessous. Il n’est conservé qu’après votre confirmation.</div>`;
+    } catch { status.textContent = 'La lecture automatique est indisponible pour cette photo.'; result.innerHTML = '<div class="budget-ocr-result">Saisissez le montant final manuellement, puis enregistrez-le.</div>'; }
+  }
+  document.addEventListener('click', event => {
+    const action = event.target.closest('[data-nc-budget-action]')?.dataset.ncBudgetAction; if (!action) return;
+    const data = dataWithBudget();
+    if (action === 'save') { const value = toNumber(document.getElementById('nc-fixed-ticket-total')?.value); if (!Number.isFinite(value) || value <= 0) { flash('Ajoutez un montant supérieur à zéro.'); return; } data.shoppingBudget.ticketTotal = value; data.shoppingBudget.ticketDate = new Date().toISOString(); writeData(data); mountFixedRoute(); flash('Le total de vos courses est enregistré.'); }
+    if (action === 'clear') { data.shoppingBudget.ticketTotal = null; data.shoppingBudget.ticketDate = null; writeData(data); mountFixedRoute(); flash('Le total enregistré a été effacé.'); }
+  });
+  document.addEventListener('input', event => {
+    const input = event.target; if (!input.matches('[data-nc-fixed-price]')) return;
+    const data = dataWithBudget(); const value = toNumber(input.value); data.shoppingBudget.prices[input.dataset.ncFixedPrice] = Number.isFinite(value) && value >= 0 ? value : 0; data.shoppingBudget.ticketTotal = null; data.shoppingBudget.ticketDate = null; writeData(data);
+    const total = document.getElementById('nc-fixed-budget-total'); const help = document.getElementById('nc-fixed-budget-help'); if (total) total.textContent = formatMoney(linesTotal(data)); if (help) help.textContent = 'Total des prix renseignés, enregistré sur cet appareil.';
+  });
+  document.addEventListener('change', event => { if (event.target.id === 'nc-fixed-receipt-photo') readReceipt(event.target.files?.[0]); });
+  window.addEventListener('hashchange', () => window.setTimeout(mountFixedRoute, 0));
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => window.setTimeout(mountFixedRoute, 0), { once:true }); else window.setTimeout(mountFixedRoute, 0);
+})();
+</script>
 </body></html>
 
