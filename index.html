@@ -1266,28 +1266,26 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 </script>
 
 <style id="nutrichef-week-budget-fix-style">
-/* Correction accueil : l'action semaine occupe exactement la largeur du contenu. */
-#app .home-week-row { display:block; width:100%; margin:20px 0 26px; }
+/* Accueil : une action discrète, de même esprit que les autres accès. */
+#app .home-week-row { display:flex; width:100%; justify-content:center; margin:17px 0 24px; }
 #app .home-week-row .week-cta-full {
-  box-sizing:border-box; display:flex; width:100% !important; max-width:none !important;
-  min-height:70px; align-items:center; justify-content:center; gap:11px; padding:14px 26px;
-  border:2px solid #f2b739; border-bottom-width:7px; border-radius:19px;
-  background:linear-gradient(145deg,#43845d,#24583d); box-shadow:0 7px 0 #c98d12,0 14px 24px rgb(29 71 46 / 18%);
-  color:#fff; font-size:18px; font-weight:850; line-height:1; text-align:center; text-decoration:none; white-space:nowrap;
+  box-sizing:border-box; display:flex; width:min(100%,330px) !important; max-width:330px !important;
+  min-height:54px; align-items:center; justify-content:center; padding:10px 18px;
+  border:1px solid #c9dce2; border-bottom-width:5px; border-radius:15px;
+  background:linear-gradient(145deg,#f0f7f9,#dcecf2); box-shadow:0 5px 0 #b7d1dc,0 11px 20px rgb(60 104 121 / 13%);
+  color:#214d36; font-size:15px; font-weight:600; line-height:1.1; text-align:center; text-decoration:none; white-space:nowrap;
 }
-#app .home-week-row .week-cta-full:hover { color:#fff; background:linear-gradient(145deg,#4b9167,#2b6546); box-shadow:0 4px 0 #c98d12,0 10px 18px rgb(29 71 46 / 18%); transform:translateY(3px); }
-#app .week-cta-full .week-calendar { flex:0 0 auto; font-size:23px; }
-#app .week-cta-full .week-pipo { flex:0 0 auto; width:35px; height:35px; object-fit:cover; object-position:50% 18%; border:2px solid #fff8df; border-radius:50%; background:#eff3e2; }
+#app .home-week-row .week-cta-full:hover { color:#214d36; background:linear-gradient(145deg,#f6fbfc,#e3f0f4); box-shadow:0 3px 0 #b7d1dc,0 8px 15px rgb(60 104 121 / 13%); transform:translateY(2px); }
 
 /* Courses : un seul bouton "Le chef calcule", avec Pipo et sa calculatrice. */
 #app .shopping-budget-action { display:flex; justify-content:center; margin:18px 0 8px; }
 #app .shopping-budget-action .shopping-budget-button {
-  box-sizing:border-box; display:inline-flex; width:min(100%,460px); min-height:88px; align-items:center; justify-content:center; gap:13px; padding:9px 20px;
-  border:2px solid #f2b739; border-bottom-width:7px; border-radius:20px; background:linear-gradient(145deg,#43845d,#24583d);
-  box-shadow:0 7px 0 #c98d12,0 14px 23px rgb(29 71 46 / 18%); color:#fff; font-size:19px; font-weight:850; text-decoration:none;
+  box-sizing:border-box; display:inline-flex; width:min(100%,280px); min-height:60px; align-items:center; justify-content:center; gap:9px; padding:5px 14px;
+  border:2px solid #f2b739; border-bottom-width:5px; border-radius:15px; background:linear-gradient(145deg,#43845d,#24583d);
+  box-shadow:0 5px 0 #c98d12,0 11px 19px rgb(29 71 46 / 18%); color:#fff; font-size:16px; font-weight:800; text-decoration:none;
 }
-#app .shopping-budget-action .shopping-budget-button:hover { color:#fff; transform:translateY(3px); box-shadow:0 4px 0 #c98d12,0 10px 17px rgb(29 71 46 / 18%); }
-#app .shopping-budget-action .shopping-budget-button img { width:72px; height:72px; object-fit:contain; filter:drop-shadow(0 4px 4px rgb(0 0 0 / 16%)); }
+#app .shopping-budget-action .shopping-budget-button:hover { color:#fff; transform:translateY(2px); box-shadow:0 3px 0 #c98d12,0 8px 14px rgb(29 71 46 / 18%); }
+#app .shopping-budget-action .shopping-budget-button img { width:48px; height:48px; object-fit:contain; filter:drop-shadow(0 3px 3px rgb(0 0 0 / 16%)); }
 
 /* Page de suivi de ticket : chaque total est volontairement vérifiable. */
 #app .budget-shell { max-width:900px; }
@@ -1316,13 +1314,11 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 #app .budget-empty { margin:12px 0 0; color:#6a756d; }
 #app .budget-back { margin-top:6px; }
 @media (max-width:700px) {
-  #app .home-week-row { margin:15px 0 22px; }
-  #app .home-week-row .week-cta-full { min-height:62px; gap:8px; padding:11px 13px; border-bottom-width:6px; border-radius:16px; font-size:15px; }
-  #app .week-cta-full .week-calendar { font-size:19px; }
-  #app .week-cta-full .week-pipo { width:27px; height:27px; }
-  #app .shopping-budget-action { margin:16px 0 6px; }
-  #app .shopping-budget-action .shopping-budget-button { min-height:78px; padding:7px 15px; border-bottom-width:6px; border-radius:17px; font-size:17px; }
-  #app .shopping-budget-action .shopping-budget-button img { width:61px; height:61px; }
+  #app .home-week-row { margin:14px 0 20px; }
+  #app .home-week-row .week-cta-full { width:min(100%,288px) !important; max-width:288px !important; min-height:52px; padding:9px 14px; border-bottom-width:5px; border-radius:14px; font-size:14px; }
+  #app .shopping-budget-action { margin:15px 0 5px; }
+  #app .shopping-budget-action .shopping-budget-button { width:min(100%,252px); min-height:56px; padding:4px 11px; border-bottom-width:5px; border-radius:14px; font-size:15px; }
+  #app .shopping-budget-action .shopping-budget-button img { width:44px; height:44px; }
   #app .budget-heading { gap:10px; }
   #app .budget-pipo { width:78px; height:78px; }
   #app .budget-total-card,.budget-ticket-total { grid-template-columns:1fr; }
@@ -1373,7 +1369,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
     return `<div class="wrap budget-shell"><section class="budget-heading"><div><div class="eyebrow">Le ticket de caisse, sans calcul mental</div><h1>Le chef calcule</h1><p class="muted">Photographiez votre ticket, vérifiez le total, puis conservez-le ici avec votre liste.</p></div><img class="budget-pipo" src="assets/pipo-calculatrice-button.png" alt="Pipo tenant une calculatrice"></section><section class="budget-total-card"><div><p>${hasSaved ? 'Dernier total enregistré' : 'Total des prix renseignés'}</p><strong id="nc-fixed-budget-total">${formatMoney(currentTotal(data))}</strong><p id="nc-fixed-budget-help">${hasSaved ? 'Le total du ticket est conservé sur cet appareil.' : 'Ajoutez les prix ci-dessous, ou laissez Pipo lire le ticket.'}</p></div><span aria-hidden="true" style="font-size:44px">🧮</span></section><section class="budget-photo-card"><h2>Photographier le ticket</h2><p class="budget-help">Sur téléphone, ce bouton ouvre l’appareil photo. Le total proposé par la lecture automatique doit toujours être vérifié avant d’être enregistré.</p><div class="budget-photo-actions"><label class="btn budget-photo-button">📷 Prendre ou ajouter une photo<input id="nc-fixed-receipt-photo" type="file" accept="image/*" capture="environment"></label><button type="button" class="secondary" data-nc-budget-action="clear" ${hasSaved ? '' : 'disabled'}>Effacer le total</button></div><img id="nc-fixed-receipt-preview" class="budget-photo-preview" alt="Aperçu du ticket de caisse"><p id="nc-fixed-ocr-status" class="budget-ocr-status" aria-live="polite">Aucune photo analysée pour le moment.</p><div id="nc-fixed-ocr-result"></div><div class="budget-ticket-total"><label>Montant total du ticket<input id="nc-fixed-ticket-total" inputmode="decimal" type="number" min="0" max="9999.99" step="0.01" placeholder="Ex. 42,70" value="${hasSaved ? saved.toFixed(2) : ''}"></label><button type="button" data-nc-budget-action="save">Enregistrer ce total</button></div></section><section class="budget-lines-card"><h2>Prix article par article</h2><p class="budget-help">Vous pouvez corriger ou compléter chaque prix : le total se met à jour et reste enregistré sur cet appareil.</p><div class="budget-price-list">${lines || '<p class="budget-empty">Ajoutez d’abord des produits à votre liste de courses.</p>'}</div></section><a class="btn secondary budget-back" href="#courses">← Revenir à ma liste de courses</a></div>`;
   }
   function weekButton() {
-    return `<a class="btn week-cta week-cta-full" href="#calendrier"><span class="week-calendar" aria-hidden="true">🗓️</span><span>Organiser ma semaine</span><img class="week-pipo" src="nutrichef-assets-v2/image-01.png" alt=""></a>`;
+    return `<a class="btn week-cta week-cta-full" href="#calendrier">Organiser ma recette</a>`;
   }
   function fixHome() {
     const intro = document.querySelector('#app .intro'); const row = document.querySelector('#app .home-week-row');
@@ -1433,6 +1429,135 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   document.addEventListener('change', event => { if (event.target.id === 'nc-fixed-receipt-photo') readReceipt(event.target.files?.[0]); });
   window.addEventListener('hashchange', () => window.setTimeout(mountFixedRoute, 0));
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => window.setTimeout(mountFixedRoute, 0), { once:true }); else window.setTimeout(mountFixedRoute, 0);
+})();
+</script>
+<style id="nutrichef-budget-calendar-style">
+/* Le chef calcule : un suivi mensuel sobre et réellement utilisable sur téléphone. */
+#app .budget-calendar-shell { max-width:900px; }
+#app .budget-calendar-header { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:20px; }
+#app .budget-calendar-header h1 { margin:0; }
+#app .budget-calendar-header p { margin:6px 0 0; }
+#app .budget-calendar-pipo { width:84px; height:84px; flex:0 0 auto; object-fit:contain; filter:drop-shadow(0 7px 10px rgb(29 71 46 / 15%)); }
+#app .budget-month-switcher { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 0 15px; }
+#app .budget-month-switcher h2 { margin:0; font-size:22px; text-transform:capitalize; }
+#app .budget-month-switcher .secondary { min-width:42px; min-height:42px; padding:8px 11px; font-size:20px; line-height:1; }
+#app .budget-overview { display:grid; grid-template-columns:minmax(0,1fr) minmax(210px,.75fr); gap:16px; margin-bottom:18px; }
+#app .budget-target-card,#app .budget-ring-card,#app .budget-add-card,#app .budget-calendar-card,#app .budget-history-card { border:1px solid #dce7d2; border-radius:20px; background:#fffefa; }
+#app .budget-target-card { padding:19px; }
+#app .budget-target-card h3,#app .budget-add-card h2,#app .budget-calendar-card h2,#app .budget-history-card h2 { margin:0 0 6px; font-size:21px; }
+#app .budget-target-card p,#app .budget-add-card p,#app .budget-history-card p { margin:0; color:#617166; font-size:13px; line-height:1.5; }
+#app .budget-target-input { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:9px; align-items:end; margin-top:15px; }
+#app .budget-target-input label,#app .budget-add-grid label { margin:0; color:#53665a; font-size:12px; font-weight:700; }
+#app .budget-target-input input,#app .budget-add-grid input { box-sizing:border-box; width:100%; margin-top:5px; }
+#app .budget-target-input span { padding:10px 0; color:#56685c; font-size:14px; font-weight:700; }
+#app .budget-list-link { display:inline-flex; margin-top:15px; padding:10px 13px; font-size:13px; }
+#app .budget-ring-card { display:flex; align-items:center; justify-content:center; gap:14px; min-height:163px; padding:15px; background:#f2f7ec; }
+#app .budget-ring { display:grid; width:112px; height:112px; flex:0 0 auto; place-items:center; border-radius:50%; background:conic-gradient(#3b7a56 0 var(--progress),#d8e5d4 var(--progress) 100%); }
+#app .budget-ring::before { content:""; position:absolute; width:86px; height:86px; border-radius:50%; background:#f2f7ec; }
+#app .budget-ring strong,#app .budget-ring span { position:relative; z-index:1; display:block; text-align:center; }
+#app .budget-ring strong { color:#1e5138; font-size:20px; line-height:1; }
+#app .budget-ring span { margin-top:3px; color:#647167; font-size:10px; }
+#app .budget-ring-copy strong { display:block; color:#1f5239; font-family:Georgia,serif; font-size:25px; line-height:1.1; }
+#app .budget-ring-copy span { display:block; margin-top:4px; color:#617166; font-size:12px; line-height:1.35; }
+#app .budget-add-card { margin-bottom:18px; padding:19px; }
+#app .budget-add-top { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; }
+#app .budget-photo-mini { cursor:pointer; flex:0 0 auto; margin:0; padding:10px 13px; font-size:13px; }
+#app .budget-photo-mini input { position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; }
+#app .budget-photo-status { min-height:19px; margin:11px 0 0; color:#607065; font-size:12px; }
+#app .budget-add-grid { display:grid; grid-template-columns:150px minmax(0,1fr) auto; gap:10px; align-items:end; margin-top:12px; }
+#app .budget-add-grid button { min-height:44px; }
+#app .budget-calendar-card { margin-bottom:18px; overflow:hidden; }
+#app .budget-calendar-weekdays,#app .budget-calendar-grid { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); }
+#app .budget-calendar-weekdays { padding:11px 12px 7px; background:#f0f6e9; color:#617166; font-size:11px; font-weight:800; text-align:center; }
+#app .budget-calendar-grid { padding:0 12px 12px; gap:6px; }
+#app .budget-day { display:flex; min-height:76px; flex-direction:column; gap:6px; padding:8px; border:1px solid #e2eadc; border-radius:11px; background:#fffefa; }
+#app .budget-day.empty { border-color:transparent; background:transparent; }
+#app .budget-day.today { border-color:#82a77d; background:#f1f7eb; }
+#app .budget-day time { color:#53665a; font-size:12px; font-weight:800; }
+#app .budget-day-amount { margin-top:auto; color:#1f563c; font-size:11px; font-weight:850; line-height:1.15; }
+#app .budget-day-amount.over { color:#b1523e; }
+#app .budget-history-card { padding:19px; }
+#app .budget-history-list { display:grid; gap:8px; margin-top:13px; }
+#app .budget-history-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:10px; align-items:center; padding:10px 11px; border-radius:12px; background:#f4f8ef; }
+#app .budget-history-row time { color:#52665a; font-size:13px; font-weight:700; }
+#app .budget-history-row strong { color:#1d5439; font-size:14px; }
+#app .budget-delete { width:31px; height:31px; padding:0; border:1px solid #e2c6bd; border-radius:50%; background:#fff7f4; color:#a54b3c; font-size:18px; line-height:1; }
+#app .budget-empty-history { margin:13px 0 0; color:#68766c; font-size:13px; }
+@media (max-width:700px) {
+  #app .budget-calendar-header { align-items:center; margin-bottom:16px; }
+  #app .budget-calendar-header h1 { font-size:29px; }
+  #app .budget-calendar-header p { font-size:14px; line-height:1.4; }
+  #app .budget-calendar-pipo { width:62px; height:62px; }
+  #app .budget-month-switcher h2 { font-size:19px; }
+  #app .budget-overview { grid-template-columns:1fr; gap:12px; }
+  #app .budget-target-card,#app .budget-add-card,#app .budget-history-card { padding:15px; border-radius:17px; }
+  #app .budget-ring-card { justify-content:flex-start; min-height:132px; padding:13px 15px; border-radius:17px; }
+  #app .budget-ring { width:96px; height:96px; }
+  #app .budget-ring::before { width:73px; height:73px; }
+  #app .budget-ring strong { font-size:17px; }
+  #app .budget-ring-copy strong { font-size:23px; }
+  #app .budget-add-top { display:block; }
+  #app .budget-photo-mini { margin-top:12px; }
+  #app .budget-add-grid { grid-template-columns:1fr 1fr; gap:9px; }
+  #app .budget-add-grid button { grid-column:1 / -1; width:100%; }
+  #app .budget-calendar-weekdays { padding:9px 7px 6px; font-size:10px; }
+  #app .budget-calendar-grid { padding:0 7px 8px; gap:3px; }
+  #app .budget-day { min-height:55px; gap:3px; padding:5px 3px; border-radius:8px; text-align:center; }
+  #app .budget-day time { font-size:10px; }
+  #app .budget-day-amount { overflow:hidden; font-size:9px; text-overflow:ellipsis; white-space:nowrap; }
+  #app .budget-history-row { padding:9px; }
+}
+</style>
+<script id="nutrichef-budget-calendar-script">
+/* Suivi mensuel des courses : données conservées uniquement dans le navigateur de l'utilisateur. */
+(() => {
+  'use strict';
+  let shownMonth = monthKey(new Date());
+  let ocrLoader;
+  const storeKey = () => window.NUTRICHEF_STORAGE_KEY || 'nutrichef-v3';
+  const euro = value => new Intl.NumberFormat('fr-FR', { style:'currency', currency:'EUR' }).format(Number(value || 0));
+  const number = value => Number(String(value ?? '').trim().replace(',', '.'));
+  function dayKey(date = new Date()) { return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`; }
+  function monthKey(date) { return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`; }
+  function parseDay(key) { return new Date(`${key}T12:00:00`); }
+  function monthName(key) { return new Intl.DateTimeFormat('fr-FR', { month:'long', year:'numeric' }).format(new Date(`${key}-01T12:00:00`)); }
+  function dayName(key) { return new Intl.DateTimeFormat('fr-FR', { weekday:'long', day:'numeric', month:'long' }).format(parseDay(key)); }
+  function readRoot() { try { const value = JSON.parse(localStorage.getItem(storeKey()) || '{}'); return value && typeof value === 'object' ? value : {}; } catch { return {}; } }
+  function writeRoot(root) { try { localStorage.setItem(storeKey(), JSON.stringify(root)); return true; } catch { return false; } }
+  function tracker() {
+    const root = readRoot();
+    if (!root.shoppingBudget || typeof root.shoppingBudget !== 'object') root.shoppingBudget = {};
+    const data = root.shoppingBudget;
+    if (!Array.isArray(data.records)) data.records = [];
+    if (!data.monthlyTargets || typeof data.monthlyTargets !== 'object') data.monthlyTargets = {};
+    const oldTotal = number(data.ticketTotal);
+    if (!data.calendarMigrated && Number.isFinite(oldTotal) && oldTotal > 0) { data.records.push({ id:`ancien-${Date.now()}`, date:(data.ticketDate || new Date().toISOString()).slice(0, 10), amount:oldTotal }); data.calendarMigrated = true; }
+    return { root, data };
+  }
+  function recordsFor(data, key) { return data.records.filter(record => /^\d{4}-\d{2}-\d{2}$/.test(record.date || '') && record.date.slice(0, 7) === key && Number(record.amount) > 0); }
+  function sum(records) { return records.reduce((total, record) => total + (Number(record.amount) || 0), 0); }
+  function weekStart(date) { const copy = new Date(date); copy.setHours(12, 0, 0, 0); copy.setDate(copy.getDate() - ((copy.getDay() + 6) % 7)); return dayKey(copy); }
+  function currentWeekTotal(data) { const start = weekStart(new Date()); const end = new Date(`${start}T12:00:00`); end.setDate(end.getDate() + 7); return sum(data.records.filter(record => { const date = parseDay(record.date); return date >= parseDay(start) && date < end; })); }
+  function monthShift(key, offset) { const date = new Date(`${key}-01T12:00:00`); date.setMonth(date.getMonth() + offset); return monthKey(date); }
+  function dayAmount(records, key) { return sum(records.filter(record => record.date === key)); }
+  function calendarCells(key, records) {
+    const [year, month] = key.split('-').map(Number); const first = new Date(year, month - 1, 1); const days = new Date(year, month, 0).getDate(); const leading = (first.getDay() + 6) % 7; const total = Math.ceil((leading + days) / 7) * 7; const today = dayKey(); let html = '';
+    for (let index = 0; index < total; index += 1) { const day = index - leading + 1; if (day < 1 || day > days) { html += '<div class="budget-day empty" aria-hidden="true"></div>'; continue; } const date = `${key}-${String(day).padStart(2, '0')}`; const amount = dayAmount(records, date); html += `<div class="budget-day ${date === today ? 'today' : ''}" title="${dayName(date)}"><time datetime="${date}">${day}</time>${amount ? `<span class="budget-day-amount">${euro(amount)}</span>` : ''}</div>`; }
+    return html;
+  }
+  function page() {
+    const { data } = tracker(); const records = recordsFor(data, shownMonth); const spent = sum(records); const target = number(data.monthlyTargets[shownMonth]); const hasTarget = Number.isFinite(target) && target > 0; const progress = hasTarget ? Math.min(100, Math.round((spent / target) * 100)) : 0; const remaining = hasTarget ? target - spent : 0; const thisWeek = currentWeekTotal(data);
+    const history = [...records].sort((a, b) => b.date.localeCompare(a.date) || String(b.id).localeCompare(String(a.id))).map(record => `<div class="budget-history-row"><time datetime="${record.date}">${dayName(record.date)}</time><strong>${euro(record.amount)}</strong><button class="budget-delete" type="button" data-nc-tracker-delete="${String(record.id).replace(/&/g, '&amp;').replace(/"/g, '&quot;')}" aria-label="Supprimer la dépense du ${dayName(record.date)}">×</button></div>`).join('');
+    return `<div class="wrap budget-calendar-shell"><header class="budget-calendar-header"><div><h1>Le chef calcule</h1><p class="muted">Suivez vos courses mois après mois, sans perdre le fil.</p></div><img class="budget-calendar-pipo" src="assets/pipo-calculatrice-button.png" alt="Pipo tenant une calculatrice"></header><div class="budget-month-switcher"><button type="button" class="secondary" data-nc-tracker-action="previous" aria-label="Mois précédent">‹</button><h2>${monthName(shownMonth)}</h2><button type="button" class="secondary" data-nc-tracker-action="next" aria-label="Mois suivant">›</button></div><section class="budget-overview"><div class="budget-target-card"><h3>Mon budget courses</h3><p>Choisissez votre objectif pour le mois. Il reste modifiable à tout moment.</p><div class="budget-target-input"><label>Budget de ${monthName(shownMonth)}<input id="nc-tracker-target" inputmode="decimal" type="number" min="0" max="9999" step="1" placeholder="Ex. 400" value="${hasTarget ? target : ''}"></label><span>€ / mois</span></div><a class="btn secondary budget-list-link" href="#courses">Voir ma liste de courses</a></div><div class="budget-ring-card"><div class="budget-ring" style="--progress:${progress}%"><div><strong>${progress}%</strong><span>du budget</span></div></div><div class="budget-ring-copy"><strong>${euro(spent)}</strong><span>dépensés ce mois</span><span>${hasTarget ? (remaining >= 0 ? `${euro(remaining)} restants` : `${euro(Math.abs(remaining))} au-dessus`) : 'Ajoutez un budget mensuel'}</span><span>Cette semaine : ${euro(thisWeek)}</span></div></div></section><section class="budget-add-card"><div class="budget-add-top"><div><h2>Ajouter mes courses</h2><p>Ajoutez le total d’un ticket à la date de vos courses. La photo peut préremplir le montant, que vous vérifiez ensuite.</p></div><label class="btn budget-photo-mini">Prendre une photo<input id="nc-tracker-photo" type="file" accept="image/*" capture="environment"></label></div><p id="nc-tracker-photo-status" class="budget-photo-status" aria-live="polite"></p><div class="budget-add-grid"><label>Date des courses<input id="nc-tracker-date" type="date" value="${dayKey()}" max="2100-12-31"></label><label>Total du ticket<input id="nc-tracker-amount" inputmode="decimal" type="number" min="0.01" max="9999.99" step="0.01" placeholder="Ex. 90,00"></label><button type="button" data-nc-tracker-action="add">Enregistrer mes courses</button></div></section><section class="budget-calendar-card"><div class="budget-calendar-weekdays"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div><div class="budget-calendar-grid">${calendarCells(shownMonth, records)}</div></section><section class="budget-history-card"><h2>Mes courses du mois</h2><p>Chaque total est enregistré à sa date pour garder une vue claire de vos dépenses.</p><div class="budget-history-list">${history || '<p class="budget-empty-history">Aucune course enregistrée pour ce mois.</p>'}</div></section></div>`;
+  }
+  function mount() { if ((location.hash.slice(1) || 'accueil') !== 'budget') return; const app = document.getElementById('app'); if (!app) return; app.innerHTML = page(); document.title = 'NutriChef · Le chef calcule'; window.scrollTo(0, 0); }
+  function getOcr() { if (window.Tesseract) return Promise.resolve(window.Tesseract); if (ocrLoader) return ocrLoader; ocrLoader = new Promise((resolve, reject) => { const script = document.createElement('script'); script.src = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'; script.async = true; script.onload = () => window.Tesseract ? resolve(window.Tesseract) : reject(new Error('indisponible')); script.onerror = () => reject(new Error('chargement impossible')); document.head.appendChild(script); }); return ocrLoader; }
+  function detectedTotal(text) { const values = [...String(text || '').matchAll(/(?:^|[^0-9])(\d{1,4}(?:[ .]\d{3})*[,.]\d{2})(?:\s*(?:€|eur))?/gi)].map(match => number(match[1].replace(/[ .]/g, ''))).filter(value => Number.isFinite(value) && value >= 0 && value < 10000); return values.at(-1) ?? null; }
+  async function readPhoto(file) { const status = document.getElementById('nc-tracker-photo-status'); if (!file || !status) return; status.textContent = 'Pipo lit le ticket…'; try { const Tesseract = await getOcr(); const { data } = await Tesseract.recognize(file, 'fra+eng', { logger: message => { if (message.status === 'recognizing text' && Number.isFinite(message.progress)) status.textContent = `Pipo lit le ticket… ${Math.round(message.progress * 100)} %`; } }); const total = detectedTotal(data.text); if (total === null) { status.textContent = 'Total non détecté : vous pouvez le saisir manuellement.'; return; } const amount = document.getElementById('nc-tracker-amount'); if (amount) amount.value = total.toFixed(2); status.textContent = `Total proposé : ${euro(total)}. Vérifiez-le puis enregistrez vos courses.`; } catch { status.textContent = 'Lecture automatique indisponible : vous pouvez saisir le montant manuellement.'; } }
+  document.addEventListener('click', event => { const action = event.target.closest('[data-nc-tracker-action]')?.dataset.ncTrackerAction; if (action) { if (action === 'previous') { shownMonth = monthShift(shownMonth, -1); mount(); } if (action === 'next') { shownMonth = monthShift(shownMonth, 1); mount(); } if (action === 'add') { const amount = number(document.getElementById('nc-tracker-amount')?.value); const date = document.getElementById('nc-tracker-date')?.value; if (!/^\d{4}-\d{2}-\d{2}$/.test(date || '') || !Number.isFinite(amount) || amount <= 0) { const status = document.getElementById('nc-tracker-photo-status'); if (status) status.textContent = 'Ajoutez une date et un montant supérieur à zéro.'; return; } const { root, data } = tracker(); data.records.push({ id:`course-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, date, amount }); writeRoot(root); shownMonth = date.slice(0, 7); mount(); } return; } const id = event.target.closest('[data-nc-tracker-delete]')?.dataset.ncTrackerDelete; if (id) { const { root, data } = tracker(); data.records = data.records.filter(record => String(record.id) !== id); writeRoot(root); mount(); } });
+  document.addEventListener('change', event => { if (event.target.id === 'nc-tracker-photo') readPhoto(event.target.files?.[0]); if (event.target.id === 'nc-tracker-target') { const { root, data } = tracker(); const value = number(event.target.value); if (Number.isFinite(value) && value > 0) data.monthlyTargets[shownMonth] = value; else delete data.monthlyTargets[shownMonth]; writeRoot(root); mount(); } });
+  window.addEventListener('hashchange', () => window.setTimeout(mount, 25));
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => window.setTimeout(mount, 25), { once:true }); else window.setTimeout(mount, 25);
 })();
 </script>
 </body></html>
