@@ -1,32 +1,21 @@
-const CACHE_NAME = "nutrichef-app-v1";
-const APP_SHELL = ["./", "./nutrichef-icon.svg"];
+/* NutriChef : toujours privilégier la version en ligne la plus récente. */
+const CACHE_NAME = "nutrichef-app-v6";
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)));
+  event.waitUntil(caches.open(CACHE_NAME));
   self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))
+    caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
   );
   self.clients.claim();
 });
 
+/* Les pages ne sont volontairement pas mises en cache : chaque ouverture charge la dernière version. */
 self.addEventListener("fetch", (event) => {
-  const request = event.request;
-  if (request.method !== "GET" || new URL(request.url).origin !== self.location.origin) return;
-
-  if (request.mode === "navigate") {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-          return response;
-        })
-        .catch(() => caches.match(request).then((cached) => cached || caches.match("./")))
-    );
-  }
+  if (event.request.method !== "GET" || event.request.mode !== "navigate") return;
+  event.respondWith(fetch(event.request, { cache: "no-store" }));
 });
 
