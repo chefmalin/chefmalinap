@@ -1650,5 +1650,46 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => window.setTimeout(mount, 55), { once:true }); else window.setTimeout(mount, 55);
 })();
 </script>
+<style id="nutrichef-hero-go-style">
+/* Accès immédiat aux trois façons de choisir une recette. */
+#app>section.hero .cta.nc-go-choices {
+  display:grid; width:66px; min-width:66px; height:66px; min-height:66px; padding:0;
+  place-items:center; border:3px solid #fff7de; border-bottom-width:6px; border-radius:50%;
+  background:linear-gradient(145deg,#4a9065,#235b40); box-shadow:0 6px 0 #c98d12,0 11px 19px rgb(36 67 45 / 24%);
+  color:#fff; font-family:"Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif; font-size:16px; font-weight:900; letter-spacing:.04em;
+}
+#app>section.hero .cta.nc-go-choices:hover { transform:translateY(calc(-50% - 2px))!important; filter:brightness(1.06); }
+#app>section.hero .cta.nc-go-choices:active { border-bottom-width:3px; box-shadow:0 3px 0 #c98d12,0 6px 10px rgb(36 67 45 / 22%); transform:translateY(calc(-50% + 3px))!important; }
+@media (max-width:700px) {
+  #app>section.hero .cta.nc-go-choices { width:58px; min-width:58px; height:58px; min-height:58px; border-width:3px; border-bottom-width:5px; font-size:14px; }
+}
+</style>
+<script id="nutrichef-hero-go-script">
+/* Le bouton rond défile vers les trois choix sans changer de page. */
+(() => {
+  function prepareChoices() {
+    if ((location.hash.slice(1) || 'accueil') !== 'accueil') return;
+    const app = document.getElementById('app');
+    const button = app?.querySelector('section.hero .cta');
+    const choices = app?.querySelector('.home-shortcuts');
+    if (!button || !choices) return;
+    choices.id = 'choix-recettes';
+    button.classList.add('nc-go-choices');
+    button.href = '#choix-recettes';
+    button.removeAttribute('data-action');
+    button.dataset.ncGoChoices = 'true';
+    button.setAttribute('aria-label', 'Voir les trois choix de recettes');
+    button.textContent = 'GO';
+  }
+  document.addEventListener('click', event => {
+    const button = event.target.closest('[data-nc-go-choices="true"]');
+    if (!button) return;
+    event.preventDefault();
+    document.getElementById('choix-recettes')?.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+  window.addEventListener('hashchange', () => window.setTimeout(prepareChoices, 60));
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => window.setTimeout(prepareChoices, 60), { once:true }); else window.setTimeout(prepareChoices, 60);
+})();
+</script>
 </body></html>
 
