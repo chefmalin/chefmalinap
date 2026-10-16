@@ -1452,7 +1452,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 #app .budget-target-input span { padding:10px 0; color:#56685c; font-size:14px; font-weight:700; }
 #app .budget-list-link { display:inline-flex; margin-top:15px; padding:10px 13px; font-size:13px; }
 #app .budget-ring-card { display:flex; align-items:center; justify-content:center; gap:14px; min-height:163px; padding:15px; background:#f2f7ec; }
-#app .budget-ring { display:grid; width:112px; height:112px; flex:0 0 auto; place-items:center; border-radius:50%; background:conic-gradient(#3b7a56 0 var(--progress),#d8e5d4 var(--progress) 100%); }
+#app .budget-ring { position:relative; display:grid; width:112px; height:112px; flex:0 0 auto; place-items:center; border-radius:50%; background:conic-gradient(#3b7a56 0 var(--progress),#d8e5d4 var(--progress) 100%); }
 #app .budget-ring::before { content:""; position:absolute; width:86px; height:86px; border-radius:50%; background:#f2f7ec; }
 #app .budget-ring strong,#app .budget-ring span { position:relative; z-index:1; display:block; text-align:center; }
 #app .budget-ring strong { color:#1e5138; font-size:20px; line-height:1; }
