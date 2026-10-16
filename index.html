@@ -1683,7 +1683,16 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
     event.preventDefault();
     document.getElementById('choix-recettes')?.scrollIntoView({ behavior:'smooth', block:'start' });
   });
+  // L'accueil est rendu après ce script lors d'une ouverture directe : on attend aussi sa création.
+  let pendingFrame = 0;
+  const scheduleChoices = () => {
+    cancelAnimationFrame(pendingFrame);
+    pendingFrame = requestAnimationFrame(prepareChoices);
+  };
+  const appRoot = document.getElementById('app');
+  if (appRoot) new MutationObserver(scheduleChoices).observe(appRoot, { childList:true, subtree:true });
   window.addEventListener('hashchange', () => window.setTimeout(prepareChoices, 60));
+  window.addEventListener('load', () => { prepareChoices(); window.setTimeout(prepareChoices, 180); }, { once:true });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => window.setTimeout(prepareChoices, 60), { once:true }); else window.setTimeout(prepareChoices, 60);
 })();
 </script>
