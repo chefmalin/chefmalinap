@@ -1700,13 +1700,11 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 </script>
 
 <script id="nutrichef-initial-home-refresh">
-/* Rejoue l'accueil une seule fois une fois que toutes les améliorations sont chargées. */
+/* Rejoue la page ouverte une seule fois une fois que toutes les améliorations sont chargées. */
 (() => {
-  const refreshHome = () => {
-    if ((location.hash.slice(1) || 'accueil') === 'accueil') window.dispatchEvent(new Event('hashchange'));
-  };
-  if (document.readyState === 'complete') window.setTimeout(refreshHome, 0);
-  else window.addEventListener('load', () => window.setTimeout(refreshHome, 0), { once:true });
+  const refreshCurrentRoute = () => window.dispatchEvent(new Event('hashchange'));
+  if (document.readyState === 'complete') window.setTimeout(refreshCurrentRoute, 80);
+  else window.addEventListener('load', () => window.setTimeout(refreshCurrentRoute, 80), { once:true });
 })();
 </script>
 </body></html>
