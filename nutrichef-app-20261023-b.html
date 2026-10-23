@@ -1,0 +1,24 @@
+Warning: truncated output (original token count: 144358)
+Total output lines: 2001
+
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#25472c"><title>NutriChef</title><style>:root{--green:#264c35;--lime:#e9edda;--cream:#faf8f1;--ink:#263c2c;--muted:#6d7569}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,sans-serif}button,input,select,textarea{font:inherit}a{color:inherit}button,.btn{cursor:pointer;border:0;border-radius:12px;padding:13px 20px;background:var(--green);color:white;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600}button:hover,.btn:hover{filter:brightness(1.1)}button:disabled{opacity:.5;cursor:not-allowed}.secondary{background:var(--lime);color:var(--green)}.danger{background:#fff0eb;color:#9e3f2d}:focus-visible{outline:3px solid #b68017;outline-offset:3px}.top{padding:18px 4%;background:var(--cream);border-bottom:1px solid #deded1;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{text-decoration:none;font-family:Georgia,serif;font-size:31px;white-space:nowrap;font-weight:700}.brand span{color:#72914c}.brand small{display:block;font:9px system-ui;letter-spacing:1.7px;margin-top:5px}.top nav{display:flex;gap:6px;flex-wrap:wrap}.top nav a{font-size:13px;text-decoration:none;padding:12px 14px;border-radius:9px}.top nav a[aria-current=page]{background:var(--lime);font-weight:700}.dot{display:inline-block;background:#d65344;width:8px;height:8px;border-radius:50%;margin-left:6px}.wrap{max-width:1200px;margin:auto;padding:40px 30px}.eyebrow{color:#7c8059;letter-spacing:2px;text-transform:uppercase;font-size:11px;font-weight:700}h1,h2,h3{font-family:Georgia,serif;font-weight:600}h1{font-size:clamp(30px,4vw,46px);margin:10px 0 16px}h2{font-size:28px;margin:0 0 16px}h3{font-size:23px;margin:12px 0}p{line-height:1.65}.muted{color:var(--muted)}.hero{position:relative;overflow:hidden;width:100%;height:cla…143358 tokens truncated…) {
+      const basis = document.createElement('p');
+      basis.className = 'nc-energy-basis';
+      basis.textContent = 'Calcul : équation de Mifflin–St Jeor, puis niveau d’activité renseigné. Les calories restent une estimation : elles ne peuvent pas être exactes à la calorie près.';
+      breakdown.after(basis);
+    }
+    const method = document.querySelector('#app .nc-profile-method');
+    if (method) method.innerHTML = '<summary>Comment sont calculés mes repères ?</summary><p>Pour les adultes de 18 à 78 ans sans situation particulière déclarée, NutriChef estime le métabolisme de base avec l’équation de Mifflin–St Jeor, puis applique le niveau d’activité renseigné. C’est une estimation de départ, pas un diagnostic ni une prescription.</p><p>Pour une perte de poids, NutriChef utilise un déficit indicatif de 500 kcal/jour — proche de 2 kg/mois en moyenne. Si cela ferait descendre l’objectif sous 1 200 kcal/jour, aucun objectif automatique n’est proposé.</p><p>Les besoins varient notamment avec l’âge, le sexe, l’activité, la grossesse ou l’allaitement. En cas de maladie, traitement, trouble alimentaire, grossesse/allaitement ou IMC hors repère, demandez un avis professionnel.</p><a href="https://pubmed.ncbi.nlm.nih.gov/2305711/" target="_blank" rel="noopener">Équation de Mifflin–St Jeor</a> · <a href="https://www.who.int/publications/m/item/healthy-diet-factsheet394/" target="_blank" rel="noopener">Repères de l’OMS</a>';
+  }
+  let frame = 0;
+  const schedule = () => { clearTimeout(frame); frame = window.setTimeout(refreshProfileCopy, 0); };
+  const app = document.getElementById('app');
+  if (app) new MutationObserver(schedule).observe(app, { childList: true, subtree: true });
+  window.addEventListener('hashchange', () => window.setTimeout(schedule, 80));
+  window.addEventListener('load', () => window.setTimeout(schedule, 180), { once: true });
+  window.setTimeout(schedule, 80);
+})();
+</script>
+
+</body></html>
+
