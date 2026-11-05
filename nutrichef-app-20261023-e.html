@@ -960,8 +960,8 @@ function addIngredients(list,r,portions=1){for(const i of r.ingredients){const f
 function buildMenu(recipes,p,dates){const n=nutrition(p);if(!n.target)throw Error('Un objectif calorique personnalisé nécessite un avis professionnel pour ce profil.');const slots=[['matin',.25],['midi',.35],['soir',.30],['collation',.10]];const pool=recipes.filter(r=>compatible(r,p));const result={};for(const [index,date]of dates.entries()){result[date]={};for(const [slot,fraction]of slots){const eligible=pool.filter(r=>r.meals.includes(slot)&&n.target*fraction/r.kcal>=.5&&n.target*fraction/r.kcal<=2);if(!eligible.length)throw Error('Pas assez de recettes compatibles pour '+slot+'. Aucun menu n’a été modifié.');const r=eligible[index%eligible.length];result[date][slot]={id:r.id,portions:Math.round(n.target*fraction/r.kcal*100)/100};}}return result;}
 function isoDate(d=new Date()){return new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);}
 
-const FOODCLOUD_URL='https://naregjbyatnoazyyfwmj.supabase.co';
-const FOODCLOUD_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hcmVnamJ5YXRub2F6eXlmd21qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxODMyMjAsImV4cCI6MjEwNTc1OTIyMH0.3wdp1l-61dSaFyVKDqKr9sM0SlUZT-y6wmDJ0Io9JhI';
+const FOODCLOUD_URL='https://uqbbknlrbyzchmydvmna.supabase.co';
+const FOODCLOUD_ANON_KEY='sb_publishable_njFYoHAuHKrIMiY49Qx1UA_D1yKNejz';
 const foodCloudDiets=['Omnivore','Végétarien','Végétalien','Pescatarien'];
 const foodCloudMeals={breakfast:'matin',lunch:'midi',dinner:'soir',snack:'collation'};
 const foodCloudRoutePrefix='__nutrichef:';
