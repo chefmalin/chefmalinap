@@ -1,0 +1,2 @@
+[functions.systeme-sale-webhook]
+verify_jwt = false

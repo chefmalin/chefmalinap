@@ -22,5 +22,7 @@ html:not(.nc-auth-ready) #nc-loading-screen{visibility:hidden!important}
 .nc-auth-note{margin:18px 0 0;color:#708075;font-size:.75rem;line-height:1.45}
 .nc-auth-account{margin-left:2px;padding:8px 10px;border:1px solid #d7e2cc;border-radius:11px;background:#f5f8ef;color:#315b43;font:750 11px/1 ui-sans-serif,system-ui,sans-serif;white-space:nowrap;cursor:pointer}
 .nc-auth-account:hover{background:#e8f0df}
+.nc-auth-renew{display:flex;min-height:49px;align-items:center;justify-content:center;margin-top:20px;border-radius:14px;background:#315b43;color:#fff;text-decoration:none;font:800 .95rem/1 ui-sans-serif,system-ui,sans-serif;box-shadow:0 5px 0 #214735}
+.nc-auth-logout{width:100%;margin-top:18px;border:0;background:transparent;color:#315b43;font:700 .84rem/1 ui-sans-serif,system-ui,sans-serif;text-decoration:underline;cursor:pointer}
 @media(max-width:559px){.nc-auth-gate{padding:16px}.nc-auth-card{padding:24px 19px;border-radius:23px}.nc-auth-pipo{width:92px;height:92px}.nc-auth-card h1{font-size:1.75rem}.nc-auth-copy{font-size:.91rem}.nc-auth-account{min-height:38px}}
 
