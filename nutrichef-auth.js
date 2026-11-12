@@ -14,19 +14,35 @@
   const dataKey = session => 'nutrichef-v3:' + userId(session);
   const clearHash = () => history.replaceState(null, '', location.pathname + location.search);
 
+  async function legacyActiveAccess(session) {
+    const email = String(session?.user?.email || tokenInfo(session?.access_token || '').email || '').trim().toLowerCase();
+    if (!email) return null;
+    const response = await api('/rest/v1/nutrichef_entitlements?select=plan,access_expires_at&email=eq.' + encodeURIComponent(email) + '&limit=1', {
+      headers: { Authorization: 'Bearer ' + session.access_token }
+    });
+    if (!response.ok) return null;
+    const rows = await response.json();
+    const access = Array.isArray(rows) ? rows[0] : null;
+    if (!access || !access.access_expires_at || new Date(access.access_expires_at).getTime() <= Date.now()) return null;
+    return access;
+  }
+
   async function activeAccess(session) {
     if (!isFresh(session)) return null;
     try {
-      const email = String(session?.user?.email || tokenInfo(session?.access_token || '').email || '').trim().toLowerCase();
-      if (!email) return null;
-      const response = await api('/rest/v1/nutrichef_entitlements?select=plan,access_expires_at&email=eq.' + encodeURIComponent(email) + '&limit=1', {
+      const response = await api('/rest/v1/rpc/nutrichef_access', {
+        method: 'POST',
+        body: '{}',
         headers: { Authorization: 'Bearer ' + session.access_token }
       });
-      if (!response.ok) return null;
-      const rows = await response.json();
-      const access = Array.isArray(rows) ? rows[0] : null;
-      if (!access || !access.access_expires_at || new Date(access.access_expires_at).getTime() <= Date.now()) return null;
-      return access;
+      if (response.ok) {
+        const rows = await response.json();
+        const access = Array.isArray(rows) ? rows[0] : rows;
+        return access?.allowed === true ? access : null;
+      }
+      // During the staged rollout only, preserve subscriber access until the migration is deployed.
+      if (response.status !== 404) return null;
+      return await legacyActiveAccess(session);
     } catch { return null; }
   }
 
