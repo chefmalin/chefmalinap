@@ -2,6 +2,7 @@
   const URL = 'https://naregjbyatnoazyyfwmj.supabase.co';
   const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hcmVnamJ5YXRub2F6eXlmd21qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxODMyMjAsImV4cCI6MjEwNTc1OTIyMH0.3wdp1l-61dSaFyVKDqKr9sM0SlUZT-y6wmDJ0Io9JhI';
   const SESSION_KEY = 'sb-naregjbyatnoazyyfwmj-auth-token';
+  const APP_URL = 'https://chefmalin.github.io/chefmalinap/nutrichef-app-20261023-e.html';
   const root = document.documentElement;
   const headers = { apikey: KEY, 'Content-Type': 'application/json' };
 
@@ -71,7 +72,7 @@
       if (!/^\S+@\S+\.\S+$/.test(email)) { message.textContent = 'Entrez une adresse e-mail valide.'; message.className = 'nc-auth-message is-error'; input.focus(); return; }
       button.disabled = true; message.className = 'nc-auth-message'; message.textContent = 'Envoi du lien sécurisé…';
       try {
-        const response = await api('/auth/v1/otp', { method: 'POST', body: JSON.stringify({ email, create_user: true, redirect_to: location.origin + location.pathname }) });
+        const response = await api('/auth/v1/otp', { method: 'POST', body: JSON.stringify({ email, create_user: true, redirect_to: APP_URL }) });
         if (!response.ok) throw Error();
         message.textContent = 'C’est envoyé. Ouvrez votre e-mail, puis cliquez sur le lien sécurisé.'; input.disabled = true; button.textContent = 'Lien envoyé';
       } catch { message.textContent = 'L’envoi n’a pas fonctionné. Réessayez dans un instant.'; message.className = 'nc-auth-message is-error'; button.disabled = false; }
