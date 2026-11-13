@@ -2079,7 +2079,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   height: 100% !important;
   top: 0 !important;
   left: 0 !important;
-  object-fit: contain !important;
+  object-fit: cover !important;
   object-position: center !important;
 }
 #app section.hero {
@@ -2139,7 +2139,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
     choices.querySelector('.card.green')?.setAttribute('href', '#personnalisees');
     pipo.dataset.ncHomePrepared = 'true';
   };
-  const schedule = () => [0, 80, 250, 700].forEach(delay => window.setTimeout(refreshHome, delay));
+  const schedule = () => [0, 80, 250, 700, 1600, 3200, 6500].forEach(delay => window.setTimeout(refreshHome, delay));
   new MutationObserver(schedule).observe(document.getElementById('app'), { childList: true, subtree: true });
   window.addEventListener('hashchange', schedule);
   window.addEventListener('load', schedule, { once: true });
