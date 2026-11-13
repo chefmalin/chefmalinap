@@ -2080,34 +2080,46 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   top: 0 !important;
   left: 0 !important;
   object-fit: cover;
-  object-position: center 45%;
+  object-position: center 52%;
 }
 #app section.hero {
-  height: min(72vw, 900px) !important;
-  min-height: 460px;
+  height: clamp(330px, 31vw, 470px) !important;
+  min-height: 330px;
   background: #e9d7b5;
 }
 #app section.hero .cta,
 #app .week-cta,
 #app .home-week-row { display: none !important; }
 #app .home-shortcuts {
-  max-width: 1160px;
-  margin: 28px auto 42px;
-  padding: 0 30px;
+  width: min(100%, 1280px);
+  max-width: 1280px;
+  margin: 38px auto 54px;
+  padding: 0 44px;
+  gap: 34px;
 }
 #app .home-shortcuts .card {
-  min-height: 245px;
+  min-height: 278px;
   justify-content: space-between;
 }
+#app .home-shortcuts .card h3 { font-size: 24px; }
+/* L'en-tête reprend l'importance visuelle de l'accueil, sans alourdir la page. */
+.top { padding: 16px 5% !important; }
+.brand { font-size: 32px !important; }
+.top nav { gap: 7px !important; }
+.top nav a { padding: 12px 15px !important; font-size: 14px !important; font-weight: 650; }
+#profile-link { font-size: 14px; font-weight: 700; }
 @media (max-width: 760px) {
-  #app section.hero { height: min(78vw, 560px) !important; min-height: 310px; }
-  #app section.hero .hero-art { object-position: center 45%; }
-  #app .home-shortcuts { padding: 0 18px; margin-top: 20px; }
+  #app section.hero { height: min(68vw, 430px) !important; min-height: 280px; }
+  #app section.hero .hero-art { object-position: center 52%; }
+  #app .home-shortcuts { padding: 0 20px; margin-top: 26px; gap: 18px; }
+  #app .home-shortcuts .card { min-height: 210px; }
+  .top nav a { padding: 10px 11px !important; font-size: 13px !important; }
 }
 </style>
 <script id="nutrichef-home-pipo-refresh-script">
 (() => {
   const pipoImage = 'nutrichef-assets-v2/pipo-accueil-cuisine.png';
+  const pipoGreetingImage = 'nutrichef-assets-v2/pipo-accueil-salut-cuillere.png';
   const refreshHome = () => {
     if ((location.hash.slice(1) || 'accueil') !== 'accueil') return;
     const app = document.getElementById('app');
@@ -2116,7 +2128,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
     const choices = app?.querySelector('.home-shortcuts');
     if (!hero || !pipo || !choices) return;
     pipo.src = pipoImage;
-    pipo.dataset.heySrc = pipoImage;
+    pipo.dataset.heySrc = pipoGreetingImage;
     pipo.dataset.talkSrc = pipoImage;
     pipo.alt = 'Pipo, le chef NutriChef, cuisine une recette dans sa casserole';
     hero.querySelector('.cta')?.remove();
