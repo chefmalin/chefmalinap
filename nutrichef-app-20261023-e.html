@@ -2128,14 +2128,16 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
     const pipo = hero?.querySelector('.hero-art');
     const choices = app?.querySelector('.home-shortcuts');
     if (!hero || !pipo || !choices) return;
+    if (pipo.dataset.ncHomePrepared === 'true' && hero.nextElementSibling === choices) return;
     pipo.src = pipoImage;
     pipo.dataset.heySrc = pipoGreetingImage;
     pipo.dataset.talkSrc = pipoImage;
     pipo.alt = 'Pipo, le chef NutriChef, cuisine une recette dans sa casserole';
     hero.querySelector('.cta')?.remove();
-    hero.after(choices);
+    if (hero.nextElementSibling !== choices) hero.after(choices);
     app.querySelector('.intro .week-cta')?.remove();
     choices.querySelector('.card.green')?.setAttribute('href', '#personnalisees');
+    pipo.dataset.ncHomePrepared = 'true';
   };
   const schedule = () => [0, 80, 250, 700].forEach(delay => window.setTimeout(refreshHome, delay));
   new MutationObserver(schedule).observe(document.getElementById('app'), { childList: true, subtree: true });
