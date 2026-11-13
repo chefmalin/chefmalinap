@@ -2088,7 +2088,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 #app .home-shortcuts {
   width: min(100%, 1280px);
   max-width: 1280px;
-  margin: 18px auto 20px;
+  margin: 30px auto 20px;
   padding: 0 44px;
   gap: 34px;
 }
@@ -2115,7 +2115,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 <script id="nutrichef-home-pipo-refresh-script">
 (() => {
   const pipoImage = 'nutrichef-assets-v2/pipo-accueil-final.png';
-  const pipoGreetingImage = pipoImage;
+  const pipoGreetingImage = 'nutrichef-assets-v2/pipo-accueil-cuillere-animation.png';
   const refreshHome = () => {
     if ((location.hash.slice(1) || 'accueil') !== 'accueil') return;
     const app = document.getElementById('app');
