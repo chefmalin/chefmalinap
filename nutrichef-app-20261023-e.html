@@ -2079,8 +2079,8 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   height: 100% !important;
   top: 0 !important;
   left: 0 !important;
-  object-fit: contain;
-  object-position: center;
+  object-fit: contain !important;
+  object-position: center !important;
 }
 #app section.hero {
   height: clamp(340px, 27vw, 410px) !important;
@@ -2111,7 +2111,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 #profile-link img { width: 48px; height: 48px; }
 @media (max-width: 760px) {
   #app section.hero { height: min(72vw, 410px) !important; min-height: 300px; }
-  #app section.hero .hero-art { object-position: center; }
+  #app section.hero .hero-art { object-position: center !important; }
   #app .home-shortcuts { padding: 0 20px; margin-top: 26px; gap: 18px; }
   #app .home-shortcuts .card { min-height: 210px; }
   .top nav a { padding: 10px 11px !important; font-size: 13px !important; }
@@ -2128,7 +2128,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
     const pipo = hero?.querySelector('.hero-art');
     const choices = app?.querySelector('.home-shortcuts');
     if (!hero || !pipo || !choices) return;
-    if (pipo.dataset.ncHomePrepared === 'true' && hero.nextElementSibling === choices) return;
+    if (pipo.dataset.ncHomePrepared === 'true' && hero.nextElementSibling === choices && pipo.getAttribute('src') === pipoImage) return;
     pipo.src = pipoImage;
     pipo.dataset.heySrc = pipoGreetingImage;
     pipo.dataset.talkSrc = pipoImage;
