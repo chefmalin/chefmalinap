@@ -2064,7 +2064,12 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   top: 0 !important;
   left: 0 !important;
   object-fit: cover;
-  object-position: center 36%;
+  object-position: center 45%;
+}
+#app section.hero {
+  height: min(72vw, 900px) !important;
+  min-height: 460px;
+  background: #e9d7b5;
 }
 #app section.hero .cta,
 #app .week-cta,
@@ -2079,13 +2084,14 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   justify-content: space-between;
 }
 @media (max-width: 760px) {
-  #app section.hero .hero-art { object-position: center 31%; }
+  #app section.hero { height: min(78vw, 560px) !important; min-height: 310px; }
+  #app section.hero .hero-art { object-position: center 45%; }
   #app .home-shortcuts { padding: 0 18px; margin-top: 20px; }
 }
 </style>
 <script id="nutrichef-home-pipo-refresh-script">
 (() => {
-  const pipoImage = 'nutrichef-assets-v2/pipo-accueil.png';
+  const pipoImage = 'nutrichef-assets-v2/pipo-accueil-cuisine.png';
   const refreshHome = () => {
     if ((location.hash.slice(1) || 'accueil') !== 'accueil') return;
     const app = document.getElementById('app');
@@ -2096,10 +2102,11 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
     pipo.src = pipoImage;
     pipo.dataset.heySrc = pipoImage;
     pipo.dataset.talkSrc = pipoImage;
-    pipo.alt = 'Pipo, le chef NutriChef, vous accueille avec le pouce levé';
+    pipo.alt = 'Pipo, le chef NutriChef, cuisine une recette dans sa casserole';
     hero.querySelector('.cta')?.remove();
     hero.after(choices);
     app.querySelector('.intro .week-cta')?.remove();
+    choices.querySelector('.card.green')?.setAttribute('href', '#personnalisees');
   };
   const schedule = () => [0, 80, 250, 700].forEach(delay => window.setTimeout(refreshHome, delay));
   new MutationObserver(schedule).observe(document.getElementById('app'), { childList: true, subtree: true });
