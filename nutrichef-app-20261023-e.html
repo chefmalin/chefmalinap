@@ -2080,11 +2080,11 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   top: 0 !important;
   left: 0 !important;
   object-fit: cover;
-  object-position: center 52%;
+  object-position: center 55%;
 }
 #app section.hero {
-  height: clamp(330px, 31vw, 470px) !important;
-  min-height: 330px;
+  height: clamp(220px, 18vw, 290px) !important;
+  min-height: 220px;
   background: #e9d7b5;
 }
 #app section.hero .cta,
@@ -2093,7 +2093,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 #app .home-shortcuts {
   width: min(100%, 1280px);
   max-width: 1280px;
-  margin: 38px auto 54px;
+  margin: 26px auto 48px;
   padding: 0 44px;
   gap: 34px;
 }
@@ -2103,14 +2103,15 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 }
 #app .home-shortcuts .card h3 { font-size: 24px; }
 /* L'en-tête reprend l'importance visuelle de l'accueil, sans alourdir la page. */
-.top { padding: 16px 5% !important; }
-.brand { font-size: 32px !important; }
-.top nav { gap: 7px !important; }
-.top nav a { padding: 12px 15px !important; font-size: 14px !important; font-weight: 650; }
-#profile-link { font-size: 14px; font-weight: 700; }
+.top { padding: 17px 5% !important; }
+.brand { font-size: 34px !important; }
+.top nav { gap: 9px !important; }
+.top nav a { padding: 13px 17px !important; font-size: 16px !important; font-weight: 700; }
+#profile-link { font-size: 15px; font-weight: 800; }
+#profile-link img { width: 48px; height: 48px; }
 @media (max-width: 760px) {
-  #app section.hero { height: min(68vw, 430px) !important; min-height: 280px; }
-  #app section.hero .hero-art { object-position: center 52%; }
+  #app section.hero { height: min(54vw, 300px) !important; min-height: 210px; }
+  #app section.hero .hero-art { object-position: center 55%; }
   #app .home-shortcuts { padding: 0 20px; margin-top: 26px; gap: 18px; }
   #app .home-shortcuts .card { min-height: 210px; }
   .top nav a { padding: 10px 11px !important; font-size: 13px !important; }
@@ -2142,5 +2143,18 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   window.addEventListener('load', schedule, { once: true });
   schedule();
 })();
+</script>
+<script id="nutrichef-home-choice-navigation">
+/* Les cartes de l'accueil gardent un passage direct et fiable vers leur page. */
+document.addEventListener('click', event => {
+  const card = event.target.closest('#app .home-shortcuts a[href^="#"]');
+  if (!card) return;
+  const destination = card.getAttribute('href');
+  if (!destination) return;
+  event.preventDefault();
+  event.stopPropagation();
+  if (location.hash === destination) window.dispatchEvent(new HashChangeEvent('hashchange'));
+  else location.hash = destination;
+}, true);
 </script>
 <link rel="stylesheet" href="nutrichef-auth.css"><script src="nutrichef-auth.js?v=public-access-1"></script></body></html>
