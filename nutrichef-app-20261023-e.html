@@ -2146,6 +2146,17 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   schedule();
 })();
 </script>
+<script id="nutrichef-stable-home-root">
+/* Les anciennes décorations observaient le contenu en continu et empêchaient les clics.
+   On conserve la page rendue, puis on la détache de ces anciens observateurs. */
+(() => {
+  const app = document.getElementById('app');
+  if (!app || app.dataset.ncStableRoot === 'true') return;
+  const stableApp = app.cloneNode(true);
+  stableApp.dataset.ncStableRoot = 'true';
+  app.replaceWith(stableApp);
+})();
+</script>
 <script id="nutrichef-home-choice-navigation">
 /* Les cartes de l'accueil gardent un passage direct et fiable vers leur page. */
 document.addEventListener('click', event => {
