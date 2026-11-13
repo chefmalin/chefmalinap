@@ -1036,6 +1036,22 @@ if(action==='erase'&&confirm('Effacer définitivement votre profil, vos pesées,
 if(action==='retry')await load();});
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.dataset.action==='greet-pipo'){e.preventDefault();e.target.click();}});window.addEventListener('hashchange',()=>{filter='';render();window.scrollTo(0,0);});
 let catalogueUpdatedAt=0,catalogueRefreshBusy=false;async function refreshCatalogue(options={}){const {renderView=false,notify=false}=options;if(catalogueRefreshBusy)return false;catalogueRefreshBusy=true;try{const data=await getRecipes();catalogue=[...data.recipes,...(state.custom||[])];demo=data.demo;loadError='';catalogueUpdatedAt=Date.now();if(renderView)render();if(notify)toast(data.demo?'Catalogue local disponible : vous pouvez continuer à cuisiner.':'Catalogue FoodCloud actualisé : '+data.recipes.length+' recette'+(data.recipes.length>1?'s':'')+' disponible'+(data.recipes.length>1?'s':'')+'.');return true;}catch(e){loadError='';if(renderView)render();return false;}finally{catalogueRefreshBusy=false;}}async function load(){await refreshCatalogue({renderView:false});render();}setInterval(()=>{if(document.visibilityState==='visible'&&Date.now()-catalogueUpdatedAt>120000)refreshCatalogue();},120000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&Date.now()-catalogueUpdatedAt>30000)refreshCatalogue();});
+// Les trois choix d'accueil restent disponibles même avant la création d'un profil.
+// Sans profil, les recettes sont simplement proposées sans filtre personnel.
+function listing(route){
+  const n=nutrition(state.profile);
+  let pool=catalogue.filter(r=>compatible(r,state.profile));
+  if(route==='panier') pool=pool.filter(r=>isForFoodCloudRoute(r,'panier')&&(r.routes&&r.routes.length||r.tags.includes('mediterraneen')));
+  if(route==='personnalisees') pool=pool.filter(r=>isForFoodCloudRoute(r,'personnalisees')&&r.meals.includes(selectedMeal)&&(!n.target||Math.abs(r.kcal-n.target*fractions[selectedMeal])<=n.target*fractions[selectedMeal]*.25));
+  if(route==='chef') pool=pool.filter(r=>isForFoodCloudRoute(r,'chef'));
+  if(filter) pool=pool.filter(r=>(r.title+' '+r.ingredients.map(i=>i.name).join(' ')).toLocaleLowerCase('fr').includes(filter.toLocaleLowerCase('fr')));
+  if(route==='chef'&&pool.length) pool=[pool[Math.floor(Math.random()*pool.length)]];
+  const title=route==='panier'?'Le panier bleu':route==='chef'?'La surprise du chef':'Vos recettes personnalisées';
+  const description=state.profile
+    ? 'Des recettes adaptées à votre profil lorsque celui-ci est renseigné.'
+    : 'Choisissez une recette librement, ou créez votre profil pour des suggestions personnalisées.';
+  return `<a href="#accueil">← Revenir à l’accueil</a><h1>${title}</h1><p class="muted">${description}</p>${!state.profile?'<a class="btn secondary" href="#profil">Créer mon profil</a>':''}<form id="search-form" class="toolbar"><input aria-label="Rechercher une recette" name="query" placeholder="Une recette, un ingrédient…" value="${esc(filter)}">${route==='personnalisees'?`<select name="meal" aria-label="Repas" style="width:auto">${Object.entries(mealNames).map(([k,v])=>`<option value="${k}" ${selectedMeal===k?'selected':''}>${v}</option>`).join('')}</select>`:''}<button>Rechercher</button>${route==='chef'?'<button type="button" class="secondary" data-action="refresh">Une autre idée</button>':''}</form>${recipeCards(pool)}`;
+}
 render();await load();
 
 })();
