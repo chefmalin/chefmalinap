@@ -1887,14 +1887,9 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
     button.setAttribute('aria-label', 'Organiser ma recette');
   }
 
-  function polishHero() {
-    if ((location.hash.slice(1) || 'accueil') !== 'accueil') return;
-    const pipo = document.querySelector('#app section.hero .hero-art');
-    if (!pipo || pipo.dataset.premiumHero === 'true') return;
-    pipo.src = 'assets/pipo-cuisine-premium-v1.png';
-    pipo.dataset.premiumHero = 'true';
-    pipo.alt = 'Pipo cuisine une recette méditerranéenne dans sa cuisine';
-  }
+  // Ancienne bannière supprimée : l'accueil est désormais entièrement géré
+  // par l'image fournie dans le script final de la page.
+  function polishHero() {}
 
   function polishWizard() {
     if ((location.hash.slice(1) || 'accueil') !== 'profil' || typeof state === 'undefined' || state.profile) return;
