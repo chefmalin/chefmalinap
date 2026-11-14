@@ -2242,7 +2242,8 @@ document.addEventListener('click', event => {
       return;
     }
     if (button.dataset.waterAction !== 'drink') return;
-    const next = Math.min(2, read() + .25);
+    // Une fois les 2 L atteints, le clic suivant relance naturellement le compteur.
+    const next = read() >= 2 ? 0 : Math.min(2, read() + .25);
     write(next);
     button.classList.remove('is-drinking');
     void button.offsetWidth;
