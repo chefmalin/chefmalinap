@@ -4,7 +4,8 @@
   "private": true,
   "description": "Écran d’accueil ChefMalin — étape 1",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "prepare:private-access": "node worker/scripts/prepare-assets.mjs"
   }
 }
 
