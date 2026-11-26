@@ -16,6 +16,10 @@
   <script>
     (() => {
       "use strict";
+      if (location.hostname === "chefmalin.github.io") {
+        location.replace("https://nutrichef-private-access.mathiaspantano63.workers.dev/connexion");
+        return;
+      }
       const fallback = "nutrichef-app-20261018-a.html";
       const hash = location.hash || "#accueil";
       const fail = () => location.replace(fallback + hash);
