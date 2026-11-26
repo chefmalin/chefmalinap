@@ -2142,9 +2142,32 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   #app section.hero .hero-art { object-position: center !important; }
   #app .home-shortcuts { padding: 0 20px; margin-top: 26px; gap: 18px; }
   #app .home-shortcuts .card { min-height: 210px; }
-  #app .water-tracker { width: calc(100% - 40px); grid-template-columns: 1fr; gap: 4px; padding: 23px 22px 17px; }
-  #app .water-pipo { margin-bottom: -22px; }
-  #app .water-progress { padding-top: 4px; }
+  /* Même largeur que les trois cartes et aucun débordement sur iPhone. */
+  #app .water-tracker {
+    box-sizing: border-box;
+    width: calc(100% - 24px);
+    max-width: calc(100vw - 36px);
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+    margin: 30px auto 24px;
+    padding: 20px 18px 16px;
+    overflow: hidden;
+  }
+  #app .water-copy { min-width: 0; }
+  #app .water-copy h2 {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    font-size: clamp(21px, 6vw, 27px);
+    line-height: 1.12;
+  }
+  #app .water-pipo { width: 150px; height: 158px; margin: -2px auto -18px; }
+  #app .water-progress { min-width: 0; padding-top: 4px; }
+  #app .water-progress-top { gap: 10px; font-size: 13px; }
+  #app .water-progress-top strong { flex: 0 0 auto; font-size: 23px; }
+  #app .water-meter { width: 100%; max-width: 100%; }
+  #app .water-scale { font-size: 11px; }
+  #app .water-note { font-size: 13px; line-height: 1.35; }
   .top nav a { padding: 10px 11px !important; font-size: 13px !important; }
 }
 </style>
