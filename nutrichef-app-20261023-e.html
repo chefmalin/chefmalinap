@@ -2049,8 +2049,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   if (app) new MutationObserver(schedule).observe(app, { childList: true, subtree: true });
   window.addEventListener('hashchange', () => window.setTimeout(schedule, 80));
   window.addEventListener('load', () => window.setTimeout(schedule, 150), { once: true });
-  // Exécution synchrone : Pipo est prêt avant le premier affichage.
-  refreshHome();
+  schedule();
 })();
 </script>
 <script id="nutrichef-first-open-refresh">
@@ -2158,6 +2157,8 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   #app .water-meter { width: 100%; max-width: 100%; }
   #app .water-scale { font-size: 11px; }
   #app .water-note { font-size: 13px; line-height: 1.35; }
+  /* L'accueil démarre directement avec les trois choix, sans encart intermédiaire. */
+  #app .intro, #app .home-week-row { display: none !important; }
   .top nav a { padding: 10px 11px !important; font-size: 13px !important; }
 }
 </style>
@@ -2190,11 +2191,26 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   };
   window.addEventListener('hashchange', schedule);
   window.addEventListener('load', schedule, { once: true });
-  schedule();
+  // Pipo est préparé avant le premier affichage, sans délai visible.
+  refreshHome();
 })();
 </script>
 <script id="nutrichef-stable-home-root">
 /* L'accueil conserve son nœud d'origine : le clonage complet provoquait un clignotement. */
+</script>
+<script id="nutrichef-pipo-spoon-lift">
+/* Le clic conserve Pipo actuel et montre uniquement sa cuillère levée. */
+document.addEventListener('click', event => {
+  const pipo = event.target.closest('#app .pipo-greeting[data-action="greet-pipo"]');
+  if (!pipo) return;
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  const cookingSrc = pipo.dataset.cookingSrc || pipo.currentSrc || pipo.src;
+  pipo.dataset.cookingSrc = cookingSrc;
+  window.clearTimeout(window.pipoHelloTimer);
+  pipo.src = 'nutrichef-assets-v2/pipo-accueil-cuillere-levee.png';
+  window.pipoHelloTimer = window.setTimeout(() => { pipo.src = cookingSrc; }, 900);
+}, true);
 </script>
 <script id="nutrichef-home-choice-navigation">
 /* Les cartes de l'accueil gardent un passage direct et fiable vers leur page. */
