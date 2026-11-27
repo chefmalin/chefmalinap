@@ -1052,7 +1052,9 @@ function listing(route){
     : 'Choisissez une recette librement, ou créez votre profil pour des suggestions personnalisées.';
   return `<a href="#accueil">← Revenir à l’accueil</a><h1>${title}</h1><p class="muted">${description}</p>${!state.profile?'<a class="btn secondary" href="#profil">Créer mon profil</a>':''}<form id="search-form" class="toolbar"><input aria-label="Rechercher une recette" name="query" placeholder="Une recette, un ingrédient…" value="${esc(filter)}">${route==='personnalisees'?`<select name="meal" aria-label="Repas" style="width:auto">${Object.entries(mealNames).map(([k,v])=>`<option value="${k}" ${selectedMeal===k?'selected':''}>${v}</option>`).join('')}</select>`:''}<button>Rechercher</button>${route==='chef'?'<button type="button" class="secondary" data-action="refresh">Une autre idée</button>':''}</form>${recipeCards(pool)}`;
 }
-render();await load();
+// L'accueil s'affiche immédiatement avec le catalogue local, puis le catalogue
+// distant se charge en arrière-plan sans reconstruire toute la page.
+render();void refreshCatalogue({renderView:false});
 
 })();
 const nutrichefIcon=document.createElement('link');
@@ -2047,7 +2049,8 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   if (app) new MutationObserver(schedule).observe(app, { childList: true, subtree: true });
   window.addEventListener('hashchange', () => window.setTimeout(schedule, 80));
   window.addEventListener('load', () => window.setTimeout(schedule, 150), { once: true });
-  schedule();
+  // Exécution synchrone : Pipo est prêt avant le premier affichage.
+  refreshHome();
 })();
 </script>
 <script id="nutrichef-first-open-refresh">
