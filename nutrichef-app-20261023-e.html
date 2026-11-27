@@ -1711,12 +1711,8 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 </script>
 
 <script id="nutrichef-initial-home-refresh">
-/* Rejoue la page ouverte une seule fois une fois que toutes les améliorations sont chargées. */
-(() => {
-  const refreshCurrentRoute = () => window.dispatchEvent(new Event('hashchange'));
-  if (document.readyState === 'complete') window.setTimeout(refreshCurrentRoute, 80);
-  else window.addEventListener('load', () => window.setTimeout(refreshCurrentRoute, 80), { once:true });
-})();
+/* Le rendu initial est déjà effectué par l'application principale.
+   Ne pas le rejouer ici : un deuxième rendu faisait sauter l'accueil au chargement. */
 </script>
 
 <style id="nutrichef-profile-and-week-polish">
@@ -1947,10 +1943,7 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
   const app = document.getElementById('app');
   if (app) new MutationObserver(updateView).observe(app, { childList: true, subtree: true });
   window.addEventListener('hashchange', () => window.setTimeout(updateView, 80));
-  window.addEventListener('load', () => window.setTimeout(() => {
-    if (typeof window.render === 'function') window.render();
-    updateView();
-  }, 140), { once: true });
+  window.addEventListener('load', () => window.setTimeout(updateView, 140), { once: true });
   window.setTimeout(updateView, 80);
 })();
 </script>
@@ -2058,14 +2051,8 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
 })();
 </script>
 <script id="nutrichef-first-open-refresh">
-/* À l'ouverture : laisse la récupération des recettes finir, puis rejoue le rendu final.
-   Évite qu'un premier affichage provisoire reste visible avant toute navigation. */
-(() => {
-  const refresh = () => window.dispatchEvent(new Event('hashchange'));
-  const settle = () => [0, 160, 520, 1100].forEach(delay => window.setTimeout(refresh, delay));
-  if (document.readyState === 'complete') settle();
-  else window.addEventListener('load', settle, { once: true });
-})();
+/* Les données se mettent à jour via le chargement normal du catalogue.
+   Aucun nouveau rendu n'est déclenché artificiellement au démarrage. */
 </script>
 <style id="nutrichef-home-pipo-refresh">
 /* Accueil : Pipo est l'action principale, suivi directement des trois choix. */
@@ -2193,23 +2180,18 @@ addLink();show();window.addEventListener('hashchange',show);document.addEventLis
     choices.querySelector('.card.green')?.setAttribute('href', '#personnalisees');
     pipo.dataset.ncHomePrepared = 'true';
   };
-  const schedule = () => [0, 80, 250, 700, 1600, 3200, 6500].forEach(delay => window.setTimeout(refreshHome, delay));
-  new MutationObserver(schedule).observe(document.getElementById('app'), { childList: true, subtree: true });
+  let refreshTimer = 0;
+  const schedule = () => {
+    window.clearTimeout(refreshTimer);
+    refreshTimer = window.setTimeout(refreshHome, 0);
+  };
   window.addEventListener('hashchange', schedule);
   window.addEventListener('load', schedule, { once: true });
   schedule();
 })();
 </script>
 <script id="nutrichef-stable-home-root">
-/* Les anciennes décorations observaient le contenu en continu et empêchaient les clics.
-   On conserve la page rendue, puis on la détache de ces anciens observateurs. */
-(() => {
-  const app = document.getElementById('app');
-  if (!app || app.dataset.ncStableRoot === 'true') return;
-  const stableApp = app.cloneNode(true);
-  stableApp.dataset.ncStableRoot = 'true';
-  app.replaceWith(stableApp);
-})();
+/* L'accueil conserve son nœud d'origine : le clonage complet provoquait un clignotement. */
 </script>
 <script id="nutrichef-home-choice-navigation">
 /* Les cartes de l'accueil gardent un passage direct et fiable vers leur page. */
